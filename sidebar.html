@@ -1,0 +1,136 @@
+<style>
+    .logout {
+        border-radius: 5px;
+        background: #FFF;
+        border: 1px solid #40BEC2;
+    }
+    
+    .logout a {
+        color: #25396f;
+        font-size: 1rem;
+        padding: 0.7rem 1rem;
+        text-decoration: none;
+        transition: all .5s;
+    }
+    
+    .logout a:focus,
+    .logout a:hover,
+    .logout a:active {
+        color: #FFF;
+        background: #40BEC2;
+    }
+</style>
+
+<div class="sidebar-wrapper active" style="box-shadow: 7px 6px 0px rgba(233, 233, 233, 0.25); border-radius: 0px 50px 50px 0px;">
+    <div class="sidebar-header">
+        <div class="align-items-center">
+            <div class="avatar avatar-xl mb-3" style="display: block;">
+                <img src="assets/images/faces/1.jpg" alt="Face 1" style="height: 100%;">
+            </div>
+            <div class="text-center">
+                <h6 class="font-bold mb-2  name-id" style="color:#26B7BC;"></h6>
+            </div>
+        </div>
+    </div>
+
+    <hr style="margin-left: 40px; margin-right: 40px; border: 0.5px solid #26B7BC;">
+
+
+    <div class="sidebar-menu">
+        <ul class="menu">
+
+            <li id="cate1" class="sidebar-item">
+                <a href="manage-index.html" class='sidebar-link'>
+                    <i class="bi bi-grid-fill"></i>
+                    <span>總覽</span>
+                </a>
+            </li>
+
+            <li id="cate2" class="sidebar-item">
+                <a href="manage-message.html" class='sidebar-link'>
+                    <i class="bi bi-stack"></i>
+
+                    <span>訊息通知</span>
+                </a>
+            </li>
+
+            <li id="cate3" class="sidebar-item">
+                <a href="order-pending.html" class='sidebar-link'>
+                    <i class="bi bi-collection-fill"></i>
+                    <span>訂單資訊</span>
+                </a>
+            </li>
+
+            <li id="cate4" class="sidebar-item">
+                <a href="hawker.html" class='sidebar-link'>
+                    <i class="bi bi-grid-1x2-fill"></i>
+                    <span>小販資訊</span>
+                </a>
+            </li>
+
+            <li id="cate5" class="sidebar-item">
+                <a href="commodity.html" class='sidebar-link'>
+                    <i class="bi bi-hexagon-fill"></i>
+                    <span>商品資訊</span>
+                </a>
+            </li>
+
+            <li id="cate6" class="sidebar-item">
+                <a href="company.html" class='sidebar-link'>
+                    <i class="bi bi-file-earmark-medical-fill"></i>
+                    <span>廠商資訊</span>
+                </a>
+            </li>
+
+            <li id="cate7" class="sidebar-item">
+                <a href="store.html" class='sidebar-link'>
+                    <i class="bi bi-pen-fill"></i>
+                    <span>販團資訊</span>
+                </a>
+            </li>
+
+
+            <li id="cate8" class="sidebar-item">
+                <a href="control2.html" class='sidebar-link'>
+                    <i class="bi bi-pen-fill"></i>
+                    <span>控制台</span>
+                </a>
+            </li>
+
+            <li class="sidebar-item logout">
+                <a href="manage-login.html" style="text-align: center; display: block;">
+                    <span class="m-0">登出</span>
+                </a>
+            </li>
+
+        </ul>
+    </div>
+    <button class="sidebar-toggler btn x"><i data-feather="x"></i></button>
+
+
+    <button class="sidebar-toggler btn x"><i data-feather="x"></i></button>
+
+    <div style="
+                position: absolute;
+                left: 0%;
+                right: 0%;
+                top: 83.61%;
+                bottom: 0%;
+                
+                background: #40BEC2;
+                border-radius: 0px 20px 50px 0px;">
+    </div>
+    <div style="
+                position: absolute;
+                left: 0%;
+                right: 0%;
+                
+                bottom: 0%;">
+        <img src="assets/images/svg/07.png" class="w-75" style="position: absolute; right: 0%; bottom: 0%; z-index: 40;" />
+    </div>
+</div>
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mustache.js/3.0.0/mustache.min.js"></script>
+<script src="controller/js/ajax.js"></script>
+<script src="controller/js/sidebar.js"></script>

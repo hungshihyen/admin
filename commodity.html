@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>總後台管理 - 商品總管</title>
+
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/bootstrap.css">
+
+    <link rel="stylesheet" href="assets/vendors/iconly/bold.css">
+    <link rel="stylesheet" href="assets/vendors/toastify/toastify.css">
+    <link href="https://unpkg.com/filepond/dist/filepond.css" rel="stylesheet">
+    <link href="https://unpkg.com/filepond-plugin-image-preview/dist/filepond-plugin-image-preview.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="assets/vendors/perfect-scrollbar/perfect-scrollbar.css">
+    <link rel="stylesheet" href="assets/vendors/bootstrap-icons/bootstrap-icons.css">
+    <link rel="stylesheet" href="assets/css/app.css">
+    <link rel="shortcut icon" href="assets/images/favicon.svg" type="image/x-icon">
+
+    <link rel="stylesheet" href="assets/css/customization.css">
+
+    <script>
+        sessionStorage.setItem('sidebar', 5);
+    </script>
+    <script src="https://kit.fontawesome.com/f8db84f08a.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <div id="app">
+
+        <div id="sidebar" class="active"> </div>
+
+        <div id="main">
+            <header class="mb-3">
+                <a href="#" class="burger-btn d-block d-xl-none">
+                    <i class="bi bi-justify fs-3"></i>
+                </a>
+            </header>
+
+            <div class="page-content">
+                <!--code寫這裡-->
+                <section>
+
+                    <div class="container">
+                        <div class="col">
+                            <div class="d-block" style="text-align: right;">
+                                <a class="btn btn-primary rounded-pill" href="commodity-type.html"><i class="fa-solid fa-plus-circle"></i> 商品分類</a>&nbsp&nbsp
+                                <a class="btn btn-primary rounded-pill" href="#" data-bs-toggle="modal" data-bs-target="#ModalInsert"><i class="fa-solid fa-plus-circle"></i> 新增商品</a>&nbsp&nbsp
+                            </div>
+                            <br/>
+                        </div>
+                        <div class="row">
+                            <div class="col">
+                                <ul class="nav">
+                                    <li class="nav-item">
+                                        <h5><a class="nav-link sbtn99" onclick="filter(99)" href="#" style="color: #26B7BC;">所有商品</a></h5>
+                                    </li>
+                                    <li class="nav-item">
+                                        <h5><a class="nav-link sbtn1" onclick="filter(1)" href="#" style="color:  #AEAEAE;">上架中</a></h5>
+                                    </li>
+                                    <li class="nav-item">
+                                        <h5><a class="nav-link sbtn0" onclick="filter(0)" href="#" style="color:  #AEAEAE;">下架中</a></h5>
+                                    </li>
+                                    <li class="nav-item">
+                                        <h5><a class="nav-link sbtn2" onclick="filter(2)" href="#" style="color:  #AEAEAE;">暫停販售</a></h5>
+                                    </li>
+                                </ul>
+                            </div>
+
+
+                        </div>
+
+                        <div class="row top-tab mb-3">
+                            <div class="col-md-6 col-12" style="align-self: center;">
+                                <div class="style1">
+                                    請選擇商品類型：
+                                    <select class="g_class" onchange="table_change()">
+                                    <option value="99"> -- </option>
+                                </select>
+                                </div>
+
+                                <div class="style2" hidden>
+                                    <a class="btn btn-secondary rounded-pill" href="#">上架中</a>
+                                    <a class="btn btn-secondary rounded-pill" href="#">下架中</a>
+                                </div>
+
+                            </div>
+
+                            <div class="col search-block p-0">
+                                <input type="text" id="first-name" class="form-control search-textbox keyword" name="fname" placeholder="關鍵字搜尋...">
+                                <button class="search-btn" onclick="table_change()"><i class="fa-solid fa-magnifying-glass"></i></button>
+                            </div>
+                        </div>
+
+                        <div class="card">
+                            <div class="card-content">
+                                <div class="card-body overflow-auto">
+                                    <table class="table table-hover align-items-center text-center table-block" id="table1">
+                                        <thead>
+                                            <tr style="color: #26B7BC;">
+                                                <th>
+                                                    <input class="tbox" type="checkbox" value="first_checkbox" onclick="selectall(this)">
+                                                </th>
+                                                <th>商品編號</th>
+                                                <th>廠商名稱</th>
+                                                <th>品名</th>
+                                                <th>型號/口味</th>
+                                                <th>狀態</th>
+                                                <th>進價</th>
+                                                <th>市售</th>
+                                                <th>查看</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+
+                                        </tbody>
+                                        <template>
+                                                <tr>
+                                                    <td>
+                                                        <input onclick="boxOnclick(this)" type="checkbox" class="cbox" value="first_checkbox">
+                                                    </td>
+                                                    <td id="pid"></td>
+                                                    <td id="cname"></td>
+                                                    <td id="pname"></td>
+                                                    <td id="type"></td>
+                                                    <td id="status"><a id="green"><i class="fa-solid fa-check"></i> 上架中</a></td>
+                                                    <td id="cost"></td>
+                                                    <td id="sale"></td>
+                                                    <td id="check">
+                                                        <a class="btn btn-success rounded-pill mb-1" href="commodity-new.html">查看</a>
+                                                    </td>
+                                                </tr>
+                                            </template>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+
+                        <nav aria-label="Page navigation example">
+                            <ul class="pagination pagination-primary justify-content-center">
+                                <li class="page-item">
+                                    <a class="page-link" href="#">
+                                        <span aria-hidden="true"><i class="bi bi-chevron-left"></i></span>
+                                    </a>
+                                </li>
+                                <li class="page-item"><a class="page-link" href="#">1</a></li>
+                                <li class="page-item active"><a class="page-link" href="#">2</a></li>
+                                <li class="page-item"><a class="page-link" href="#">3</a></li>
+                                <li class="page-item"><a class="page-link" href="#">4</a></li>
+                                <li class="page-item"><a class="page-link" href="#">5</a></li>
+                                <li class="page-item"><a class="page-link" href="#">6</a></li>
+                                <li class="page-item"><a class="page-link" href="#">7</a></li>
+                                <li class="page-item"><a class="page-link" href="#">8</a></li>
+                                <li class="page-item"><a class="page-link" href="#">9</a></li>
+                                <li class="page-item">
+                                    <a class="page-link" href="#">
+                                        <span aria-hidden="true"><i class="bi bi-chevron-right"></i></span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </nav>
+                    </div>
+
+                </section>
+
+                <!-- Vertically Centered modal Modal -->
+                <div class="modal fade" id="ModalInsert" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered modal-dialog-centered modal-dialog-scrollable" role="document">
+                        <div class="modal-content text-center p-4">
+                            <div class="modal-body" style="margin: 30px;">
+
+                                <p style="color: #26B7BC;">新增商品</p>
+
+                                <select class="form-control manu_class">
+                                    <option> 請選擇廠商 </option>
+                                </select>
+
+                                <div class="row px-4 mt-4">
+                                    <div class="col">
+                                        <a class="btn btn-secondary w-100" href="#" data-bs-dismiss="modal">取消</a>
+                                    </div>
+                                    <div class="col">
+                                        <!-- button trigger for  Vertically Centered modal -->
+                                        <button type="button" onclick="to_insert()" class="btn btn-primary w-100">
+                                    確認
+                                </button>
+
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+
+        </div>
+        <script src="assets/vendors/perfect-scrollbar/perfect-scrollbar.min.js"></script>
+        <script src="assets/js/bootstrap.bundle.min.js"></script>
+
+        <script src="assets/vendors/apexcharts/apexcharts.js"></script>
+        <script src="assets/js/pages/dashboard.js"></script>
+
+        <script src="assets/js/mazer.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        <script>
+            $(function() {
+                $("#sidebar").load("sidebar.html");
+            });
+        </script>
+        <script src="controller/js/ajax.js"></script>
+        <script src="controller/js/commodity.js"></script>
+</body>
+
+</html>

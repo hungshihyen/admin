@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>總後台管理 - 總覽</title>
+
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/bootstrap.css">
+
+    <link rel="stylesheet" href="assets/vendors/iconly/bold.css">
+    <link rel="stylesheet" href="assets/vendors/perfect-scrollbar/perfect-scrollbar.css">
+    <link rel="stylesheet" href="assets/vendors/bootstrap-icons/bootstrap-icons.css">
+    <link rel="stylesheet" href="assets/css/app.css">
+    <link rel="shortcut icon" href="assets/images/favicon.svg" type="image/x-icon">
+
+    <link rel="stylesheet" href="assets/css/customization.css"> not
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script>
+        sessionStorage.setItem('sidebar', 1);
+    </script>
+    <script src="https://kit.fontawesome.com/f8db84f08a.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <div id="app">
+        <div id="sidebar" class="active"> </div>
+        <div id="main">
+            <header class="mb-3">
+                <a href="#" class="burger-btn d-block d-xl-none">
+                    <i class="bi bi-justify fs-3"></i>
+                </a>
+            </header>
+
+            <div class="page-heading align-items-center">
+                <div class="row">
+                    <div class="col">
+                        <h3 class="m-0" style="color: #26B7BC;">一起揪團賺外快</h3>
+                    </div>
+                </div>
+            </div>
+
+            <div class="page-content">
+                <section class="row">
+                    <div class="col-12 col-lg-12">
+                        <div class="row">
+                            <div class="col-3">
+                                <div class="card">
+                                    <div class="card-body p-2 px-3">
+                                        <div class="d-flex">
+                                            <i class="fa-regular fa-calendar-days pt-1"></i>&nbsp;&nbsp;
+                                            <p class="m-0"> Jan, 2021 - Dec, 2021</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-3">
+                                <!-- <fieldset class="form-group">
+                        <select class="form-select" id="basicSelect">
+                            <option href="">所有販團</option>
+                            <option>販團A</option>
+                            <option>販團B</option>
+                        </select>
+                    </fieldset> -->
+
+                                <button class="btn btn-outline-primary w-100" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">
+                        所有販團
+                    </button>
+
+                                <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
+                                    <div class="offcanvas-header text-center align-items-center d-block">
+                                        <input type="text" class="offcanvas-title mt-3 form-control" id="offcanvasRightLabel" placeholder="關鍵字搜尋...">
+                                    </div>
+                                    <div class="offcanvas-body" style="text-align: left;">
+                                        <ul class="list-group">
+                                            <li class="list-group-item list-group-item-manage-index mb-3">
+                                                <div class="row">
+                                                    <div class="col-1 pt-3">
+                                                        <input class="form-check-input me-1" type="checkbox" value="" aria-label="...">
+                                                    </div>
+                                                    <div class="col">
+                                                        <p>蔡小販 FA0100050002</p>
+                                                        <p class="mb-0" id="gray">0911000222</p>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <li class="list-group-item list-group-item-manage-index mb-3">
+                                                <div class="row">
+                                                    <div class="col-1 pt-3">
+                                                        <input class="form-check-input me-1" type="checkbox" value="" aria-label="...">
+                                                    </div>
+                                                    <div class="col">
+                                                        <p>蔡小販 FA0100050002</p>
+                                                        <p class="mb-0" id="gray">0911000222</p>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <li class="list-group-item list-group-item-manage-index mb-3">
+                                                <div class="row">
+                                                    <div class="col-1 pt-3">
+                                                        <input class="form-check-input me-1" type="checkbox" value="" aria-label="...">
+                                                    </div>
+                                                    <div class="col">
+                                                        <p>蔡小販 FA0100050002</p>
+                                                        <p class="mb-0" id="gray">0911000222</p>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <li class="list-group-item list-group-item-manage-index mb-3">
+                                                <div class="row">
+                                                    <div class="col-1 pt-3">
+                                                        <input class="form-check-input me-1" type="checkbox" value="" aria-label="...">
+                                                    </div>
+                                                    <div class="col">
+                                                        <p>蔡小販 FA0100050002</p>
+                                                        <p class="mb-0" id="gray">0911000222</p>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <li class="list-group-item list-group-item-manage-index mb-3">
+                                                <div class="row">
+                                                    <div class="col-1 pt-3">
+                                                        <input class="form-check-input me-1" type="checkbox" value="" aria-label="...">
+                                                    </div>
+                                                    <div class="col">
+                                                        <p>蔡小販 FA0100050002</p>
+                                                        <p class="mb-0" id="gray">0911000222</p>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <li class="list-group-item list-group-item-manage-index mb-3">
+                                                <div class="row">
+                                                    <div class="col-1 pt-3">
+                                                        <input class="form-check-input me-1" type="checkbox" value="" aria-label="...">
+                                                    </div>
+                                                    <div class="col">
+                                                        <p>蔡小販 FA0100050002</p>
+                                                        <p class="mb-0" id="gray">0911000222</p>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <li class="list-group-item list-group-item-manage-index mb-3">
+                                                <div class="row">
+                                                    <div class="col-1 pt-3">
+                                                        <input class="form-check-input me-1" type="checkbox" value="" aria-label="...">
+                                                    </div>
+                                                    <div class="col">
+                                                        <p>蔡小販 FA0100050002</p>
+                                                        <p class="mb-0" id="gray">0911000222</p>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <li class="list-group-item list-group-item-manage-index mb-3">
+                                                <div class="row">
+                                                    <div class="col-1 pt-3">
+                                                        <input class="form-check-input me-1" type="checkbox" value="" aria-label="...">
+                                                    </div>
+                                                    <div class="col">
+                                                        <p>蔡小販 FA0100050002</p>
+                                                        <p class="mb-0" id="gray">0911000222</p>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row mb-4 align-items-center">
+                            <div class="col">
+                                <div class="card m-0 h-100 align-items-center px-5 text-nowrap">
+                                    <div id="mm" class="row container align-items-center p-4 text-center">
+                                        <div class="col" style="border-right: 0.5px solid #AEAEAE;">
+                                            <p class="mb-0" style="font-size: 14px; color: #26B7BC;">廠商進貨成本</p>
+                                            <h4>$<span id="pur"></span></h4>
+                                        </div>
+                                        <div class="col" style="border-right: 0.5px solid #AEAEAE;">
+                                            <p class="mb-0" style="font-size: 14px; color: #26B7BC;">總收入</p>
+                                            <h4>$ <span id="allin"></span> </h4>
+                                        </div>
+                                        <div class="col" style="border-right: 0.5px solid #AEAEAE;">
+                                            <p class="mb-0" style="font-size: 14px; color: #26B7BC;">總支出</p>
+                                            <h4>$ <span id="allout"></span> </h4>
+                                        </div>
+                                        <div class="col">
+                                            <p class="mb-0" style="font-size: 14px; color: #26B7BC;">總利潤</p>
+                                            <h4>$ <span id="allearn"></span> </h4>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div>
+                            <h4 style="color: #26B7BC;">商品銷售總排名</h4>
+                        </div>
+
+                        <div class="card">
+                            <div class="card-body text-center overflow-auto">
+                                <table class="table table-block table-hover" id="table1">
+                                    <thead>
+                                        <tr>
+                                            <th>本月銷售排名</th>
+                                            <th>廠商名稱</th>
+                                            <th>商品</th>
+                                            <th>成本</th>
+                                            <th>出售金額</th>
+                                            <th>銷售數量</th>
+                                            <th>毛利總額</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                    </tbody>
+                                    <template>
+                                        <tr>
+                                            <td id="rank">1</td>
+                                            <td id="cname">老神在在瓦甕煨湯</td>
+                                            <td id="pname">剝皮辣椒雞湯</td>
+                                            <td id="cost">230</td>
+                                            <td id="sale">250</td>
+                                            <td id="qnt">100</td>
+                                            <td id="all">148,600</td>
+                                        </tr>
+                                    </template>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+
+                </section>
+            </div>
+        </div>
+    </div>
+    <script src="assets/vendors/perfect-scrollbar/perfect-scrollbar.min.js"></script>
+    <script src="assets/js/bootstrap.bundle.min.js"></script>
+
+    <script src="assets/vendors/apexcharts/apexcharts.js"></script>
+    <script src="assets/js/pages/dashboard.js"></script>
+
+
+    <script src="assets/js/mazer.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script>
+        $(function() {
+            $("#sidebar").load("sidebar.html");
+        });
+    </script>
+    <script src="controller/js/ajax.js"></script>
+    <script src="controller/js/manage-index.js"></script>
+
+</body>
+
+</html>

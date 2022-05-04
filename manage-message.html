@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>小販團 - 訊息通知</title>
+
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/bootstrap.css">
+
+    <link rel="stylesheet" href="assets/vendors/iconly/bold.css">
+    <link rel="stylesheet" href="assets/vendors/toastify/toastify.css">
+    <link href="https://unpkg.com/filepond/dist/filepond.css" rel="stylesheet">
+    <link href="https://unpkg.com/filepond-plugin-image-preview/dist/filepond-plugin-image-preview.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="assets/vendors/perfect-scrollbar/perfect-scrollbar.css">
+    <link rel="stylesheet" href="assets/vendors/bootstrap-icons/bootstrap-icons.css">
+    <link rel="stylesheet" href="assets/css/app.css">
+    <link rel="shortcut icon" href="assets/images/favicon.svg" type="image/x-icon">
+
+    <link rel="stylesheet" href="assets/css/customization.css">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script>
+        sessionStorage.setItem('sidebar', 2);
+    </script>
+    <script src="https://kit.fontawesome.com/f8db84f08a.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <div id="app">
+        <div id="sidebar" class="active"> </div>
+        <div id="main">
+            <header class="mb-3">
+                <a href="#" class="burger-btn d-block d-xl-none">
+                    <i class="bi bi-justify fs-3"></i>
+                </a>
+            </header>
+
+            <div class="page-heading align-items-center">
+                <div class="row">
+                    <div class="col">
+                    </div>
+
+
+                </div>
+            </div>
+            <div class="page-content">
+                <section>
+
+                    <div class="container">
+                        <div class="row top-tab">
+                            <div class="col">
+                                <ul class="nav">
+                                    <li class="nav-item">
+                                        <a class="nav-link active" href="manage-message.html" style="color: #26B7BC;">意見與回饋</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="#" style="color:  #AEAEAE;">商品許願</a>
+                                    </li>
+
+                                </ul>
+                            </div>
+
+                            <div class="col search-block">
+                                <input type="text" id="first-name" class="form-control search-textbox" name="fname" placeholder="關鍵字搜尋...">
+                                <button class="search-btn"><i class="fa-solid fa-magnifying-glass"></i></button>
+                            </div>
+                        </div>
+
+                        <div class="card">
+                            <div class="card-content">
+                                <div class="card-body">
+                                    <table class="table table-striped align-items-center table-block" id="table1">
+                                        <thead>
+                                            <tr>
+                                                <th>訊息時間</th>
+                                                <th>小販名稱</th>
+                                                <th>訊息內容</th>
+                                                <th>操作</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <template>
+                                                <tr>
+                                                    <td id="time">2021/09/01  10：23</td>
+                                                    <td id="uid">蔡小販</td>
+                                                    <td id="mtxt">走啊團購gogogo走啊團購gogogo</td>
+                                                    <td id="check">
+                                                        <a class="btn btn-primary rounded-pill mb-1" href="manage-message-content.html">
+                                                            查看
+                                                        </a>
+                                                    </td>
+                                                </tr>
+                                            </template>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+
+                        <nav aria-label="Page navigation example">
+                            <ul class="pagination pagination-primary justify-content-center">
+                                <li class="page-item">
+                                    <a class="page-link" href="#">
+                                        <span aria-hidden="true"><i class="bi bi-chevron-left"></i></span>
+                                    </a>
+                                </li>
+                                <li class="page-item"><a class="page-link" href="#">1</a></li>
+                                <li class="page-item active"><a class="page-link" href="#">2</a></li>
+                                <li class="page-item"><a class="page-link" href="#">3</a></li>
+                                <li class="page-item"><a class="page-link" href="#">4</a></li>
+                                <li class="page-item"><a class="page-link" href="#">5</a></li>
+                                <li class="page-item"><a class="page-link" href="#">6</a></li>
+                                <li class="page-item"><a class="page-link" href="#">7</a></li>
+                                <li class="page-item"><a class="page-link" href="#">8</a></li>
+                                <li class="page-item"><a class="page-link" href="#">9</a></li>
+                                <li class="page-item">
+                                    <a class="page-link" href="#">
+                                        <span aria-hidden="true"><i class="bi bi-chevron-right"></i></span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </nav>
+                    </div>
+
+                </section>
+            </div>
+        </div>
+    </div>
+    <script src="assets/vendors/perfect-scrollbar/perfect-scrollbar.min.js"></script>
+    <script src="assets/js/bootstrap.bundle.min.js"></script>
+
+    <script src="assets/vendors/apexcharts/apexcharts.js"></script>
+    <script src="assets/js/pages/dashboard.js"></script>
+
+
+    <script src="assets/js/mazer.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script>
+        $(function() {
+            $("#sidebar").load("sidebar.html");
+        });
+    </script>
+    <script src="controller/js/ajax.js"></script>
+    <script src="controller/js/manage-message.js"></script>
+</body>
+
+</html>

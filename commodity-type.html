@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>總後台管理 - 商品分類</title>
+
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/bootstrap.css">
+
+    <link rel="stylesheet" href="assets/vendors/iconly/bold.css">
+    <link rel="stylesheet" href="assets/vendors/toastify/toastify.css">
+    <link href="https://unpkg.com/filepond/dist/filepond.css" rel="stylesheet">
+    <link href="https://unpkg.com/filepond-plugin-image-preview/dist/filepond-plugin-image-preview.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="assets/vendors/perfect-scrollbar/perfect-scrollbar.css">
+    <link rel="stylesheet" href="assets/vendors/bootstrap-icons/bootstrap-icons.css">
+    <link rel="stylesheet" href="assets/css/app.css">
+    <link rel="shortcut icon" href="assets/images/favicon.svg" type="image/x-icon">
+
+    <link rel="stylesheet" href="assets/css/customization.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+
+    <script>
+        sessionStorage.setItem('sidebar', 5);
+    </script>
+    <script src="https://kit.fontawesome.com/f8db84f08a.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <div id="app">
+
+        <div id="sidebar" class="active"> </div>
+
+        <div id="main">
+            <header class="mb-3">
+                <a href="#" class="burger-btn d-block d-xl-none">
+                    <i class="bi bi-justify fs-3"></i>
+                </a>
+            </header>
+
+            <div class="page-content">
+                <div class="page-heading align-items-center">
+                    <div class="row container">
+                        <div class="col">
+                            <a class="btn btn-primary" href="commodity.html"><i class="fa-solid fa-arrow-left"></i> 回列表</a>
+                        </div>
+
+                    </div>
+                    <br/>
+                    <div class="row ">
+                        <div class="col">
+                            <h5 class="m-0 " style="color: #26B7BC;text-align: center;">商品分類</h5><br/>
+                        </div>
+                    </div>
+                    <div class="row ">
+                        <section class="container">
+                            <div class="container">
+                                <div class="card">
+                                    <div class="card-content">
+                                        <div class="card-body">
+
+                                            <div class="row">
+                                                <div class="d-block col-12" style="text-align: right;">
+                                                    <a class="btn btn-primary col-md-2 col-12  m-4 mb-0" href="#" data-bs-toggle="modal" data-bs-target="#ModalCenter2">新增</a>
+                                                </div>
+                                                <div class="col-12 col-md-5 order-md-1 order-last">
+                                                    <div class="m-4">
+                                                        <table>
+                                                            <tr>
+                                                                <td style="padding-right: 20px;">分類代碼</td>
+                                                                <td class="cur-code"></td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>分類名稱</td>
+                                                                <td class="cur-name"></td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>備註說明</td>
+                                                                <td></td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td colspan="2" class="cur-note"></td>
+                                                            </tr>
+
+                                                        </table>
+                                                    </div>
+                                                    <br/>
+                                                    <div class="col">
+                                                        <div class="d-block" style="text-align: center;">
+                                                            <a class="btn btn-danger" href="#" data-bs-toggle="modal" data-bs-target="#ModalCenter4">刪除分類</a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-12 col-md-7 order-md-last order-1">
+                                                    <br/>
+                                                    <div class="card m-4 mt-0">
+                                                        <table class="table table-type align-items-center text-center list">
+                                                            <thead>
+                                                                <tr style="color: #26B7BC;">
+                                                                    <th>編輯</th>
+                                                                    <th>分類代碼</th>
+                                                                    <th>分類名稱</th>
+                                                                    <th>數量</th>
+                                                                </tr>
+                                                            </thead>
+                                                            <tbody>
+                                                            </tbody>
+                                                            <template>
+                                                                <tr onclick="change_left_table(this)">
+                                                                    <td id="edit">
+                                                                        <a class="btn mb-1" href="#" onclick="set_modal()" data-bs-toggle="modal" data-bs-target="#ModalCenter3">
+                                                                            <span class="material-icons">edit</span>
+                                                                        編輯
+                                                                        </a>
+                                                                    </td>
+                                                                    <td hidden class="tid">
+                                                                    </td>
+                                                                    <td id="tcode"></td>
+                                                                    <td id="tname"></td>
+                                                                    <td id="quantity"></td>
+                                                                </tr>
+                                                            </template>
+                                                        </table>
+                                                    </div>
+
+                                                    <nav aria-label="Page navigation example">
+                                                        <ul class="pagination pagination-primary justify-content-center">
+                                                            <li class="page-item">
+                                                                <a class="page-link" href="#">
+                                                                    <span aria-hidden="true"><i class="bi bi-chevron-left"></i></span>
+                                                                </a>
+                                                            </li>
+                                                            <li class="page-item"><a class="page-link" href="#">1</a></li>
+                                                            <li class="page-item active"><a class="page-link" href="#">2</a></li>
+                                                            <li class="page-item"><a class="page-link" href="#">3</a></li>
+                                                            <li class="page-item"><a class="page-link" href="#">4</a></li>
+                                                            <li class="page-item"><a class="page-link" href="#">5</a></li>
+                                                            <li class="page-item"><a class="page-link" href="#">6</a></li>
+                                                            <li class="page-item"><a class="page-link" href="#">7</a></li>
+                                                            <li class="page-item"><a class="page-link" href="#">8</a></li>
+                                                            <li class="page-item"><a class="page-link" href="#">9</a></li>
+                                                            <li class="page-item">
+                                                                <a class="page-link" href="#">
+                                                                    <span aria-hidden="true"><i class="bi bi-chevron-right"></i></span>
+                                                                </a>
+                                                            </li>
+                                                        </ul>
+                                                    </nav>
+                                                </div>
+
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </section>
+                    </div>
+
+                    <!-- Vertically Centered modal Modal -->
+                    <div class="modal fade" id="ModalCenter0" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered modal-dialog-centered modal-dialog-scrollable" role="document">
+                            <div class="modal-content text-center p-4">
+                                <div class="modal-body">
+                                    <i class="fa-solid fa-circle-xmark fa-xl" id="pink"></i>
+                                    <p class="xmarkmodaltxt" style="margin: 15px"> 已刪除分類 </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Vertically Centered modal Modal -->
+                    <div class="modal fade" id="ModalCenter1" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered modal-dialog-centered modal-dialog-scrollable" role="document">
+                            <div class="modal-content text-center p-4">
+                                <div class="modal-body">
+                                    <i class="fa-solid fa-circle-check fa-xl" id="green"></i>
+                                    <p class="checkmodaltxt" style="margin: 15px"> 已新增分類 </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <!-- Vertically Centered modal Modal -->
+                    <div class="modal fade" id="ModalCenter2" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered modal-dialog-centered modal-dialog-scrollable" role="document">
+                            <div class="modal-content text-center p-4">
+                                <div class="modal-body" style="margin: 30px;">
+
+                                    <p>新增分類</p>
+                                    <form id="form">
+                                        <div class="row ">
+                                            <div class="col-5 p-2">
+                                                分類代碼
+                                            </div>
+                                            <div class="col-7 p-2">
+                                                <input type="text" class="form-control imtcode">
+                                            </div>
+                                            <div class="col-5 p-2">
+                                                分類名稱
+                                            </div>
+                                            <div class="col-7 p-2">
+                                                <input type="text" class="form-control imtname">
+                                            </div>
+                                            <div class="col-5 p-2">
+                                                備註說明
+                                            </div>
+                                            <div class="col-7 p-2">
+                                                <textarea type="text" rows="4" class="form-control imnote"></textarea>
+                                            </div>
+                                        </div>
+                                        <input id="reset-btn" type="reset" value="Reset" class="d-none">
+                                    </form>
+                                    <div class="row px-4 mt-4">
+                                        <div class="col">
+                                            <a class="btn btn-secondary w-100" href="#" data-bs-dismiss="modal">取消</a>
+                                        </div>
+                                        <div class="col">
+                                            <!-- button trigger for  Vertically Centered modal -->
+                                            <button type="button" onclick="insert_tier()" class="btn btn-primary w-100" data-bs-toggle="modal" data-bs-target="#ModalCenter1">確認</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Vertically Centered modal Modal -->
+                    <div class="modal fade" id="ModalCenter3" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered modal-dialog-centered modal-dialog-scrollable" role="document">
+                            <div class="modal-content text-center p-4">
+                                <div class="modal-body" style="margin: 30px;">
+
+                                    <p>修改分類</p>
+
+                                    <div class="row">
+                                        <div class="col-5  p-2">
+                                            分類代碼
+                                        </div>
+                                        <div class="col-7  p-2">
+                                            <input type="text" class="form-control emtcode">
+                                        </div>
+                                        <div class="col-5  p-2">
+                                            分類名稱
+                                        </div>
+                                        <div class="col-7 p-2">
+                                            <input type="text" class="form-control emtname">
+                                        </div>
+                                        <div class="col-5  p-2">
+                                            備註說明
+                                        </div>
+                                        <div class="col-7 p-2">
+                                            <textarea type="text" rows="4" class="form-control emnote"></textarea>
+                                        </div>
+                                    </div>
+
+                                    <div class="row px-4 mt-4">
+                                        <div class="col">
+                                            <a class="btn btn-secondary w-100" href="#" data-bs-dismiss="modal">取消</a>
+                                        </div>
+                                        <div class="col">
+                                            <!-- button trigger for  Vertically Centered modal -->
+                                            <button type="button" onclick="update_tier()" class="btn btn-primary w-100" data-bs-toggle="modal" data-bs-target="#ModalCenter1">確認</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Vertically Centered modal Modal -->
+                    <div class="modal fade" id="ModalCenter4" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered modal-dialog-centered modal-dialog-scrollable" role="document">
+                            <div class="modal-content text-center p-4">
+                                <div class="modal-body" style="margin: 30px;">
+
+                                    <p>是否確認刪除分類?</p>
+
+                                    <div class="row px-4 mt-4">
+                                        <div class="col">
+                                            <a class="btn btn-secondary w-100" href="#" data-bs-dismiss="modal">取消</a>
+                                        </div>
+                                        <div class="col">
+                                            <!-- button trigger for  Vertically Centered modal -->
+                                            <button type="button" onclick="del_tier()" class="btn btn-primary w-100" data-bs-toggle="modal" data-bs-target="#ModalCenter0">
+                                    確認
+                                </button>
+
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!--code寫這裡-->
+
+
+                </div>
+
+                <script src="assets/vendors/perfect-scrollbar/perfect-scrollbar.min.js"></script>
+                <script src="assets/js/bootstrap.bundle.min.js"></script>
+
+                <script src="assets/vendors/apexcharts/apexcharts.js"></script>
+                <script src="assets/js/pages/dashboard.js"></script>
+
+                <script src="assets/js/mazer.js"></script>
+                <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+                <script>
+                    $(function() {
+                        $("#sidebar").load("sidebar.html");
+                    });
+                </script>
+                <script src="controller/js/ajax.js"></script>
+                <script src="controller/js/commodity-type.js"></script>
+</body>
+
+</html>

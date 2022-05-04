@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>總後台管理 - 小販資訊</title>
+
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/bootstrap.css">
+
+    <link rel="stylesheet" href="assets/vendors/iconly/bold.css">
+    <link rel="stylesheet" href="assets/vendors/toastify/toastify.css">
+    <link href="https://unpkg.com/filepond/dist/filepond.css" rel="stylesheet">
+    <link href="https://unpkg.com/filepond-plugin-image-preview/dist/filepond-plugin-image-preview.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="assets/vendors/perfect-scrollbar/perfect-scrollbar.css">
+    <link rel="stylesheet" href="assets/vendors/bootstrap-icons/bootstrap-icons.css">
+    <link rel="stylesheet" href="assets/css/app.css">
+    <link rel="shortcut icon" href="assets/images/favicon.svg" type="image/x-icon">
+
+    <link rel="stylesheet" href="assets/css/customization.css">
+
+    <script>
+        sessionStorage.setItem('sidebar', 4);
+    </script>
+    <script src="https://kit.fontawesome.com/f8db84f08a.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <div id="app">
+
+        <div id="sidebar" class="active"> </div>
+
+        <div id="main">
+            <header class="mb-3">
+                <a href="#" class="burger-btn d-block d-xl-none">
+                    <i class="bi bi-justify fs-3"></i>
+                </a>
+            </header>
+
+            <div class="page-content">
+                <!--code寫這裡-->
+                <section>
+
+                    <div class="container">
+                        <div class="col">
+                            <div class="d-block" style="text-align: right;">
+                                <a class="btn btn-primary rounded-pill" href="hawker-new.html"><i class="fa-solid fa-plus-circle"></i> 新增小販</a>&nbsp&nbsp
+                                <a class="btn btn-primary rounded-pill" href="hawker-type.html"><i class="fa-solid fa-plus-circle"></i> 小販分類</a>
+                            </div>
+                            <br/>
+                        </div>
+                        <div class="row">
+                            <div class="col">
+                                <ul class="nav">
+                                    <li class="nav-item">
+                                        <a id="all-btn" class="nav-link active" href="#" style="color: #26B7BC;" onclick="getAll(this)">所有小販</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a id="block-btn" class="nav-link" href="#" style="color:  #AEAEAE;" onclick="getBlock(this)">黑名單小販</a>
+                                    </li>
+                                </ul>
+                            </div>
+
+                            <div class="col">
+                                <input type="text" id="first-name" class="form-control" name="fname" placeholder="關鍵字搜尋...">
+                            </div>
+                        </div>
+
+                        <div class="card">
+                            <div class="card-content">
+                                <div class="card-body overflow-auto">
+                                    <table class="table table-block table-hover align-items-center text-center" id="table1">
+                                        <thead>
+                                            <tr style="color: #26B7BC;">
+
+                                                <th>加入日期</th>
+                                                <th>小販名稱</th>
+                                                <th>連絡電話</th>
+                                                <th>狀態</th>
+                                                <th>最近成團日期</th>
+                                                <th>分類</th>
+                                                <th>查看</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+
+                        <nav aria-label="Page navigation example">
+                            <ul class="pagination pagination-primary justify-content-center">
+                                <li class="page-item">
+                                    <a class="page-link" href="#">
+                                        <span aria-hidden="true"><i class="bi bi-chevron-left"></i></span>
+                                    </a>
+                                </li>
+                                <li class="page-item"><a class="page-link" href="#">1</a></li>
+                                <li class="page-item active"><a class="page-link" href="#">2</a></li>
+                                <li class="page-item"><a class="page-link" href="#">3</a></li>
+                                <li class="page-item"><a class="page-link" href="#">4</a></li>
+                                <li class="page-item"><a class="page-link" href="#">5</a></li>
+                                <li class="page-item"><a class="page-link" href="#">6</a></li>
+                                <li class="page-item"><a class="page-link" href="#">7</a></li>
+                                <li class="page-item"><a class="page-link" href="#">8</a></li>
+                                <li class="page-item"><a class="page-link" href="#">9</a></li>
+                                <li class="page-item">
+                                    <a class="page-link" href="#">
+                                        <span aria-hidden="true"><i class="bi bi-chevron-right"></i></span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </nav>
+                    </div>
+
+                </section>
+            </div>
+
+            <template>
+                <tr>
+
+                    <td id="jdate">2021/09/01</td>
+                    <td id="name">蔡小販</td>
+                    <td id="phone">0901987654</td>
+                    <td id="status">
+                        <a id="green"><i class="fa-solid fa-check"></i> 使用中</a>
+                    </td>
+                    <td id="ndate">2021/12/08</td>
+                    <td id="class">一般小販</td>
+
+                    <td id="check">
+                        <a class="btn btn-success rounded-pill mb-1" href="">
+                            查看
+                        </a>
+
+                    </td>
+                </tr>
+                
+            </template>
+
+            <script src="assets/vendors/perfect-scrollbar/perfect-scrollbar.min.js"></script>
+            <script src="assets/js/bootstrap.bundle.min.js"></script>
+
+            <script src="assets/vendors/apexcharts/apexcharts.js"></script>
+            <script src="assets/js/pages/dashboard.js"></script>
+
+            <script src="assets/js/mazer.js"></script>
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+            <script>
+                $(function() {
+                    $("#sidebar").load("sidebar.html");
+                });
+            </script>
+            <script src="controller/js/ajax.js"></script>
+            <script src="controller/js/hawker.js"></script>
+        </div>
+</body>
+
+</html>

@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>小販團 - 訊息通知</title>
+
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/bootstrap.css">
+
+    <link rel="stylesheet" href="assets/vendors/iconly/bold.css">
+
+    <link rel="stylesheet" href="assets/vendors/perfect-scrollbar/perfect-scrollbar.css">
+    <link rel="stylesheet" href="assets/vendors/bootstrap-icons/bootstrap-icons.css">
+    <link rel="stylesheet" href="assets/css/app.css">
+    <link rel="shortcut icon" href="assets/images/favicon.svg" type="image/x-icon">
+
+    <link rel="stylesheet" href="assets/css/customization.css">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script>
+        sessionStorage.setItem('sidebar', 2);
+    </script>
+    <script src="https://kit.fontawesome.com/f8db84f08a.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <div id="app">
+        <div id="sidebar" class="active"> </div>
+        <div id="main">
+            <header class="mb-3">
+                <a href="#" class="burger-btn d-block d-xl-none">
+                    <i class="bi bi-justify fs-3"></i>
+                </a>
+            </header>
+
+            <div class="page-heading align-items-center">
+                <div class="row">
+                    <div class="row">
+                        <div class="col">
+
+                        </div>
+
+                        <div class="col">
+                            <input type="text" id="first-name" class="form-control" name="fname" placeholder="關鍵字搜尋...">
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+            <div class="page-content">
+                <section class="container">
+
+                    <div class="container">
+                        <div class="card">
+                            <div class="card-content">
+                                <div class="card-body">
+                                    <form class="form form-horizontal align-items-center" style="text-align: right;">
+                                        <div class="form-body">
+                                            <div id="ta" class="row">
+                                                <div class="col-md-2 pt-2">
+                                                    <p style="color: #26B7BC;">訊息時間</p>
+                                                </div>
+                                                <div id="time" class="col-md-10 form-group text-left mt-2">
+                                                    <p style="color: #AEAEAE;">2021/09/01 10：23</p>
+                                                </div>
+
+                                                <!-- 編輯資料 -->
+                                                <div class="col-md-2 pt-2">
+                                                    <p style="color: #26B7BC;">小販名稱</p>
+                                                </div>
+                                                <div id="name" class="col-md-10 form-group text-left mt-2">
+                                                    <p style="color: #AEAEAE;">蔡小販</p>
+                                                </div>
+
+                                                <div class="col-md-2 pt-2">
+                                                    <p style="color: #26B7BC;">訊息內容</p>
+                                                </div>
+                                                <div id="mtxt" class="col-md-6 form-group text-left mt-2">
+                                                    <p style="color: #AEAEAE;">內容文字內容文字內容文字內容文字內容文字內容文字內容文字內容文字.文字內容文字內容文字內容文字內容文字內容文字內容文字內容文字文字內容文字內容文字內容文字內容文字內容文字內容文字內容文字文字內容文字內容文字內容文字內容文字內容文字內容文字內容文字內容文字內容文字內容文字內容文字內容文字內容文字內容文字內容文字.文字內容文字內容文字內容文字內容文字內容文字內容文字內容文字文字內容文字內容文字內容文字內容文字內容文字內容文字內容文字文字內容文字內容文字內容文字內容文字內容文字內容文字內容文字內容文字內容文字內容文字內容文字內容文字內容文字內容文字內容文字.文字內容文字內容文字內容文字內容文字內容文字內容文字內容文字文字內容文字內容文字內容文字內容文字內容文字內容文字內容文字文字內容文字內容文字內容文字內容文字內容文字內容文字內容文字內容文字內容文字內容文字內容文字內容文字內容文字內容文字內容文字.文字內容文字內容文字內容文字內容文字內容文字內容文字內容文字文字內容文字內容文字內容文字內容文字內容文字內容文字內容文字文字內容文字內容文字內容文字內容文字內容文字內容文字內容文字內容文字內容文字內容文字內容文字內容文字內容文字內容文字內容文字.文字內容文字內容文字內容文字內容文字內容文字內容文字內容文字文字內容文字內容文字內容文字內容文字內容文字內容文字內容文字文字內容文字內容文字內容文字內容文字內容文字內容文字內容文字</p>
+                                                </div>
+                                                <div id="img" class="col-md-4 form-group text-left mt-2">
+                                                    <img src="assets/images/samples/banana.jpg" alt="Face 1" class="w-75">
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="justify-content-center align-items-center">
+                            <div style="text-align:center">
+                                <a class="btn btn-primary btn-block w-25" href="#">確定修改</a>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </section>
+            </div>
+        </div>
+    </div>
+    <script src="assets/vendors/perfect-scrollbar/perfect-scrollbar.min.js"></script>
+    <script src="assets/js/bootstrap.bundle.min.js"></script>
+
+    <script src="assets/vendors/apexcharts/apexcharts.js"></script>
+    <script src="assets/js/pages/dashboard.js"></script>
+
+
+    <script src="assets/js/mazer.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script>
+        $(function() {
+            $("#sidebar").load("sidebar.html");
+        });
+    </script>
+    <script src="controller/js/ajax.js"></script>
+    <script src="controller/js/manage-message-content.js"></script>
+</body>
+
+
+</html>

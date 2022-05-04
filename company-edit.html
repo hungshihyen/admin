@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>總後台管理 - 待處理訂單</title>
+
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/bootstrap.css">
+
+    <link rel="stylesheet" href="assets/vendors/iconly/bold.css">
+    <link rel="stylesheet" href="assets/vendors/toastify/toastify.css">
+    <link href="https://unpkg.com/filepond/dist/filepond.css" rel="stylesheet">
+    <link href="https://unpkg.com/filepond-plugin-image-preview/dist/filepond-plugin-image-preview.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="assets/vendors/perfect-scrollbar/perfect-scrollbar.css">
+    <link rel="stylesheet" href="assets/vendors/bootstrap-icons/bootstrap-icons.css">
+    <link rel="stylesheet" href="assets/css/app.css">
+    <link rel="shortcut icon" href="assets/images/favicon.svg" type="image/x-icon">
+
+    <link rel="stylesheet" href="assets/css/customization.css">
+
+    <script>
+        sessionStorage.setItem('sidebar', 6);
+    </script>
+    <script src="https://kit.fontawesome.com/f8db84f08a.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <div id="app">
+
+        <div id="sidebar" class="active"> </div>
+
+        <div id="main">
+            <header class="mb-3">
+                <a href="#" class="burger-btn d-block d-xl-none">
+                    <i class="bi bi-justify fs-3"></i>
+                </a>
+            </header>
+
+            <div class="page-content">
+                <div class="page-heading align-items-center">
+                    <div class="row container">
+                        <div class="col">
+                            <a class="btn btn-primary" href="company.html"><i class="fa-solid fa-arrow-left"></i> 回列表</a>
+                        </div>
+                        <div class="col">
+                            <div class="d-block" style="text-align: right;">
+                                <a hidden class="btn btn-secondary down" href="#" data-bs-toggle="modal" data-bs-target="#ModalCenterStatus0">取消合作</a>
+                            </div>
+                            <div class="d-block" style="text-align: right;">
+                                <a hidden class="btn btn-primary up" href="#" data-bs-toggle="modal" data-bs-target="#ModalCenterStatus1">合作</a>
+                            </div>
+
+                        </div>
+                    </div>
+                    <br/>
+                    <div class="row ">
+                        <div class="col">
+                            <h5 class="m-0 " style="color: #26B7BC;text-align: center;">編輯廠商</h5><br>
+                        </div>
+                    </div>
+                    <div class="row ">
+                        <section class="container">
+                            <div class="container">
+                                <div class="card">
+                                    <div class="card-content">
+                                        <div class="card-body">
+                                            <table id="ctable" class="table table-lg align-items-center text-center">
+                                                <tr>
+                                                    <td>廠商名稱</td>
+                                                    <td id="cname" style="color: #26B7BC;"><input type="text" class="form-control" id="basicInput" value=""></td>
+                                                </tr>
+                                                <tr>
+                                                    <td>窗口</td>
+                                                    <td id="win" style="color: #26B7BC;"><input type="text" class="form-control" id="basicInput" value=""></td>
+                                                </tr>
+
+                                                <tr>
+                                                    <td>連絡電話</td>
+                                                    <td id="phone" style="color: #26B7BC;"><input type="text" class="form-control" id="basicInput" value=""></td>
+                                                </tr>
+                                                <tr>
+                                                    <td>地址</td>
+                                                    <td id="add" style="color: #26B7BC;"><input type="text" class="form-control" id="basicInput" value=""></td>
+                                                </tr>
+                                                <tr>
+                                                    <td>銀行代碼</td>
+                                                    <td id="bank" style="color: #26B7BC;"><input type="text" class="form-control" id="basicInput" value=""></td>
+                                                </tr>
+                                                <tr>
+                                                    <td>銀行帳戶</td>
+                                                    <td id="acc" style="color: #26B7BC;"><input type="text" class="form-control" id="basicInput" value=""></td>
+                                                </tr>
+                                                <tr>
+                                                    <th>結帳方式</th>
+                                                    <td id="pay" style="color: #26B7BC;"><input type="text" class="form-control" id="basicInput" value=""></td>
+                                                </tr>
+                                            </table>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </section>
+                        <div class="row container">
+                            <div class="col">
+                                <div class="d-block" style="text-align: center;">
+                                    <a class="btn btn-primary" onclick="ceditsend()" data-bs-toggle="modal" data-bs-target="#ModalCentercheck">儲存</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Vertically Centered modal Modal -->
+                    <div class="modal fade" id="ModalCenterxmark" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered modal-dialog-centered modal-dialog-scrollable" role="document">
+                            <div class="modal-content text-center p-4">
+                                <div class="modal-body">
+                                    <i class="fa-solid fa-circle-xmark fa-xl" id="pink"></i>
+                                    <p class="xmarkmodaltxt" style="margin: 15px"> 已取消合作廠商</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Vertically Centered modal Modal -->
+                    <div class="modal fade" id="ModalCentercheck" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered modal-dialog-centered modal-dialog-scrollable" role="document">
+                            <div class="modal-content text-center p-4">
+                                <div class="modal-body">
+                                    <i class="fa-solid fa-circle-check fa-xl" id="green"></i>
+                                    <p class="checkmodaltxt" style="margin: 15px"> 已合作廠商 </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Vertically Centered modal Modal -->
+                    <div class="modal fade" id="ModalCenterStatus0" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered modal-dialog-centered modal-dialog-scrollable" role="document">
+                            <div class="modal-content text-center p-4">
+                                <div class="modal-body" style="margin: 30px;">
+
+                                    <p>確定要取消合作此廠商嗎?</p>
+
+                                    <div class="row px-4 mt-4">
+                                        <div class="col">
+                                            <a class="btn btn-secondary w-100" href="#" data-bs-dismiss="modal">取消</a>
+                                        </div>
+                                        <div class="col">
+                                            <!-- button trigger for  Vertically Centered modal -->
+                                            <button type="button" onclick="change_status(0)" class="btn btn-primary w-100" data-bs-toggle="modal" data-bs-target="#ModalCenterxmark"> 確認 </button>
+
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Vertically Centered modal Modal -->
+                    <div class="modal fade" id="ModalCenterStatus1" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered modal-dialog-centered modal-dialog-scrollable" role="document">
+                            <div class="modal-content text-center p-4">
+                                <div class="modal-body" style="margin: 30px;">
+
+                                    <p>確定要合作此廠商嗎?</p>
+
+                                    <div class="row px-4 mt-4">
+                                        <div class="col">
+                                            <a class="btn btn-secondary w-100" href="#" data-bs-dismiss="modal">取消</a>
+                                        </div>
+                                        <div class="col">
+                                            <!-- button trigger for  Vertically Centered modal -->
+                                            <button type="button" onclick="change_status(1)" class="btn btn-primary w-100" data-bs-toggle="modal" data-bs-target="#ModalCentercheck">
+                                    確認
+                                </button>
+
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+                    <!--code寫這裡-->
+
+                </div>
+
+                <script src="assets/vendors/perfect-scrollbar/perfect-scrollbar.min.js"></script>
+                <script src="assets/js/bootstrap.bundle.min.js"></script>
+
+                <script src="assets/vendors/apexcharts/apexcharts.js"></script>
+                <script src="assets/js/pages/dashboard.js"></script>
+
+                <script src="assets/js/mazer.js"></script>
+                <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+                <script>
+                    $(function() {
+                        $("#sidebar").load("sidebar.html");
+                    });
+                </script>
+                <script src="controller/js/ajax.js"></script>
+                <script src="controller/js/company-edit.js"></script>
+</body>
+
+</html>

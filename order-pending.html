@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>總後台管理 - 訂單資訊</title>
+
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/bootstrap.css">
+
+    <link rel="stylesheet" href="assets/vendors/iconly/bold.css">
+    <link rel="stylesheet" href="assets/vendors/toastify/toastify.css">
+    <link href="https://unpkg.com/filepond/dist/filepond.css" rel="stylesheet">
+    <link href="https://unpkg.com/filepond-plugin-image-preview/dist/filepond-plugin-image-preview.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="assets/vendors/perfect-scrollbar/perfect-scrollbar.css">
+    <link rel="stylesheet" href="assets/vendors/bootstrap-icons/bootstrap-icons.css">
+    <link rel="stylesheet" href="assets/css/app.css">
+    <link rel="shortcut icon" href="assets/images/favicon.svg" type="image/x-icon">
+
+    <link rel="stylesheet" href="assets/css/customization.css">
+
+    <script>
+        sessionStorage.setItem('sidebar', 3);
+    </script>
+    <script src="https://kit.fontawesome.com/f8db84f08a.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <div id="app">
+
+        <div id="sidebar" class="active"> </div>
+
+        <div id="main">
+            <header class="mb-3">
+                <a href="#" class="burger-btn d-block d-xl-none">
+                    <i class="bi bi-justify fs-3"></i>
+                </a>
+            </header>
+
+            <div class="page-heading align-items-center">
+                <div class="container d-block">
+                    <a href="order-pending.html" class="btn btn-primary rounded-pill btn-sm">待處理訂單</a>
+                    <a href="#" class="btn btn-light rounded-pill btn-sm">已完成訂單</a>
+                    <a href="order-cancel.html" class="btn btn-light rounded-pill btn-sm">取消訂單</a>
+                </div>
+            </div>
+
+            <div class="page-content">
+                <section>
+                    <div class="container">
+                        <div class="row">
+                            <div class="col centerValiary">
+                                <div class="btn-group mb-3" role="group" aria-label="Basic example">
+                                    <button type="button" class="btn btn-light">Days</button>
+                                    <button type="button" class="btn btn-light">Weeks</button>
+                                    <button type="button" class="btn btn-light">Months</button>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="card">
+                                    <div class="card-body p-2 px-3">
+                                        <div class="d-flex">
+                                            <i class="fa-regular fa-calendar-days pt-1"></i>&nbsp;&nbsp;
+                                            <p class="m-0"> Jan, 2021 - Dec, 2021</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <input type="text" id="first-name" class="form-control" name="fname" placeholder="關鍵字搜尋...">
+                            </div>
+                        </div>
+
+                        <div class="card">
+                            <div class="card-content">
+                                <div class="card-body overflow-auto">
+                                    <table class="table table-block table-hover align-items-center text-center" id="table1">
+                                        <thead>
+                                            <tr>
+                                                <th>訂單編號</th>
+                                                <th>結團日期</th>
+                                                <th>小販名稱</th>
+                                                <th>狀態</th>
+                                                <th>販團名稱</th>
+                                                <th>總金額</th>
+                                                <th>快速編輯</th>
+                                                <th>查看</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <!-- Vertically Centered modal Modal -->
+                                            <div class="modal fade" id="exampleModalCenter2" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                                                <div class="modal-lg modal-dialog modal-dialog-centered modal-dialog-centered modal-dialog-scrollable align-items-center text-center" role="document">
+                                                    <div class="modal-content">
+                                                        <div class="modal-body p-5">
+                                                            <form class="form form-horizontal mb-3">
+                                                                <div class="form-body">
+                                                                    <div class="row p-3 pe-5">
+                                                                        <div class="col-md-4" style="text-align: right;">
+                                                                            <label>訂單編號</label>
+                                                                        </div>
+                                                                        <div class="col-md-8 form-group text-left">
+                                                                            <label id="lid">FAHKKKLSLL</label>
+                                                                        </div>
+                                                                        <div class="col-md-4" style="text-align: right;">
+                                                                            <label>小販名稱</label>
+                                                                        </div>
+                                                                        <div class="col-md-8 form-group text-left">
+                                                                            <label id="uname">蔡小販</label>
+                                                                        </div>
+                                                                        <div class="col-md-4" style="text-align: right;">
+                                                                            <label>飯糰名稱</label>
+                                                                        </div>
+                                                                        <div class="col-md-8 form-group text-left">
+                                                                            <label id="gname">澎湖海鮮冷凍食品(商品任選滿5千元)</label>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </form>
+
+                                                            <div class="card p-5" style="background: #E9F8F8;">
+                                                                <p id="green">匯款後五碼 : <span id="backacc">09990</span></p>
+                                                                <div class="row">
+                                                                    <div class="col text-center">
+                                                                        <p id="trafyes" class="text-center">帳務確認中</p>
+                                                                        <button id="trafyes-btn" class="btn w-50" onclick="trafyesSend(this)">帳務已確認</button>
+                                                                    </div>
+                                                                    <div class="col text-center">
+                                                                        <p id="orderyes" class="text-center">訂單確認中</p>
+                                                                        <button id="orderyes-btn" class="btn w-50" onclick="orderyesSend(this)">訂單已確認</button>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+
+                        <nav aria-label="Page navigation example">
+                            <ul class="pagination pagination-primary justify-content-center">
+                                <li class="page-item">
+                                    <a class="page-link" href="#">
+                                        <span aria-hidden="true"><i class="bi bi-chevron-left"></i></span>
+                                    </a>
+                                </li>
+                                <li class="page-item"><a class="page-link" href="#">1</a></li>
+                                <li class="page-item active"><a class="page-link" href="#">2</a></li>
+                                <li class="page-item"><a class="page-link" href="#">3</a></li>
+                                <li class="page-item"><a class="page-link" href="#">4</a></li>
+                                <li class="page-item"><a class="page-link" href="#">5</a></li>
+                                <li class="page-item"><a class="page-link" href="#">6</a></li>
+                                <li class="page-item"><a class="page-link" href="#">7</a></li>
+                                <li class="page-item"><a class="page-link" href="#">8</a></li>
+                                <li class="page-item"><a class="page-link" href="#">9</a></li>
+                                <li class="page-item">
+                                    <a class="page-link" href="#">
+                                        <span aria-hidden="true"><i class="bi bi-chevron-right"></i></span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </nav>
+                    </div>
+
+                </section>
+            </div>
+        </div>
+    </div>
+
+    <template>
+        <tr>
+            <td id="lid">FA0100050002</td>
+            <td id="date">2021/09/01</td>
+            <td id="uname">蔡小販</td>
+            <td id="status">帳務 <i class="fa-solid fa-circle-check" id="g"></i><br> 訂單 <i class="fa-solid fa-circle-xmark" id="pink"></i></td>
+            <td id="gname">澎湖海鮮冷凍食品(商品任選滿5千元)</td>
+            <td id="allp">8,020</td>
+            <td id="quick">
+                <!-- button trigger for  Vertically Centered modal -->
+                <a class="btn btn-danger rounded-pill mb-1" onclick="change_txt()" data-bs-toggle="modal" data-bs-target="#exampleModalCenter2">快速編輯</a>
+
+                
+            </td>
+            <td id="check">
+                <a class="btn btn-success rounded-pill mb-1" href="order-check.html">查看</a>
+            </td>
+        </tr>
+        
+    </template>
+
+    <script src="assets/vendors/perfect-scrollbar/perfect-scrollbar.min.js"></script>
+    <script src="assets/js/bootstrap.bundle.min.js"></script>
+
+    <script src="assets/vendors/apexcharts/apexcharts.js"></script>
+    <script src="assets/js/pages/dashboard.js"></script>
+
+    <script src="assets/js/mazer.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+    <script>
+        $(function() {
+            $("#sidebar").load("sidebar.html");
+        });
+    </script>
+    <script src="controller/js/ajax.js"></script>
+    <script src="controller/js/order-pending.js"></script>
+</body>
+
+</html>

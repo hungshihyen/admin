@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>總後台管理 - 建立推播訊息</title>
+
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/bootstrap.css">
+
+    <link rel="stylesheet" href="assets/vendors/iconly/bold.css">
+    <link rel="stylesheet" href="assets/vendors/toastify/toastify.css">
+    <link href="https://unpkg.com/filepond/dist/filepond.css" rel="stylesheet">
+    <link href="https://unpkg.com/filepond-plugin-image-preview/dist/filepond-plugin-image-preview.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="assets/vendors/perfect-scrollbar/perfect-scrollbar.css">
+    <link rel="stylesheet" href="assets/vendors/bootstrap-icons/bootstrap-icons.css">
+    <link rel="stylesheet" href="assets/css/app.css">
+    <link rel="shortcut icon" href="assets/images/favicon.svg" type="image/x-icon">
+
+    <link rel="stylesheet" href="assets/css/customization.css">
+
+    <script>
+        sessionStorage.setItem('sidebar', 8);
+    </script>
+    <script src="https://kit.fontawesome.com/f8db84f08a.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <div id="app">
+
+        <div id="sidebar" class="active"> </div>
+
+        <div id="main">
+            <header class="mb-3">
+                <a href="#" class="burger-btn d-block d-xl-none">
+                    <i class="bi bi-justify fs-3"></i>
+                </a>
+            </header>
+
+            <div class="page-content">
+                <!--code寫這裡-->
+                <section>
+
+                    <div class="container">
+
+                        <div class="row">
+                            <div class="col">
+                                <ul class="nav">
+                                    <li class="nav-item">
+                                        <a class="nav-link active" href="control.html" style="color: #26B7BC;">建立推播訊息</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="control2.html" style="color:  #AEAEAE;">管理員設定</a>
+                                    </li>
+                                </ul>
+                            </div>
+
+                        </div>
+
+                        <div class="card">
+                            <div class="card-content">
+                                <div class="card-body">
+
+                                    <h6 style="color: #26B7BC;">新增推播訊息</h6>
+
+                                    <table class="table table-lg align-items-center text-center">
+                                        <tr>
+                                            <td>通知對象</td>
+                                            <td id="for"><select class="form-control" id="basicInput">
+                                                <option>VIP、一般小販</option>
+                                            </select>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td></td>
+                                            <td>
+                                                <p>這則資訊要推播給哪些人？</p>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>發送時間</td>
+                                            <td id="sendtime" style="color: #26B7BC;"><input type="date" class="form-control" id="basicInput" value=""></td>
+                                        </tr>
+
+                                        <tr>
+                                            <td>內文</td>
+                                            <td id="txt" style="color: #26B7BC;"><input type="text" class="form-control" id="basicInput" value=""></td>
+                                        </tr>
+
+                                    </table>
+
+
+                                    <div class="col">
+                                        <div class="d-block" style="text-align: center;">
+                                            <a class="btn btn-primary" onclick="" href="">發送訊息</a>
+                                        </div>
+                                    </div>
+                                    <br/>
+                                    <h6 style="color: #26B7BC;">發送訊息</h6>
+                                    <table class="table table-striped align-items-center text-center" id="table1">
+                                        <thead>
+                                            <tr style="color: #26B7BC;">
+
+                                                <th>通知對象</th>
+                                                <th>發送時間</th>
+                                                <th>內文</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <template>
+                                                <tr>
+
+                                                    <td id="forper">VIP、一般小販</td>
+                                                    <td id="senttime">2022/12/22 12:00</td>
+                                                    <td id="mtxt">內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文</td>
+
+                                                </tr>
+
+
+                                            </template>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+
+                        <nav aria-label="Page navigation example">
+                            <ul class="pagination pagination-primary justify-content-center">
+                                <li class="page-item">
+                                    <a class="page-link" href="#">
+                                        <span aria-hidden="true"><i class="bi bi-chevron-left"></i></span>
+                                    </a>
+                                </li>
+                                <li class="page-item"><a class="page-link" href="#">1</a></li>
+                                <li class="page-item active"><a class="page-link" href="#">2</a></li>
+                                <li class="page-item"><a class="page-link" href="#">3</a></li>
+                                <li class="page-item"><a class="page-link" href="#">4</a></li>
+                                <li class="page-item"><a class="page-link" href="#">5</a></li>
+                                <li class="page-item"><a class="page-link" href="#">6</a></li>
+                                <li class="page-item"><a class="page-link" href="#">7</a></li>
+                                <li class="page-item"><a class="page-link" href="#">8</a></li>
+                                <li class="page-item"><a class="page-link" href="#">9</a></li>
+                                <li class="page-item">
+                                    <a class="page-link" href="#">
+                                        <span aria-hidden="true"><i class="bi bi-chevron-right"></i></span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </nav>
+                    </div>
+
+                </section>
+            </div>
+
+            <script src="assets/vendors/perfect-scrollbar/perfect-scrollbar.min.js"></script>
+            <script src="assets/js/bootstrap.bundle.min.js"></script>
+
+            <script src="assets/vendors/apexcharts/apexcharts.js"></script>
+            <script src="assets/js/pages/dashboard.js"></script>
+
+            <script src="assets/js/mazer.js"></script>
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+            <script>
+                $(function() {
+                    $("#sidebar").load("sidebar.html");
+                });
+            </script>
+            <script src="controller/js/ajax.js"></script>
+            <script src="controller/js/control.js"></script>
+        </div>
+</body>
+
+</html>

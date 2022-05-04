@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>總後台管理 - 待處理訂單</title>
+
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/bootstrap.css">
+
+    <link rel="stylesheet" href="assets/vendors/iconly/bold.css">
+    <link rel="stylesheet" href="assets/vendors/toastify/toastify.css">
+    <link href="https://unpkg.com/filepond/dist/filepond.css" rel="stylesheet">
+    <link href="https://unpkg.com/filepond-plugin-image-preview/dist/filepond-plugin-image-preview.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="assets/vendors/perfect-scrollbar/perfect-scrollbar.css">
+    <link rel="stylesheet" href="assets/vendors/bootstrap-icons/bootstrap-icons.css">
+    <link rel="stylesheet" href="assets/css/app.css">
+    <link rel="shortcut icon" href="assets/images/favicon.svg" type="image/x-icon">
+
+    <link rel="stylesheet" href="assets/css/customization.css">
+
+    <script>
+        sessionStorage.setItem('sidebar', 4);
+    </script>
+    <script src="https://kit.fontawesome.com/f8db84f08a.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <div id="app">
+
+        <div id="sidebar" class="active"> </div>
+
+        <div id="main">
+            <header class="mb-3">
+                <a href="#" class="burger-btn d-block d-xl-none">
+                    <i class="bi bi-justify fs-3"></i>
+                </a>
+            </header>
+
+            <div class="page-content">
+                <!--code寫這裡-->
+                <div class="d-block" style="text-align: right;">
+                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModalCenter2">
+                        恢復權限
+                    </button>
+                </div>
+                <h5 class="m-0" style="color: #26B7BC;">小販資訊</h5>
+                <div class="page-content">
+                    <section class="container mb-3">
+                        <div class="row">
+
+                            <table id="ut" class="table mb-0 table-sm">
+                                <tbody>
+                                    <template>
+                                        <tr>
+                                            <td id="green">姓名</td>
+                                            <td id="name">蔡小販</td>
+                                            <td id="green">分類</td>
+                                            <td id="class"><select>
+                                                <option>VIP</option>
+                                                
+                                                </select>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td id="green">加入日期</td>
+                                            <td id="date">2022/01/21</td>
+                                        </tr>
+                                        <tr>
+                                            <td id="green">連絡電話</td>
+                                            <td id="phone">0900-000-000</td>
+                                            <td id="green">銀行代碼</td>
+                                            <td id="bank">中國信託(822)</td>
+                                        </tr>
+                                        <tr>
+                                            <td id="green">通訊地址</td>
+                                            <td id="add">台北市中山區復興北路514巷38號</td>
+                                            <td id="green">銀行帳戶</td>
+                                            <td id="acc">100-0000-123456-123</td>
+                                        </tr>
+                                        <tr>
+                                            <td id="green">備註</td>
+                                            <td id="note" colspan="3"><textarea rows="5" cols="80"></textarea></td>
+
+                                        </tr>
+                                    </template>
+                                </tbody>
+                            </table>
+
+
+                        </div>
+                    </section>
+                </div>
+                <section>
+
+                    <div class="container">
+
+                        <h5 class="m-0" style="color: #26B7BC;">最新小販揪團紀錄</h5><br/>
+
+                        <div class="card">
+                            <div class="card-content">
+                                <div class="card-body">
+                                    <table class="table table-striped align-items-center text-center" id="table1">
+                                        <thead>
+                                            <tr style="color: #26B7BC;">
+
+                                                <th>開團日期</th>
+                                                <th>小販團編號</th>
+                                                <th>名稱</th>
+                                                <th>應付總額</th>
+                                                <th>銷售總額</th>
+                                                <th>賺取的差額</th>
+                                                <th>狀態</th>
+
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <template>
+                                                <tr>
+
+                                                    <td id="ndate">2021/09/01</td>
+                                                    <td id="uid">FA0100050002</td>
+                                                    <td id="nname">澎湖海鮮冷凍食品</td>
+                                                    <td id="price">
+                                                        300
+                                                    </td>
+                                                    <td id="salep">230</td>
+                                                    <td id="earnp">280</td>
+                                                    <td id="status">帳務 <i class="fa-solid fa-circle-check" id="g"></i><br> 訂單 <i class="fa-solid fa-circle-xmark" id="pink"></i></td>
+                                                </tr>
+
+                                            </template>
+
+
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+
+
+                    </div>
+
+                </section>
+                <div class="justify-content-center align-items-center">
+                    <div style="text-align:center">
+                        <a class="btn btn-primary btn-block w-25" href="#">查看更多揪團</a>
+                    </div>
+                </div>
+            </div>
+
+            <script src="assets/vendors/perfect-scrollbar/perfect-scrollbar.min.js"></script>
+            <script src="assets/js/bootstrap.bundle.min.js"></script>
+
+            <script src="assets/vendors/apexcharts/apexcharts.js"></script>
+            <script src="assets/js/pages/dashboard.js"></script>
+
+            <script src="assets/js/mazer.js"></script>
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+            <script>
+                $(function() {
+                    $("#sidebar").load("sidebar.html");
+                });
+            </script>
+            <script src="controller/js/ajax.js"></script>
+            <script src="controller/js/hawker_detail2.js"></script>
+        </div>
+</body>
+
+</html>

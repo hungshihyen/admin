@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>總後台管理 - 新增小販</title>
+
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/bootstrap.css">
+
+    <link rel="stylesheet" href="assets/vendors/iconly/bold.css">
+    <link rel="stylesheet" href="assets/vendors/toastify/toastify.css">
+    <link href="https://unpkg.com/filepond/dist/filepond.css" rel="stylesheet">
+    <link href="https://unpkg.com/filepond-plugin-image-preview/dist/filepond-plugin-image-preview.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="assets/vendors/perfect-scrollbar/perfect-scrollbar.css">
+    <link rel="stylesheet" href="assets/vendors/bootstrap-icons/bootstrap-icons.css">
+    <link rel="stylesheet" href="assets/css/app.css">
+    <link rel="shortcut icon" href="assets/images/favicon.svg" type="image/x-icon">
+
+    <link rel="stylesheet" href="assets/css/customization.css">
+
+    <script>
+        sessionStorage.setItem('sidebar', 4);
+    </script>
+    <script src="https://kit.fontawesome.com/f8db84f08a.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <div id="app">
+
+        <div id="sidebar" class="active"> </div>
+
+        <div id="main">
+            <header class="mb-3">
+                <a href="#" class="burger-btn d-block d-xl-none">
+                    <i class="bi bi-justify fs-3"></i>
+                </a>
+            </header>
+
+            <div class="page-content">
+                <div class="page-heading align-items-center">
+                    <div class="row container">
+                        <div class="col">
+                            <a class="btn btn-primary" href="hawker.html"><i class="fa-solid fa-arrow-left"></i> 回列表</a>
+                        </div>
+
+                    </div>
+                    <br/>
+                    <div class="row ">
+                        <div class="col">
+                            <h5 class="m-0 " style="color: #26B7BC;text-align: center;">新增小販</h5>
+                        </div>
+                    </div>
+                    <div class="row ">
+                        <section class="container">
+                            <div class="container">
+                                <div class="card">
+                                    <div class="card-content">
+                                        <form class="card-body" id="form">
+                                            <table id="utable" class="table table-lg align-items-center text-center">
+                                                <tr>
+                                                    <td>姓名</td>
+                                                    <td id="name" style="color: #26B7BC;"><input type="text" class="form-control" id="m-name" value=""></td>
+                                                </tr>
+                                                <tr>
+                                                    <td>連絡電話</td>
+                                                    <td id="phone" style="color: #26B7BC;"><input type="text" class="form-control" id="m-phone" value=""></td>
+                                                </tr>
+                                                <tr>
+                                                    <td>通訊地址</td>
+                                                    <td id="add" style="color: #26B7BC;"><input type="text" class="form-control" id="m-addr" value=""></td>
+                                                </tr>
+                                                <tr>
+                                                    <td>加入日期</td>
+                                                    <td id="date" style="color: #26B7BC;"><input type="date" class="form-control" id="m-date" value=""></td>
+                                                </tr>
+                                                <tr>
+                                                    <td>銀行代碼</td>
+                                                    <td id="bank" style="color: #26B7BC;">
+                                                        <select class="form-control" id="m-bank" value="">
+                                                            <option value="-">請選擇</option>
+                                                            <option value="001">001</option>
+                                                            <option value="002">002</option>
+                                                            <option value="003">003</option>
+                                                        </select>
+
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>銀行帳戶</td>
+                                                    <td id="bankacc" style="color: #26B7BC;"><input type="text" class="form-control" id="m-bacc" value=""></td>
+                                                </tr>
+                                                <tr>
+                                                    <td>分類</td>
+                                                    <td id="class" style="color: #26B7BC;"><select class="form-control" id="m-class" value="">
+                                                        <option value="1">未分類</option>
+                                                        <option value="2">VIP</option>
+                                                        <option value="3">NORMAL</option>
+                                                    </select></td>
+                                                </tr>
+                                                <tr>
+                                                    <td>備註</td>
+                                                    <td id="note" style="color: #26B7BC;"><textarea rows="5" class="form-control" id="m-note" value=""></textarea></td>
+                                                </tr>
+                                                <tr>
+                                                    <td>帳號</td>
+                                                    <td id="acc" style="color: #26B7BC;"><input type="text" class="form-control" id="m-acc" value=""></td>
+                                                </tr>
+                                                <tr>
+                                                    <td>密碼</td>
+                                                    <td id="pwd" style="color: #26B7BC;"><input type="password" class="form-control" id="m-pwd" value=""></td>
+                                                </tr>
+
+                                            </table>
+                                            <input id="reset-btn" type="reset" value="Reset" class="d-none">
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </section>
+                        <div class="row container">
+                            <div class="col">
+                                <div class="d-block" style="text-align: center;">
+                                    <button class="btn btn-danger" onclick="dataReset()">清除資訊</button>
+                                    <button class="btn btn-primary" onclick="dataSend()">確認新增</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!--code寫這裡-->
+
+
+                </div>
+
+                <script src="assets/vendors/perfect-scrollbar/perfect-scrollbar.min.js"></script>
+                <script src="assets/js/bootstrap.bundle.min.js"></script>
+
+                <script src="assets/vendors/apexcharts/apexcharts.js"></script>
+                <script src="assets/js/pages/dashboard.js"></script>
+
+                <script src="assets/js/mazer.js"></script>
+                <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+                <script>
+                    $(function() {
+                        $("#sidebar").load("sidebar.html");
+                    });
+                </script>
+                <script src="controller/js/ajax.js"></script>
+                <script src="controller/js/hawker-new.js"></script>
+</body>
+
+</html>
