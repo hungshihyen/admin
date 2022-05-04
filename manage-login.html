@@ -9,40 +9,42 @@
     <link rel="stylesheet" href="assets/css/bootstrap.css">
     <link rel="stylesheet" href="assets/vendors/bootstrap-icons/bootstrap-icons.css">
     <link rel="stylesheet" href="assets/css/app.css">
-    <link rel="stylesheet" href="assets/css/pages/auth.css">
+    <link rel="stylesheet" href="assets/css/new/login.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 </head>
 
 <body>
-    <div class="container px-5" id="auth">
+    <div class="h-100 d-flex flex-column justify-content-center" id="auth">
         <div class="align-items-center" id="auth-left" style="
         height:100%;
         display: flex; 
         flex-direction: column;
         justify-content: center;
         text-align: center;">
-            <div class="auth-logo mb-3">
-                <a href="manage-index.html" class="d-grid" style="justify-items: center;">
+            <div class="auth-logo">
+                <a href="javascript:;" class="d-grid" style="justify-items: center;">
                     <img src="assets/images/svg/02.svg" alt="Logo" class="h-100">
                     <img src="assets/images/svg/01.svg" alt="Logo" class="h-75">
-                    <h5 class="font-bold mb-2" style="color:#26B7BC;">總後台管理系統</h5>
+                    <h5 class="title font-bold primary-color">總後台管理系統</h5>
                 </a>
             </div>
 
-            <form action="index.html">
+            <form class="form" action="index.html">
                 <div class="form-group position-relative has-icon-left mb-4">
                     <input type="text" class="form-control form-control-xl usr" placeholder="Username">
-                    <div class="form-control-icon">
-                        <i class="bi bi-person"></i>
+                    <div class="form-control-icon icon-person">
+                        <i class="bi bi-person-fill primary-color"></i>
                     </div>
                 </div>
                 <div class="form-group position-relative has-icon-left mb-4">
                     <input type="password" class="form-control form-control-xl pwd" placeholder="Password">
-                    <div class="form-control-icon">
-                        <i class="bi bi-shield-lock"></i>
+                    <div class="form-control-icon lock-icon">
+                        <svg width="100%" height="100%" viewBox="0 0 15 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M7.69803 0.196289C5.21683 0.196289 3.19822 2.21491 3.19822 4.6961V7.39599H2.29825C1.82088 7.39599 1.36307 7.58562 1.02551 7.92318C0.687964 8.26073 0.498329 8.71854 0.498329 9.19592V16.3956C0.498329 16.873 0.687964 17.3308 1.02551 17.6684C1.36307 18.0059 1.82088 18.1955 2.29825 18.1955H13.0978C13.5752 18.1955 14.033 18.0059 14.3705 17.6684C14.7081 17.3308 14.8977 16.873 14.8977 16.3956V9.19592C14.8977 8.71854 14.7081 8.26073 14.3705 7.92318C14.033 7.58562 13.5752 7.39599 13.0978 7.39599H12.1978V4.6961C12.1978 2.21491 10.1792 0.196289 7.69803 0.196289ZM4.99814 4.6961C4.99814 3.20756 6.20949 1.99621 7.69803 1.99621C9.18657 1.99621 10.3979 3.20756 10.3979 4.6961V7.39599H4.99814V4.6961ZM8.59799 14.3464V16.3956H6.79807V14.3464C6.48343 14.1662 6.23078 13.8949 6.07344 13.5683C5.91611 13.2416 5.86146 12.8749 5.91672 12.5166C5.97198 12.1582 6.13454 11.825 6.38297 11.561C6.63141 11.2969 6.95404 11.1143 7.30835 11.0372C7.57151 10.9791 7.84438 10.9807 8.10683 11.042C8.36929 11.1033 8.61463 11.2228 8.82477 11.3915C9.03491 11.5603 9.20449 11.7741 9.321 12.0171C9.43751 12.2602 9.49798 12.5262 9.49796 12.7958C9.49744 13.1105 9.41398 13.4196 9.25598 13.6918C9.09798 13.964 8.87103 14.1898 8.59799 14.3464Z" fill="#26B7BC"/>
+                        </svg>
                     </div>
                 </div>
-                <a class="btn btn-primary btn-block shadow-lg" onclick="log()">LOGIN</a>
+                <a class="btn btn-primary btn-block login-btn shadow-lg" onclick="log()">LOGIN</a>
             </form>
         </div>
     </div>
