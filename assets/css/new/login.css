@@ -61,6 +61,7 @@ body {
 
 .login-btn {
     border-radius: 9px;
+    padding: 14px 0;
 }
 
 .login-btn:hover {
