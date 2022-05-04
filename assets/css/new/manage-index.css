@@ -33,6 +33,52 @@ body {
     box-shadow: none;
 }
 
+#offcanvasRightLabel {
+    border: 1px solid #26B7BC;
+}
+
+#offcanvasRightLabel:focus, #offcanvasRightLabel:focus-visible {
+    border: 1px solid #26B7BC;
+    outline: 1px solid #26B7BC;
+    box-shadow: none;
+}
+
+.list-group-item {
+    border: none !important;
+}
+
+.all-buyer-card {
+    padding: 11px 29px;
+    background: #F5F5F5;
+    border: 1px solid #BCBCBC;
+    border-radius: 5px;
+}
+
+.all-buyer-card .text {
+    display: flex;
+    color: #747474;
+}
+
+.all-buyer-card .text span {
+    color: #000;
+    margin-right: 7px;
+}
+
+.all-buyer-card .number {
+    color: #C0C0C0;
+}
+
+.form-check-input:checked {
+    background-color: #26B7BC !important;
+    border-width: 1px;
+    border-color: #747474 !important;
+}
+
+.icon-search {
+    top: 50%;
+    right: 25px;
+}
+
 #mm {
     padding: 30px 56px;
 }

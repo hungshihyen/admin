@@ -61,112 +61,32 @@
                             <p class="m-0 calendar-text"> Jan, 2021 - Dec, 2021</p>
                         </div>
                         <div>
-                            <button class="btn w-100 d-flex justify-content-between align-items-center all-btn" type="button" data-bs-toggle="offcanvas"
+                            <button class="btn w-100 d-flex justify-content-between align-items-center all-btn"
+                                    type="button" data-bs-toggle="offcanvas"
                                     data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">
                                 所有販團 <i class="bi bi-caret-down-fill" style="color: #26B7BC;"></i>
                             </button>
 
                             <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight"
                                  aria-labelledby="offcanvasRightLabel">
-                                <div class="offcanvas-header text-center align-items-center d-block">
+                                <div class="offcanvas-header text-center align-items-center d-block position-relative">
                                     <input type="text" class="offcanvas-title mt-3 form-control"
                                            id="offcanvasRightLabel" placeholder="關鍵字搜尋...">
+                                    <div class="position-absolute icon-search">
+                                        <i class="bi bi-search" style="color: #26B7BC;"></i>
+                                    </div>
                                 </div>
                                 <div class="offcanvas-body" style="text-align: left;">
                                     <ul class="list-group">
                                         <li class="list-group-item list-group-item-manage-index mb-3">
-                                            <div class="row">
-                                                <div class="col-1 pt-3">
+                                            <div class="row align-items-center">
+                                                <div class="col-1">
                                                     <input class="form-check-input me-1" type="checkbox" value=""
                                                            aria-label="...">
                                                 </div>
-                                                <div class="col">
-                                                    <p>蔡小販 FA0100050002</p>
-                                                    <p class="mb-0" id="gray">0911000222</p>
-                                                </div>
-                                            </div>
-                                        </li>
-                                        <li class="list-group-item list-group-item-manage-index mb-3">
-                                            <div class="row">
-                                                <div class="col-1 pt-3">
-                                                    <input class="form-check-input me-1" type="checkbox" value=""
-                                                           aria-label="...">
-                                                </div>
-                                                <div class="col">
-                                                    <p>蔡小販 FA0100050002</p>
-                                                    <p class="mb-0" id="gray">0911000222</p>
-                                                </div>
-                                            </div>
-                                        </li>
-                                        <li class="list-group-item list-group-item-manage-index mb-3">
-                                            <div class="row">
-                                                <div class="col-1 pt-3">
-                                                    <input class="form-check-input me-1" type="checkbox" value=""
-                                                           aria-label="...">
-                                                </div>
-                                                <div class="col">
-                                                    <p>蔡小販 FA0100050002</p>
-                                                    <p class="mb-0" id="gray">0911000222</p>
-                                                </div>
-                                            </div>
-                                        </li>
-                                        <li class="list-group-item list-group-item-manage-index mb-3">
-                                            <div class="row">
-                                                <div class="col-1 pt-3">
-                                                    <input class="form-check-input me-1" type="checkbox" value=""
-                                                           aria-label="...">
-                                                </div>
-                                                <div class="col">
-                                                    <p>蔡小販 FA0100050002</p>
-                                                    <p class="mb-0" id="gray">0911000222</p>
-                                                </div>
-                                            </div>
-                                        </li>
-                                        <li class="list-group-item list-group-item-manage-index mb-3">
-                                            <div class="row">
-                                                <div class="col-1 pt-3">
-                                                    <input class="form-check-input me-1" type="checkbox" value=""
-                                                           aria-label="...">
-                                                </div>
-                                                <div class="col">
-                                                    <p>蔡小販 FA0100050002</p>
-                                                    <p class="mb-0" id="gray">0911000222</p>
-                                                </div>
-                                            </div>
-                                        </li>
-                                        <li class="list-group-item list-group-item-manage-index mb-3">
-                                            <div class="row">
-                                                <div class="col-1 pt-3">
-                                                    <input class="form-check-input me-1" type="checkbox" value=""
-                                                           aria-label="...">
-                                                </div>
-                                                <div class="col">
-                                                    <p>蔡小販 FA0100050002</p>
-                                                    <p class="mb-0" id="gray">0911000222</p>
-                                                </div>
-                                            </div>
-                                        </li>
-                                        <li class="list-group-item list-group-item-manage-index mb-3">
-                                            <div class="row">
-                                                <div class="col-1 pt-3">
-                                                    <input class="form-check-input me-1" type="checkbox" value=""
-                                                           aria-label="...">
-                                                </div>
-                                                <div class="col">
-                                                    <p>蔡小販 FA0100050002</p>
-                                                    <p class="mb-0" id="gray">0911000222</p>
-                                                </div>
-                                            </div>
-                                        </li>
-                                        <li class="list-group-item list-group-item-manage-index mb-3">
-                                            <div class="row">
-                                                <div class="col-1 pt-3">
-                                                    <input class="form-check-input me-1" type="checkbox" value=""
-                                                           aria-label="...">
-                                                </div>
-                                                <div class="col">
-                                                    <p>蔡小販 FA0100050002</p>
-                                                    <p class="mb-0" id="gray">0911000222</p>
+                                                <div class="col all-buyer-card ms-2">
+                                                    <p class="text mb-0"><span>蔡小販</span> FA0100050002</p>
+                                                    <p class="number mb-0" >0911000222</p>
                                                 </div>
                                             </div>
                                         </li>
@@ -209,15 +129,15 @@
                         <div class="card-body text-center overflow-auto">
                             <table class="table table-block table-hover" id="table1">
                                 <thead>
-                                    <tr>
-                                        <th>本月銷售排名</th>
-                                        <th>廠商名稱</th>
-                                        <th>商品</th>
-                                        <th>成本</th>
-                                        <th>出售金額</th>
-                                        <th>銷售數量</th>
-                                        <th>毛利總額</th>
-                                    </tr>
+                                <tr>
+                                    <th>本月銷售排名</th>
+                                    <th>廠商名稱</th>
+                                    <th>商品</th>
+                                    <th>成本</th>
+                                    <th>出售金額</th>
+                                    <th>銷售數量</th>
+                                    <th>毛利總額</th>
+                                </tr>
                                 </thead>
                                 <tbody>
                                 </tbody>
