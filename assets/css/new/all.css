@@ -23,3 +23,14 @@ body {
     border: none !important;
     background-color: transparent;
 }
+
+
+tbody tr {
+    border: none !important;
+}
+
+tbody tr td {
+    text-align: center;
+    padding-top: 16px !important;
+    padding-bottom: 16px !important;
+}

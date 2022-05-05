@@ -13,7 +13,8 @@
     <link rel="stylesheet" href="assets/vendors/iconly/bold.css">
     <link rel="stylesheet" href="assets/vendors/toastify/toastify.css">
     <link href="https://unpkg.com/filepond/dist/filepond.css" rel="stylesheet">
-    <link href="https://unpkg.com/filepond-plugin-image-preview/dist/filepond-plugin-image-preview.css" rel="stylesheet">
+    <link href="https://unpkg.com/filepond-plugin-image-preview/dist/filepond-plugin-image-preview.css"
+          rel="stylesheet">
 
     <link rel="stylesheet" href="assets/vendors/perfect-scrollbar/perfect-scrollbar.css">
     <link rel="stylesheet" href="assets/vendors/bootstrap-icons/bootstrap-icons.css">
@@ -21,236 +22,308 @@
     <link rel="shortcut icon" href="assets/images/favicon.svg" type="image/x-icon">
 
     <link rel="stylesheet" href="assets/css/customization.css">
+    <link rel="stylesheet" href="assets/css/new/all.css">
+    <style>
+
+        table select {
+            width: 156px;
+            border: 1px solid #26B7BC;
+            border-radius: 4px;
+        }
+
+        table textarea {
+            border: 1px solid #26B7BC;
+            border-radius: 4px;
+        }
+
+        table textarea:focus-visible {
+            border: 1px solid #26B7BC;
+            outline: 1px solid #26B7BC;
+        }
+
+        #exampleModalCenter2 .modal-content,
+        #exampleModalCenter4 .modal-content,
+        #exampleModalCenter5 .modal-content,
+        #exampleModalCenter3 .modal-content {
+            border: 1px solid #26B7BC;
+            border-radius: 20px;
+            min-height: 297px;
+            max-width: 488px;
+        }
+
+
+        #exampleModalCenter3 .modal-content,
+        #exampleModalCenter5 .modal-content {
+            min-height: 200px;
+        }
+
+        #exampleModalCenter2 .modal-content .modal-body,
+        #exampleModalCenter4 .modal-content .modal-body,
+        #exampleModalCenter5 .modal-content .modal-body,
+        #exampleModalCenter3 .modal-content .modal-body {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        #exampleModalCenter2 .modal-content .modal-body .btn,
+        #exampleModalCenter4 .modal-content .modal-body .btn
+        {
+            max-width: 140px;
+        }
+
+
+    </style>
 
     <script>
-        sessionStorage.setItem('sidebar', 4);
+        sessionStorage.setItem('sidebar', 4)
     </script>
     <script src="https://kit.fontawesome.com/f8db84f08a.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
-    <div id="app">
+<div id="app">
 
-        <div id="sidebar" class="active"> </div>
+    <div id="sidebar" class="active"></div>
 
-        <div id="main">
-            <header class="mb-3">
-                <a href="#" class="burger-btn d-block d-xl-none">
-                    <i class="bi bi-justify fs-3"></i>
-                </a>
-            </header>
+    <div id="main">
+        <header class="mb-3">
+            <a href="#" class="burger-btn d-block d-xl-none">
+                <i class="bi bi-justify fs-3"></i>
+            </a>
+        </header>
 
-            <div class="page-content">
-                <!--code寫這裡-->
-                <div class="d-block" style="text-align: right;">
-                    <button id="block-btn" type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#exampleModalCenter2">
-                        黑名單小販
-                    </button>
-                </div>
-                <div class="d-block" style="text-align: right;">
-                    <button id="unblock-btn" type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModalCenter4">
-                        <i class="fa-solid fa-shield" style="color: #FFFFFF;"></i> 恢復權限
-                    </button>
-                </div>
-                <!-- Vertically Centered modal Modal -->
-                <div class="modal fade" id="exampleModalCenter2" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-                    <div class="modal-dialog modal-dialog-centered modal-dialog-centered modal-dialog-scrollable" role="document">
-                        <div class="modal-content text-center p-4">
-                            <div class="modal-body">
-                                <p>【<span class="m-name"></span>】即將被列入黑名單</p>
-                                <p>若想恢復權限，請至黑名單頁面取消</p>
-                                <textarea class="form-control" id="block-note" rows="5" placeholder="在此輸入訂單取消的原因...."></textarea>
+        <div class="page-content">
+            <!--code寫這裡-->
+            <div class="d-block" style="text-align: right;">
+                <button id="block-btn" type="button" class="btn btn-danger" data-bs-toggle="modal"
+                        data-bs-target="#exampleModalCenter2">
+                    黑名單小販
+                </button>
+            </div>
+            <div class="d-block" style="text-align: right;">
+                <button id="unblock-btn" type="button" class="btn btn-primary" data-bs-toggle="modal"
+                        data-bs-target="#exampleModalCenter4">
+                    <i class="fa-solid fa-shield" style="color: #FFFFFF;"></i> 恢復權限
+                </button>
+            </div>
+            <!-- Vertically Centered modal Modal -->
+            <div class="modal fade" id="exampleModalCenter2" tabindex="-1" role="dialog"
+                 aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered modal-dialog-centered modal-dialog-scrollable"
+                     role="document">
+                    <div class="modal-content text-center p-4">
+                        <div class="modal-body">
+                            <p style="color: #000;">【<span class="m-name"></span>】即將被列入黑名單</p>
+                            <p style="color: #000;">若想恢復權限，請至黑名單頁面取消</p>
+                            <textarea class="form-control" id="block-note" rows="5"
+                                      placeholder="在此輸入訂單取消的原因...."></textarea>
 
-                                <div class="row px-4 mt-4">
-                                    <div class="col">
-                                        <a class="btn btn-secondary w-100" href="#" data-bs-dismiss="modal">取消</a>
-                                    </div>
-                                    <div class="col">
-                                        <!-- button trigger for  Vertically Centered modal -->
-                                        <button type="button" onclick="blockSend()" class="btn btn-primary w-100" data-bs-toggle="modal" data-bs-target="#exampleModalCenter3">
-                                    確認
-                                </button>
+                            <div class="row px-4 mt-4">
+                                <div class="col">
+                                    <a class="btn btn-secondary w-100 border-0" href="#" data-bs-dismiss="modal"
+                                       style="background-color: #D2D2D2;">取消</a>
+                                </div>
+                                <div class="col">
+                                    <!-- button trigger for  Vertically Centered modal -->
+                                    <button type="button" onclick="blockSend()" class="btn btn-primary w-100"
+                                            data-bs-toggle="modal" data-bs-target="#exampleModalCenter3">
+                                        確認
+                                    </button>
 
 
-                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                </div>
-
-                <!-- Vertically Centered modal Modal -->
-                <div class="modal fade" id="exampleModalCenter4" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-                    <div class="modal-dialog modal-dialog-centered modal-dialog-centered modal-dialog-scrollable" role="document">
-                        <div class="modal-content text-center p-4">
-                            <div class="modal-body">
-                                <p>黑名單原因</p>
-                                <p class="block-note" style="color: #AEAEAE;"></p>
-                                <hr style="color: #AEAEAE;">
-                                <p>確定要讓【<span class="m-name"></span>】恢復權限嗎?</p>
-
-                                <div class="row px-4 mt-4">
-                                    <div class="col">
-                                        <a class="btn btn-secondary w-100" href="#" data-bs-dismiss="modal">取消</a>
-                                    </div>
-                                    <div class="col">
-                                        <!-- button trigger for  Vertically Centered modal -->
-                                        <button type="button" onclick="unblockSend()" class="btn btn-primary w-100" data-bs-toggle="modal" data-bs-target="#exampleModalCenter5">
-                                    確認
-                                </button>
-
-
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Vertically Centered modal Modal -->
-                <div class="modal fade" id="exampleModalCenter3" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-                    <div class="modal-dialog modal-dialog-centered modal-dialog-centered modal-dialog-scrollable" role="document">
-                        <div class="modal-content text-center p-4">
-                            <div class="modal-body">
-                                <i class="fa-solid fa-circle-xmark fa-xl" id="pink"></i>
-                                <p><span class="m-name"></span>已被設定黑名單</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Vertically Centered modal Modal -->
-                <div class="modal fade" id="exampleModalCenter5" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-                    <div class="modal-dialog modal-dialog-centered modal-dialog-centered modal-dialog-scrollable" role="document">
-                        <div class="modal-content text-center p-4">
-                            <div class="modal-body">
-                                <i class="fa-solid fa-circle-check fa-xl" id="green"></i>
-                                <p><span class="m-name"></span>已恢復權限</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <h5 class="m-0" style="color: #26B7BC;">小販資訊</h5>
-                <div class="page-content">
-                    <section class="container mb-3">
-                        <div class="row">
-
-                            <table id="ut" class="table mb-0 table-sm">
-                                <tbody>
-                                    <template>
-                                        <tr>
-                                            <td id="green">姓名</td>
-                                            <td id="name">蔡小販</td>
-                                            <td id="green">分類</td>
-                                            <td id="class"><select>
-                                                <option>VIP</option>
-                                                
-                                                </select>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td id="green">加入日期</td>
-                                            <td id="date">2022/01/21</td>
-                                        </tr>
-                                        <tr>
-                                            <td id="green">連絡電話</td>
-                                            <td id="phone">0900-000-000</td>
-                                            <td id="green">銀行代碼</td>
-                                            <td id="bank">中國信託(822)</td>
-                                        </tr>
-                                        <tr>
-                                            <td id="green">通訊地址</td>
-                                            <td id="add">台北市中山區復興北路514巷38號</td>
-                                            <td id="green">銀行帳戶</td>
-                                            <td id="acc">100-0000-123456-123</td>
-                                        </tr>
-                                        <tr>
-                                            <td id="green">備註</td>
-                                            <td id="note" colspan="3"><textarea rows="5" cols="80"></textarea></td>
-
-                                        </tr>
-                                    </template>
-                                </tbody>
-                            </table>
-
-
-                        </div>
-                    </section>
-                </div>
-                <section>
-
-                    <div class="container">
-
-                        <h5 class="m-0" style="color: #26B7BC;">最新小販揪團紀錄</h5><br/>
-
-                        <div class="card">
-                            <div class="card-content">
-                                <div class="card-body">
-                                    <table class="table table-striped align-items-center text-center" id="table1">
-                                        <thead>
-                                            <tr style="color: #26B7BC;">
-
-                                                <th>開團日期</th>
-                                                <th>小販團編號</th>
-                                                <th>名稱</th>
-                                                <th>應付總額</th>
-                                                <th>銷售總額</th>
-                                                <th>賺取的差額</th>
-                                                <th>狀態</th>
-
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <template>
-                                                <tr>
-
-                                                    <td id="ndate">2021/09/01</td>
-                                                    <td id="uid">FA0100050002</td>
-                                                    <td id="nname">澎湖海鮮冷凍食品</td>
-                                                    <td id="price">
-                                                        300
-                                                    </td>
-                                                    <td id="salep">230</td>
-                                                    <td id="earnp">280</td>
-                                                    <td id="status">帳務 <i class="fa-solid fa-circle-check" id="green"></i><br> 訂單 <i class="fa-solid fa-circle-xmark" id="pink"></i></td>
-                                                </tr>
-                                            </template>
-
-                                        </tbody>
-                                    </table>
-                                </div>
-                            </div>
-                        </div>
-
-
-                    </div>
-
-                </section>
-                <div class="justify-content-center align-items-center">
-                    <div style="text-align:center">
-                        <a class="btn btn-primary btn-block w-25" href="hawker_detail_s.html">查看更多揪團</a>
                     </div>
                 </div>
             </div>
 
-            <script src="assets/vendors/perfect-scrollbar/perfect-scrollbar.min.js"></script>
-            <script src="assets/js/bootstrap.bundle.min.js"></script>
+            <!-- Vertically Centered modal Modal -->
+            <div class="modal fade" id="exampleModalCenter4" tabindex="-1" role="dialog"
+                 aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered modal-dialog-centered modal-dialog-scrollable"
+                     role="document">
+                    <div class="modal-content text-center p-4">
+                        <div class="modal-body">
+                            <p>黑名單原因</p>
+                            <p class="block-note" style="color: #AEAEAE;"></p>
+                            <hr style="color: #AEAEAE;">
+                            <p>確定要讓【<span class="m-name"></span>】恢復權限嗎?</p>
 
-            <script src="assets/vendors/apexcharts/apexcharts.js"></script>
-            <script src="assets/js/pages/dashboard.js"></script>
+                            <div class="row px-4 mt-4">
+                                <div class="col">
+                                    <a class="btn btn-secondary w-100 border-0" href="#" data-bs-dismiss="modal" style="background-color: #D2D2D2;">取消</a>
+                                </div>
+                                <div class="col">
+                                    <!-- button trigger for  Vertically Centered modal -->
+                                    <button type="button" onclick="unblockSend()" class="btn btn-primary w-100"
+                                            data-bs-toggle="modal" data-bs-target="#exampleModalCenter5">
+                                        確認
+                                    </button>
 
-            <script src="assets/js/mazer.js"></script>
-            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 
-            <script>
-                $(function() {
-                    $("#sidebar").load("sidebar.html");
-                });
-            </script>
-            <script src="controller/js/ajax.js"></script>
-            <script src="controller/js/hawker_detail.js"></script>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Vertically Centered modal Modal -->
+            <div class="modal fade" id="exampleModalCenter3" tabindex="-1" role="dialog"
+                 aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered modal-dialog-centered modal-dialog-scrollable"
+                     role="document">
+                    <div class="modal-content text-center p-4">
+                        <div class="modal-body">
+                            <div>
+                                <img src="./assets/images/icons/forbidden.png" alt="">
+                            </div>
+                            <p><span class="m-name"></span>已被設定黑名單</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Vertically Centered modal Modal -->
+            <div class="modal fade" id="exampleModalCenter5" tabindex="-1" role="dialog"
+                 aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered modal-dialog-centered modal-dialog-scrollable"
+                     role="document">
+                    <div class="modal-content text-center p-4">
+                        <div class="modal-body">
+                            <div>
+                                <img src="./assets/images/icons/done.png" alt="">
+                            </div>
+                            <p><span class="m-name"></span>已恢復權限</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <h5 style="color: #26B7BC;margin-bottom: 30px;">小販資訊</h5>
+            <div class="page-content">
+                <section class="container mw-100 mb-3">
+                    <div class="row">
+
+                        <table id="ut" class="table mb-0 table-sm table-borderless" style="color: #000;">
+                            <tbody>
+
+                            <template>
+                                <tr>
+                                    <td id="green">姓名</td>
+                                    <td id="name">蔡小販</td>
+                                    <td id="green">分類</td>
+                                    <td id="class">
+                                        <select>
+                                            <option>VIP</option>
+                                        </select>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td id="green">加入日期</td>
+                                    <td id="date">2022/01/21</td>
+                                </tr>
+                                <tr>
+                                    <td id="green">連絡電話</td>
+                                    <td id="phone">0900-000-000</td>
+                                    <td id="green">銀行代碼</td>
+                                    <td id="bank">中國信託(822)</td>
+                                </tr>
+                                <tr>
+                                    <td id="green">通訊地址</td>
+                                    <td id="add">台北市中山區復興北路514巷38號</td>
+                                    <td id="green">銀行帳戶</td>
+                                    <td id="acc">100-0000-123456-123</td>
+                                </tr>
+                                <tr>
+                                    <td id="green">備註</td>
+                                    <td id="note" colspan="3"><textarea rows="5" cols="80"></textarea></td>
+
+                                </tr>
+                            </template>
+                            </tbody>
+                        </table>
+
+
+                    </div>
+                </section>
+            </div>
+            <section>
+
+                <div class="container mw-100">
+
+                    <h5 class="m-0" style="color: #26B7BC;">最新小販揪團紀錄</h5><br />
+
+                    <div class="card">
+                        <div class="card-content">
+                            <div class="card-body">
+                                <table class="table align-items-center text-center" id="table1">
+                                    <thead>
+                                    <tr style="color: #26B7BC;">
+
+                                        <th>開團日期</th>
+                                        <th>小販團編號</th>
+                                        <th>名稱</th>
+                                        <th>應付總額</th>
+                                        <th>銷售總額</th>
+                                        <th>賺取的差額</th>
+                                        <th>狀態</th>
+
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <template>
+                                        <tr>
+
+                                            <td id="ndate">2021/09/01</td>
+                                            <td id="uid">FA0100050002</td>
+                                            <td id="nname">澎湖海鮮冷凍食品</td>
+                                            <td id="price">
+                                                300
+                                            </td>
+                                            <td id="salep">230</td>
+                                            <td id="earnp">280</td>
+                                            <td id="status">帳務 <i class="fa-solid fa-circle-check" id="green"></i><br>
+                                                            訂單 <i class="fa-solid fa-circle-xmark" id="pink"></i></td>
+                                        </tr>
+                                    </template>
+
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
+
+            </section>
+            <div class="justify-content-center align-items-center">
+                <div style="text-align:center">
+                    <a class="btn btn-primary btn-block" href="hawker_detail_s.html" style="width: 176px;">查看更多揪團</a>
+                </div>
+            </div>
         </div>
+
+        <script src="assets/vendors/perfect-scrollbar/perfect-scrollbar.min.js"></script>
+        <script src="assets/js/bootstrap.bundle.min.js"></script>
+
+        <script src="assets/vendors/apexcharts/apexcharts.js"></script>
+        <script src="assets/js/pages/dashboard.js"></script>
+
+        <script src="assets/js/mazer.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+        <script>
+            $(function () {
+                $("#sidebar").load("sidebar.html")
+            })
+        </script>
+        <script src="controller/js/ajax.js"></script>
+        <script src="controller/js/hawker_detail.js"></script>
+    </div>
 </body>
 
 </html>
