@@ -2,22 +2,6 @@ body {
     background-color: #E5E5E5;
 }
 
-.calender-wrapper {
-    padding: 6px 12px;
-    border: 1px solid #26B7BC;
-    border-radius: 4px;
-    background-color: #fff;
-}
-
-.calendar-icon {
-    width: 15px;
-    margin-right: 15px;
-}
-
-.calendar-text {
-    color: #747474;
-}
-
 .all-btn {
     color: #747474;
     min-width: 130px;
