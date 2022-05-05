@@ -13,7 +13,8 @@
     <link rel="stylesheet" href="assets/vendors/iconly/bold.css">
     <link rel="stylesheet" href="assets/vendors/toastify/toastify.css">
     <link href="https://unpkg.com/filepond/dist/filepond.css" rel="stylesheet">
-    <link href="https://unpkg.com/filepond-plugin-image-preview/dist/filepond-plugin-image-preview.css" rel="stylesheet">
+    <link href="https://unpkg.com/filepond-plugin-image-preview/dist/filepond-plugin-image-preview.css"
+          rel="stylesheet">
 
     <link rel="stylesheet" href="assets/vendors/perfect-scrollbar/perfect-scrollbar.css">
     <link rel="stylesheet" href="assets/vendors/bootstrap-icons/bootstrap-icons.css">
@@ -21,169 +22,473 @@
     <link rel="shortcut icon" href="assets/images/favicon.svg" type="image/x-icon">
 
     <link rel="stylesheet" href="assets/css/customization.css">
+    <link rel="stylesheet" href="assets/css/new/all.css">
+
+    <style>
+
+        .card-content {
+            padding: 76px 43px 76px 92px;
+        }
+
+        table tr td {
+            text-align: left;
+            color: #000;
+        }
+
+        .grey {
+            color: #747474;
+        }
+
+
+        #table1 td {
+            text-align: center;
+            color: #747474;
+        }
+
+        .table-striped > tbody > tr:nth-of-type(odd) > * {
+            --bs-table-accent-bg: transparent;
+        }
+
+        .table-striped > tbody > tr:nth-of-type(even) > * {
+            --bs-table-accent-bg: rgba(38, 183, 188, .1);
+        }
+
+        .edit-btn {
+            border: 1px solid #26B7BC;
+            padding: 4px 13px;
+            font-size: 12px;
+            color: #26B7BC;
+        }
+
+        #exampleModalCenter1 .modal-content,
+        #exampleModalCenter2 .modal-content,
+        #exampleModalCenter3 .modal-content,
+        #exampleModalCenter4 .modal-content {
+            border: 1px solid #26B7BC;
+            border-radius: 20px;
+            min-height: 200px;
+            max-width: 488px;
+        }
+
+        #exampleModalCenter1 .modal-content {
+            height: 550px;
+        }
+
+        #exampleModalCenter1 .modal-content .modal-body,
+        #exampleModalCenter2 .modal-content .modal-body,
+        #exampleModalCenter3 .modal-content .modal-body,
+        #exampleModalCenter4 .modal-content .modal-body {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        #exampleModalCenter1 .modal-content .modal-body .btn,
+        #exampleModalCenter2 .modal-content .modal-body .btn,
+        #exampleModalCenter4 .modal-content .modal-body .btn {
+            width: 130px;
+        }
+
+        #exampleModalCenter1 input,
+        #exampleModalCenter1 textarea,
+        #exampleModalCenter5 input,
+        #exampleModalCenter5 textarea
+        {
+            width: 100%;
+            border: 1px solid #26B7BC;
+            padding: 13px 20px;
+        }
+
+
+    </style>
 
     <script>
-        sessionStorage.setItem('sidebar', 4);
+        sessionStorage.setItem('sidebar', 4)
     </script>
     <script src="https://kit.fontawesome.com/f8db84f08a.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
-    <div id="app">
+<div id="app">
 
-        <div id="sidebar" class="active"> </div>
+    <div id="sidebar" class="active"></div>
 
-        <div id="main">
-            <header class="mb-3">
-                <a href="#" class="burger-btn d-block d-xl-none">
-                    <i class="bi bi-justify fs-3"></i>
-                </a>
-            </header>
+    <div id="main">
+        <header class="mb-3">
+            <a href="#" class="burger-btn d-block d-xl-none">
+                <i class="bi bi-justify fs-3"></i>
+            </a>
+        </header>
 
-            <div class="page-content">
-                <div class="page-heading align-items-center">
-                    <div class="row container">
-                        <div class="col">
-                            <a class="btn btn-primary" href="hawker.html"><i class="fa-solid fa-arrow-left"></i> 回列表</a>
-                        </div>
-
+        <div class="page-content">
+            <div class="page-heading align-items-center">
+                <div class="row container">
+                    <div class="col">
+                        <a class="btn btn-primary" href="hawker.html" style="width: 176px;">
+                            <i class="fa-solid fa-arrow-left"></i>
+                            回列表
+                        </a>
                     </div>
-                    <br/>
-                    <div class="row ">
-                        <div class="col">
-                            <h5 class="m-0 " style="color: #26B7BC;text-align: center;">小販分類</h5><br/>
-                        </div>
-                    </div>
-                    <div class="row ">
-                        <section class="container">
-                            <div class="container">
-                                <div class="card">
-                                    <div class="card-content">
-                                        <div class="card-body">
-                                            <div class="d-block" style="text-align: right;">
-                                                <a class="btn btn-primary" href="order-pending.html">新增</a>
-                                            </div>
-                                            <div class="row">
-                                                <div class="col-12 col-md-5 order-md-1 order-last">
-                                                    <br/>
-                                                    <div>
-                                                        <table>
-                                                            <tr>
-                                                                <td>分類代碼</td>
-                                                                <td id="classid">01</td>
-                                                            </tr>
-                                                            <tr>
-                                                                <td>分類名稱</td>
-                                                                <td id="classname">VIP</td>
-                                                            </tr>
-                                                            <tr>
-                                                                <td>備註說明</td>
-                                                                <td></td>
-                                                            </tr>
-                                                            <tr>
-                                                                <td id="classtxt" colspan="2">揪團高手，進價可降低揪團高手，進價可降低揪團高手，進價可降低揪團高手，進價可降低揪團高手，進價可降低揪團高手，進價可降低揪團高手，進價可降低揪團高手，進價可降低揪團高手，進價可降低揪團高手，進價可降低揪團高手，進價可降低揪團高手，進價可降低揪團高手，進價可降低揪團高手，進價可降低揪團高手，進價可降低揪團高低揪團高手，進價可降低揪團高手，進價可降低揪團高手，進價可降低揪團高手，進價可降低揪團高手，進價可降低揪團高手，進價可降低揪團高手，進手，進價可降低揪團高手，進價可降低揪團高手，進價可降低揪團高手，進價可降低揪團高手，進價可降低揪團高手，進價低揪團高手，進價可降低揪團高手，進價可降低揪團高手，進價可降低揪團高手，進價可降低揪團高手，進價可降低揪團高手，進價可降低揪團高手，進價可降低揪團高手，進價可降低揪團高手，進價可降低揪團高手，進價可降低揪團高手，進價可降低揪團高手，進價可降低揪團高手，進價可降低揪團高手，進價可降低揪團高手，進價可降低揪團高手，進價可降低揪團高手，進價可降低揪團高手，進價可降低揪團高手，進價可降低揪團高手，進價可降低揪團高手，進價可降低揪團可降低揪團高手，進價可降低揪團高手，進價可降低揪團高手，進價可降低揪團高手，進價可降價可降低揪團高手，進價可降低揪團高手，進價可降低揪團高手，進價可降低揪團高手，進價可降低揪團高手，進價可降低揪團高手，進價可降低揪團高手，進價可降低揪團高手，進價可降低揪團高手，進價可降低揪團高手，進價可降高手，進價可降低</td>
-                                                            </tr>
 
-                                                        </table>
+                </div>
+                <br />
+                <div class="row ">
+                    <div class="col">
+                        <h5 class="m-0 " style="color: #26B7BC;text-align: center;">小販分類</h5><br />
+                    </div>
+                </div>
+                <div class="row ">
+                    <section class="container mw-100">
+                        <div class="container mw-100">
+                            <div class="card">
+                                <div class="card-content">
+                                    <div class="card-body">
+                                        <div class="d-block" style="margin-left: auto; width: 172px;">
+                                            <button class="w-100 btn btn-primary" data-bs-toggle="modal"
+                                                    data-bs-target="#exampleModalCenter1">新增
+                                            </button>
+                                        </div>
+
+                                        <div class="modal fade" id="exampleModalCenter1" tabindex="-1"
+                                             role="dialog"
+                                             aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                                            <div class="modal-dialog modal-dialog-centered modal-dialog-centered modal-dialog-scrollable"
+                                                 role="document">
+                                                <div class="modal-content text-center p-4">
+                                                    <div class="modal-body d-flex flex-column justify-content-center">
+                                                        <div style="font-size: 26px;color: #26B7BC;font-weight: bold;">
+                                                            新增分類
+                                                        </div>
+                                                        <div class="container my-3">
+                                                            <div class="row mb-3">
+                                                                <div class="col-3">
+                                                                    <div style="color:#000;">分類代碼</div>
+                                                                </div>
+                                                                <div class="col">
+                                                                    <input type="text">
+                                                                </div>
+                                                            </div>
+                                                            <div class="row mb-3">
+                                                                <div class="col-3">
+                                                                    <div style="color:#000;">分類名稱</div>
+                                                                </div>
+                                                                <div class="col">
+                                                                    <input type="text">
+                                                                </div>
+                                                            </div>
+                                                            <div class="row">
+                                                                <div class="col-3">
+                                                                    <div style="color:#000;">備註說明</div>
+                                                                </div>
+                                                                <div class="col">
+                                                                    <textarea rows="6"></textarea>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="row px-4 mt-4">
+                                                            <div class="col">
+                                                                <a class="btn btn-secondary border-0"
+                                                                   href="#"
+                                                                   data-bs-dismiss="modal"
+                                                                   style="background-color: #D2D2D2;">取消</a>
+                                                            </div>
+                                                            <div class="col">
+                                                                <!-- button trigger for  Vertically Centered modal -->
+                                                                <button type="button"
+                                                                        class="btn btn-primary"
+                                                                        data-bs-toggle="modal"
+                                                                        data-bs-dismiss="modal"
+                                                                        data-bs-target="#exampleModalCenter4">
+                                                                    確認
+                                                                </button>
+
+
+                                                            </div>
+                                                        </div>
                                                     </div>
-                                                    <br/>
-                                                    <div class="col">
-                                                        <div class="d-block" style="text-align: center;">
-                                                            <a class="btn btn-danger" href="order-pending.html">刪除分類</a>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="modal fade" id="exampleModalCenter4" tabindex="-1"  role="dialog"
+                                             aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                                            <div class="modal-dialog modal-dialog-centered modal-dialog-centered modal-dialog-scrollable"
+                                                 role="document">
+                                                <div class="modal-content text-center p-4">
+                                                    <div class="modal-body">
+                                                        <div>
+                                                            <img src="./assets/images/icons/done.png" alt="">
+                                                        </div>
+                                                        <p><span class="m-name"></span>已新增分類</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+
+                                        <div class="row">
+                                            <div class="col-5 order-md-1 order-last">
+                                                <br />
+                                                <div>
+                                                    <table>
+                                                        <tr>
+                                                            <td style="width: 30%;">分類代碼</td>
+                                                            <td id="classid" class="grey">01</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>分類名稱</td>
+                                                            <td id="classname" class="grey">VIP</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>備註說明</td>
+                                                            <td></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td id="classtxt" colspan="2" style="color:#B5B5B5;">
+                                                                揪團高手，進價可降低揪團高手，進價可降低揪團高手，進價可降低揪團高手，進價可降低揪團高手，進價可降低揪團高手，進價可降低揪團高手，進價可降低揪團高手，進價可降低揪團高手，進價可降低揪團高手，進價可降低揪團高手，進價可降低揪團高手，進價可降低揪團高手，進價可降低揪團高手，進價可降低揪團高手，進價可降低揪團高低揪團高手，進價可降低揪團高手，進價可降低揪團高手，進價可降低揪團高手，進價可降低揪團高手，進價可降低揪團高手，進價可降低揪團高手，進手，進價可降低揪團高手，進價可降低揪團高手，進價可降低揪團高手，進價可降低揪團高手，進價可降低揪團高手，進價低揪團高手，進價可降低揪團高手，進價可降低揪團高手，進價可降低揪團高手，進價可降低揪團高手，進價可降低揪團高手，進價可降低揪團高手，進價可降低揪團高手，進價可降低揪團高手，進價可降低揪團高手，進價可降低揪團高手，進價可降低揪團高手，進價可降低揪團高手，進價可降低揪團高手，進價可降低揪團高手，進價可降低揪團高手，進價可降低揪團高手，進價可降低揪團高手，進價可降低揪團高手，進價可降低揪團高手，進價可降低揪團高手，進價可降低揪團可降低揪團高手，進價可降低揪團高手，進價可降低揪團高手，進價可降低揪團高手，進價可降價可降低揪團高手，進價可降低揪團高手，進價可降低揪團高手，進價可降低揪團高手，進價可降低揪團高手，進價可降低揪團高手，進價可降低揪團高手，進價可降低揪團高手，進價可降低揪團高手，進價可降低揪團高手，進價可降高手，進價可降低
+                                                            </td>
+                                                        </tr>
+
+                                                    </table>
+                                                </div>
+                                                <br />
+                                                <div class="col">
+                                                    <div class="d-block" style="text-align: center;">
+                                                        <button class="btn btn-danger" data-bs-toggle="modal"
+                                                                data-bs-target="#exampleModalCenter2">刪除分類
+                                                        </button>
+                                                    </div>
+
+                                                    <div class="modal fade" id="exampleModalCenter2" tabindex="-1"
+                                                         role="dialog"
+                                                         aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                                                        <div class="modal-dialog modal-dialog-centered modal-dialog-centered modal-dialog-scrollable"
+                                                             role="document">
+                                                            <div class="modal-content text-center p-4">
+                                                                <div class="modal-body">
+                                                                    <p style="color: #000;">是否確認刪除分類</p>
+                                                                    <div class="row px-4 mt-4">
+                                                                        <div class="col">
+                                                                            <a class="btn btn-secondary w-100 border-0"
+                                                                               href="#"
+                                                                               data-bs-dismiss="modal"
+                                                                               style="background-color: #D2D2D2;">取消</a>
+                                                                        </div>
+                                                                        <div class="col">
+                                                                            <!-- button trigger for  Vertically Centered modal -->
+                                                                            <button type="button"
+                                                                                    class="btn btn-primary w-100"
+                                                                                    data-bs-toggle="modal"
+                                                                                    data-bs-dismiss="modal"
+                                                                                    data-bs-target="#exampleModalCenter3">
+                                                                                確認
+                                                                            </button>
+
+
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                    <!-- Vertically Centered modal Modal -->
+                                                    <div class="modal fade" id="exampleModalCenter3" tabindex="-1"
+                                                         role="dialog"
+                                                         aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                                                        <div class="modal-dialog modal-dialog-centered modal-dialog-centered modal-dialog-scrollable"
+                                                             role="document">
+                                                            <div class="modal-content text-center p-4">
+                                                                <div class="modal-body">
+                                                                    <div>
+                                                                        <img src="./assets/images/icons/forbidden.png"
+                                                                             alt="">
+                                                                    </div>
+                                                                    <p style="color: #000;"><span class="m-name"></span>已刪除分類
+                                                                    </p>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                </div>
+                                            </div>
+
+                                            <div class="col-7 order-md-1 order-last">
+                                                <br />
+                                                <div style="border-radius: .7rem; border: 1px solid #26B7BC;">
+                                                    <table class="table table-block table-striped align-items-center text-center"
+                                                           id="table1">
+                                                        <thead>
+                                                        <tr style="color: #26B7BC; background-color: #E6E6E6;">
+                                                            <th style="border-top-left-radius: 0.7rem;">編輯</th>
+                                                            <th>分類代碼</th>
+                                                            <th>分類名稱</th>
+                                                            <th style="border-top-right-radius: 0.7rem;">數量</th>
+                                                        </tr>
+                                                        </thead>
+                                                        <tbody>
+
+                                                        <tr>
+                                                            <td id="edit">
+                                                                <button class="btn btn-outline-primary edit-btn" data-bs-toggle="modal"
+                                                                        data-bs-target="#exampleModalCenter5">
+                                                                    <svg width="13" height="13" viewBox="0 0 13 13"
+                                                                         fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                                        <path d="M10.9468 2.67181L12.125 1.49363L11.5064 0.875L10.3282 2.05319L9.85 1.575C9.77101 1.49203 9.67599 1.42598 9.5707 1.38084C9.46542 1.33571 9.35205 1.31243 9.2375 1.31243C9.12295 1.31243 9.00959 1.33571 8.9043 1.38084C8.79901 1.42598 8.70399 1.49203 8.625 1.575L0.75 9.45V12.25H3.55L11.425 4.375C11.508 4.29601 11.574 4.20099 11.6192 4.0957C11.6643 3.99041 11.6876 3.87705 11.6876 3.7625C11.6876 3.64795 11.6643 3.53459 11.6192 3.4293C11.574 3.32401 11.508 3.22899 11.425 3.15L10.9468 2.67181ZM3.2 11.375H1.625V9.8L9.2375 2.1875L10.8125 3.7625L3.2 11.375Z"
+                                                                              fill="#26B7BC" />
+                                                                    </svg>
+                                                                    編輯
+                                                                </button>
+                                                            </td>
+                                                            <td id="classid">00</td>
+                                                            <td id="classname">未分類</td>
+                                                            <td id="classqnt">50</td>
+                                                        </tr>
+
+                                                        <template>
+                                                            <tr>
+                                                                <td id="edit">
+                                                                    <button class="btn btn-outline-primary" data-bs-toggle="modal"
+                                                                            data-bs-target="#exampleModalCenter5">
+                                                                        <svg width="13" height="13" viewBox="0 0 13 13"
+                                                                             fill="none"
+                                                                             xmlns="http://www.w3.org/2000/svg">
+                                                                            <path d="M10.9468 2.67181L12.125 1.49363L11.5064 0.875L10.3282 2.05319L9.85 1.575C9.77101 1.49203 9.67599 1.42598 9.5707 1.38084C9.46542 1.33571 9.35205 1.31243 9.2375 1.31243C9.12295 1.31243 9.00959 1.33571 8.9043 1.38084C8.79901 1.42598 8.70399 1.49203 8.625 1.575L0.75 9.45V12.25H3.55L11.425 4.375C11.508 4.29601 11.574 4.20099 11.6192 4.0957C11.6643 3.99041 11.6876 3.87705 11.6876 3.7625C11.6876 3.64795 11.6643 3.53459 11.6192 3.4293C11.574 3.32401 11.508 3.22899 11.425 3.15L10.9468 2.67181ZM3.2 11.375H1.625V9.8L9.2375 2.1875L10.8125 3.7625L3.2 11.375Z"
+                                                                                  fill="#26B7BC" />
+                                                                        </svg>
+                                                                        編輯
+                                                                    </button>
+                                                                </td>
+                                                                <td id="classid">00</td>
+                                                                <td id="classname">未分類</td>
+                                                                <td id="classqnt">50</td>
+                                                            </tr>
+                                                        </template>
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+
+                                                <div class="modal fade" id="exampleModalCenter5" tabindex="-1"
+                                                     role="dialog"
+                                                     aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                                                    <div class="modal-dialog modal-dialog-centered modal-dialog-centered modal-dialog-scrollable"
+                                                         role="document">
+                                                        <div class="modal-content text-center p-4">
+                                                            <div class="modal-body d-flex flex-column justify-content-center">
+                                                                <div style="font-size: 26px;color: #26B7BC;font-weight: bold;">
+                                                                    編輯分類
+                                                                </div>
+                                                                <div class="container my-3">
+                                                                    <div class="row mb-3">
+                                                                        <div class="col-3">
+                                                                            <div style="color:#000;">分類代碼</div>
+                                                                        </div>
+                                                                        <div class="col">
+                                                                            <input type="text">
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="row mb-3">
+                                                                        <div class="col-3">
+                                                                            <div style="color:#000;">分類名稱</div>
+                                                                        </div>
+                                                                        <div class="col">
+                                                                            <input type="text">
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="row">
+                                                                        <div class="col-3">
+                                                                            <div style="color:#000;">備註說明</div>
+                                                                        </div>
+                                                                        <div class="col">
+                                                                            <textarea rows="6"></textarea>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="row px-4 mt-4">
+                                                                    <div class="col">
+                                                                        <a class="btn btn-secondary border-0"
+                                                                           href="#"
+                                                                           data-bs-dismiss="modal"
+                                                                           style="background-color: #D2D2D2;">取消</a>
+                                                                    </div>
+                                                                    <div class="col">
+                                                                        <!-- button trigger for  Vertically Centered modal -->
+                                                                        <button type="button"
+                                                                                class="btn btn-primary"
+                                                                                data-bs-toggle="modal"
+                                                                                data-bs-dismiss="modal"
+                                                                                data-bs-target="#exampleModalCenter4">
+                                                                            確認
+                                                                        </button>
+
+
+                                                                    </div>
+                                                                </div>
+                                                            </div>
                                                         </div>
                                                     </div>
                                                 </div>
 
-                                                <div class="col-12 col-md-7 order-md-1 order-last">
-                                                    <br/>
-                                                    <table class="table table-striped align-items-center text-center" id="table1">
-                                                        <thead>
-                                                            <tr style="color: #26B7BC;">
-                                                                <th>編輯</th>
-                                                                <th>分類代碼</th>
-                                                                <th>分類名稱</th>
-                                                                <th>數量</th>
-                                                            </tr>
-                                                        </thead>
-                                                        <tbody>
-                                                            <template>
-                                                                <tr>
-                                                                    <td id="edit">
-                                                                        <a class="btn mb-1" href="#">
-                                                                            編輯
-                                                                        </a>
-                                                                    </td>
-                                                                    <td id="classid">00</td>
-                                                                    <td id="classname">未分類</td>
-                                                                    <td id="classqnt">50</td>
-                                                                </tr>
-                                                            </template>
-                                                        </tbody>
-                                                    </table>
-                                                    <nav aria-label="Page navigation example">
-                                                        <ul class="pagination pagination-primary justify-content-center">
-                                                            <li class="page-item">
-                                                                <a class="page-link" href="#">
-                                                                    <span aria-hidden="true"><i class="bi bi-chevron-left"></i></span>
-                                                                </a>
-                                                            </li>
-                                                            <li class="page-item"><a class="page-link" href="#">1</a></li>
-                                                            <li class="page-item active"><a class="page-link" href="#">2</a></li>
-                                                            <li class="page-item"><a class="page-link" href="#">3</a></li>
-                                                            <li class="page-item"><a class="page-link" href="#">4</a></li>
-                                                            <li class="page-item"><a class="page-link" href="#">5</a></li>
-                                                            <li class="page-item"><a class="page-link" href="#">6</a></li>
-                                                            <li class="page-item"><a class="page-link" href="#">7</a></li>
-                                                            <li class="page-item"><a class="page-link" href="#">8</a></li>
-                                                            <li class="page-item"><a class="page-link" href="#">9</a></li>
-                                                            <li class="page-item">
-                                                                <a class="page-link" href="#">
-                                                                    <span aria-hidden="true"><i class="bi bi-chevron-right"></i></span>
-                                                                </a>
-                                                            </li>
-                                                        </ul>
-                                                    </nav>
-                                                </div>
-
-
+                                                <nav aria-label="Page navigation example">
+                                                    <ul class="pagination pagination-primary justify-content-center">
+                                                        <li class="page-item">
+                                                            <a class="page-link arrow" href="#">
+                                                                <img src="./assets/images/icons/pagination_arrow_left.png"
+                                                                     alt="">
+                                                            </a>
+                                                        </li>
+                                                        <li class="page-item"><a class="page-link" href="#">1</a></li>
+                                                        <li class="page-item active"><a class="page-link" href="#">2</a>
+                                                        </li>
+                                                        <li class="page-item"><a class="page-link" href="#">3</a></li>
+                                                        <li class="page-item"><a class="page-link" href="#">4</a></li>
+                                                        <li class="page-item"><a class="page-link" href="#">5</a></li>
+                                                        <li class="page-item"><a class="page-link" href="#">6</a></li>
+                                                        <li class="page-item"><a class="page-link" href="#">7</a></li>
+                                                        <li class="page-item"><a class="page-link" href="#">8</a></li>
+                                                        <li class="page-item"><a class="page-link" href="#">9</a></li>
+                                                        <li class="page-item">
+                                                            <a class="page-link arrow" href="#">
+                                                                <img src="./assets/images/icons/pagination_arrow_right.png"
+                                                                     alt="">
+                                                            </a>
+                                                        </li>
+                                                    </ul>
+                                                </nav>
                                             </div>
+
+
                                         </div>
                                     </div>
                                 </div>
                             </div>
-
-                        </section>
-                        <div class="row container">
-                            <div class="col">
-                                <div class="d-block" style="text-align: center;">
-                                    <a class="btn btn-danger" href="#">清除資訊</a>
-                                    <a class="btn btn-primary" href="#">確認新增</a>
-                                </div>
-                            </div>
                         </div>
-                    </div>
 
-                    <!--code寫這裡-->
-
-
+                    </section>
                 </div>
 
-                <script src="assets/vendors/perfect-scrollbar/perfect-scrollbar.min.js"></script>
-                <script src="assets/js/bootstrap.bundle.min.js"></script>
+                <!--code寫這裡-->
 
-                <script src="assets/vendors/apexcharts/apexcharts.js"></script>
-                <script src="assets/js/pages/dashboard.js"></script>
 
-                <script src="assets/js/mazer.js"></script>
-                <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+            </div>
 
-                <script>
-                    $(function() {
-                        $("#sidebar").load("sidebar.html");
-                    });
-                </script>
-                <script src="controller/js/ajax.js"></script>
-                <script src="controller/js/hawker-type.js"></script>
+            <script src="assets/vendors/perfect-scrollbar/perfect-scrollbar.min.js"></script>
+            <script src="assets/js/bootstrap.bundle.min.js"></script>
+
+            <script src="assets/vendors/apexcharts/apexcharts.js"></script>
+            <script src="assets/js/pages/dashboard.js"></script>
+
+            <script src="assets/js/mazer.js"></script>
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+            <script>
+                $(function () {
+                    $("#sidebar").load("sidebar.html")
+                })
+            </script>
+            <script src="controller/js/ajax.js"></script>
+            <script src="controller/js/hawker-type.js"></script>
 </body>
 
 </html>
