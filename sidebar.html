@@ -4,7 +4,7 @@
         background: #FFF;
         border: 1px solid #40BEC2;
     }
-    
+
     .logout a {
         color: #25396f;
         font-size: 1rem;
@@ -12,23 +12,42 @@
         text-decoration: none;
         transition: all .5s;
     }
-    
+
     .logout a:focus,
     .logout a:hover,
     .logout a:active {
         color: #FFF;
         background: #40BEC2;
     }
+
+    .sidebar-menu {
+        height: 50%;
+        overflow: auto;
+
+    }
+
+    .sidebar-item a {
+        padding-left: 36px !important;
+    }
+
+    .sidebar-item.logout  a{
+        padding-left: 1rem !important;
+    }
+
+    .icon-wrapper {
+        margin-right: 30px;
+    }
 </style>
 
-<div class="sidebar-wrapper active" style="box-shadow: 7px 6px 0px rgba(233, 233, 233, 0.25); border-radius: 0px 50px 50px 0px;">
-    <div class="sidebar-header">
+<div class="sidebar-wrapper active"
+     style="box-shadow: 7px 6px 0px rgba(233, 233, 233, 0.25); border-radius: 0px 50px 50px 0px;">
+    <div class="sidebar-header" style="padding-bottom: 20px;">
         <div class="align-items-center">
-            <div class="avatar avatar-xl mb-3" style="display: block;">
-                <img src="assets/images/faces/1.jpg" alt="Face 1" style="height: 100%;">
+            <div class="d-block avatar avatar-xl mb-3 mx-auto" style="width: 98px;">
+                <img src="assets/images/faces/1.jpg" alt="Face 1" style="width:100%; height: 100%;">
             </div>
             <div class="text-center">
-                <h6 class="font-bold mb-2  name-id" style="color:#26B7BC;"></h6>
+                <h6 class="name-id" style="color:#26B7BC; font-weight: 400;letter-spacing: 0.14em;">草莓爸 BLOC000001</h6>
             </div>
         </div>
     </div>
@@ -41,50 +60,64 @@
 
             <li id="cate1" class="sidebar-item">
                 <a href="manage-index.html" class='sidebar-link'>
-                    <i class="bi bi-grid-fill"></i>
+                    <!--                    <i class="bi bi-bookmark"></i>-->
+                    <div class="icon-wrapper">
+                        <img src="./assets/images/icons/cate1.png" alt="">
+                    </div>
                     <span>總覽</span>
                 </a>
             </li>
 
             <li id="cate2" class="sidebar-item">
                 <a href="manage-message.html" class='sidebar-link'>
-                    <i class="bi bi-stack"></i>
-
+                    <div class="icon-wrapper">
+                        <img src="./assets/images/icons/cate2.png" alt="">
+                    </div>
                     <span>訊息通知</span>
                 </a>
             </li>
 
             <li id="cate3" class="sidebar-item">
                 <a href="order-pending.html" class='sidebar-link'>
-                    <i class="bi bi-collection-fill"></i>
+                    <div class="icon-wrapper">
+                        <img src="./assets/images/icons/cate3.png" alt="">
+                    </div>
                     <span>訂單資訊</span>
                 </a>
             </li>
 
             <li id="cate4" class="sidebar-item">
                 <a href="hawker.html" class='sidebar-link'>
-                    <i class="bi bi-grid-1x2-fill"></i>
+                    <div class="icon-wrapper">
+                        <img src="./assets/images/icons/cate4.png" alt="">
+                    </div>
                     <span>小販資訊</span>
                 </a>
             </li>
 
             <li id="cate5" class="sidebar-item">
                 <a href="commodity.html" class='sidebar-link'>
-                    <i class="bi bi-hexagon-fill"></i>
+                    <div class="icon-wrapper">
+                        <img src="./assets/images/icons/cate5.png" alt="">
+                    </div>
                     <span>商品資訊</span>
                 </a>
             </li>
 
             <li id="cate6" class="sidebar-item">
                 <a href="company.html" class='sidebar-link'>
-                    <i class="bi bi-file-earmark-medical-fill"></i>
+                    <div class="icon-wrapper">
+                        <img src="./assets/images/icons/cate6.png" alt="">
+                    </div>
                     <span>廠商資訊</span>
                 </a>
             </li>
 
             <li id="cate7" class="sidebar-item">
                 <a href="store.html" class='sidebar-link'>
-                    <i class="bi bi-pen-fill"></i>
+                    <div class="icon-wrapper">
+                        <img src="./assets/images/icons/cate7.png" alt="">
+                    </div>
                     <span>販團資訊</span>
                 </a>
             </li>
@@ -92,23 +125,21 @@
 
             <li id="cate8" class="sidebar-item">
                 <a href="control2.html" class='sidebar-link'>
-                    <i class="bi bi-pen-fill"></i>
+                    <div class="icon-wrapper">
+                        <img src="./assets/images/icons/cate8.png" alt="">
+                    </div>
                     <span>控制台</span>
                 </a>
             </li>
 
-            <li class="sidebar-item logout">
-                <a href="manage-login.html" style="text-align: center; display: block;">
+            <li class="sidebar-item logout" style="margin-top: 60px; ">
+                <a href="manage-login.html" style="text-align: center; display: block;color:#26B7BC;">
                     <span class="m-0">登出</span>
                 </a>
             </li>
 
         </ul>
     </div>
-    <button class="sidebar-toggler btn x"><i data-feather="x"></i></button>
-
-
-    <button class="sidebar-toggler btn x"><i data-feather="x"></i></button>
 
     <div style="
                 position: absolute;
@@ -126,7 +157,8 @@
                 right: 0%;
                 
                 bottom: 0%;">
-        <img src="assets/images/svg/07.png" class="w-75" style="position: absolute; right: 0%; bottom: 0%; z-index: 40;" />
+        <img src="assets/images/svg/07.png" class="w-75"
+             style="position: absolute; right: 0%; bottom: 0%; z-index: 40;" />
     </div>
 </div>
 
