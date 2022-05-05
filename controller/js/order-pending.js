@@ -3,7 +3,7 @@ $(document).ready(function() {
 });
 
 function set_table() {
-    $('#table1 tbody').html('');
+    // $('#table1 tbody').html('');
     let arr = ajax(0, '1.4.1');
 
     for (let i = 0; i < arr.length; i++) {

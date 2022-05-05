@@ -17,8 +17,3 @@ tbody tr td {
     background-color: #48C97B;
     filter: contrast(110%);
 }
-
-.page-link.arrow:hover {
-    border: none !important;
-    background-color: transparent;
-}

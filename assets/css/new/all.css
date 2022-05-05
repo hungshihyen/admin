@@ -17,3 +17,9 @@ body {
 .calendar-text {
     color: #747474;
 }
+
+
+.page-link.arrow:hover {
+    border: none !important;
+    background-color: transparent;
+}
