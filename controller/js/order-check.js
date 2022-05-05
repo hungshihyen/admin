@@ -43,7 +43,7 @@ function set_table() {
         $('#trafyes-btn').addClass("btn-secondary");
         $('#trafyes-btn').removeClass("btn-primary");
         $('#trafyes-btn').prop('disabled', true);
-        $('#trafyes-bar').css('fill', '#26B7BC');
+        $('#trafyes-bar').css('background', '#26B7BC');
         $('#trafyes-dot').addClass("fa-solid");
         $('#trafyes-dot').removeClass("fa-regular");
         $('#trafyes-dot').attr("id", "green");
@@ -56,7 +56,7 @@ function set_table() {
         $('#orderyes-btn').addClass("btn-secondary");
         $('#orderyes-btn').removeClass("btn-primary");
         $('#orderyes-btn').prop('disabled', true);
-        $('#orderyes-bar').css('fill', '#26B7BC');
+        $('#orderyes-bar').css('background', '#26B7BC');
         $('#orderyes-dot').addClass("fa-solid");
         $('#orderyes-dot').removeClass("fa-regular");
         $('#orderyes-dot').attr("id", "green");
