@@ -25,16 +25,6 @@
     <link rel="stylesheet" href="assets/css/new/all.css">
 
     <style>
-        tbody tr {
-            border: none !important;
-        }
-
-        tbody tr td {
-            text-align: center;
-            padding-top: 16px !important;
-            padding-bottom: 16px !important;
-        }
-
         .nav-btn {
             letter-spacing: 0.09em;
         }
@@ -61,6 +51,16 @@
             border-color: #26B7BC;
         }
 
+        tbody tr {
+            border: none !important;
+        }
+
+        tbody tr td {
+            text-align: center;
+            padding-top: 16px !important;
+            padding-bottom: 16px !important;
+        }
+
     </style>
     <script>
         sessionStorage.setItem('sidebar', 3)
@@ -82,9 +82,9 @@
 
         <div class="page-heading align-items-center">
             <div class="">
-                <a href="order-pending.html" class="btn nav-btn active">待處理訂單</a>
+                <a href="order-pending.html" class="btn nav-btn">待處理訂單</a>
                 <a href="#" class="btn nav-btn">已完成訂單</a>
-                <a href="order-cancel.html" class="btn nav-btn">取消訂單</a>
+                <a href="order-cancel.html" class="btn nav-btn active">取消訂單</a>
             </div>
         </div>
 
@@ -234,8 +234,7 @@
         <td id="lid">FA0100050002</td>
         <td id="date">2021/09/01</td>
         <td id="uname">蔡小販</td>
-        <td id="status">帳務 <i class="fa-solid fa-circle-check" id="g"></i><br> 訂單 <i class="fa-solid fa-circle-xmark"
-                                                                                     id="pink"></i></td>
+        <td id="status">取消</td>
         <td id="gname">澎湖海鮮冷凍食品(商品任選滿5千元)</td>
         <td id="allp">8,020</td>
         <td id="quick">
