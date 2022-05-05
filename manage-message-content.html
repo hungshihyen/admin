@@ -18,109 +18,119 @@
     <link rel="shortcut icon" href="assets/images/favicon.svg" type="image/x-icon">
 
     <link rel="stylesheet" href="assets/css/customization.css">
+    <link rel="stylesheet" href="assets/css/new/body.css">
+    <link rel="stylesheet" href="assets/css/new/manage-message-content.css">
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script>
-        sessionStorage.setItem('sidebar', 2);
+        sessionStorage.setItem('sidebar', 2)
     </script>
     <script src="https://kit.fontawesome.com/f8db84f08a.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
-    <div id="app">
-        <div id="sidebar" class="active"> </div>
-        <div id="main">
-            <header class="mb-3">
-                <a href="#" class="burger-btn d-block d-xl-none">
-                    <i class="bi bi-justify fs-3"></i>
-                </a>
-            </header>
+<div id="app">
+    <div id="sidebar" class="active"></div>
+    <div id="main">
+        <header class="mb-3">
+            <a href="#" class="burger-btn d-block d-xl-none">
+                <i class="bi bi-justify fs-3"></i>
+            </a>
+        </header>
 
-            <div class="page-heading align-items-center">
+        <div class="page-heading align-items-center">
+            <div class="row">
                 <div class="row">
-                    <div class="row">
-                        <div class="col">
-
-                        </div>
-
-                        <div class="col">
-                            <input type="text" id="first-name" class="form-control" name="fname" placeholder="關鍵字搜尋...">
-                        </div>
+                    <div class="col"></div>
+                    <div class="col-2">
+                        <input type="text" id="first-name" class="form-control" name="fname" placeholder="關鍵字搜尋...">
                     </div>
-
-
                 </div>
-            </div>
-            <div class="page-content">
-                <section class="container">
 
-                    <div class="container">
-                        <div class="card">
-                            <div class="card-content">
-                                <div class="card-body">
-                                    <form class="form form-horizontal align-items-center" style="text-align: right;">
-                                        <div class="form-body">
-                                            <div id="ta" class="row">
-                                                <div class="col-md-2 pt-2">
-                                                    <p style="color: #26B7BC;">訊息時間</p>
-                                                </div>
-                                                <div id="time" class="col-md-10 form-group text-left mt-2">
-                                                    <p style="color: #AEAEAE;">2021/09/01 10：23</p>
-                                                </div>
 
-                                                <!-- 編輯資料 -->
-                                                <div class="col-md-2 pt-2">
-                                                    <p style="color: #26B7BC;">小販名稱</p>
-                                                </div>
-                                                <div id="name" class="col-md-10 form-group text-left mt-2">
-                                                    <p style="color: #AEAEAE;">蔡小販</p>
-                                                </div>
-
-                                                <div class="col-md-2 pt-2">
-                                                    <p style="color: #26B7BC;">訊息內容</p>
-                                                </div>
-                                                <div id="mtxt" class="col-md-6 form-group text-left mt-2">
-                                                    <p style="color: #AEAEAE;">內容文字內容文字內容文字內容文字內容文字內容文字內容文字內容文字.文字內容文字內容文字內容文字內容文字內容文字內容文字內容文字文字內容文字內容文字內容文字內容文字內容文字內容文字內容文字文字內容文字內容文字內容文字內容文字內容文字內容文字內容文字內容文字內容文字內容文字內容文字內容文字內容文字內容文字內容文字.文字內容文字內容文字內容文字內容文字內容文字內容文字內容文字文字內容文字內容文字內容文字內容文字內容文字內容文字內容文字文字內容文字內容文字內容文字內容文字內容文字內容文字內容文字內容文字內容文字內容文字內容文字內容文字內容文字內容文字內容文字.文字內容文字內容文字內容文字內容文字內容文字內容文字內容文字文字內容文字內容文字內容文字內容文字內容文字內容文字內容文字文字內容文字內容文字內容文字內容文字內容文字內容文字內容文字內容文字內容文字內容文字內容文字內容文字內容文字內容文字內容文字.文字內容文字內容文字內容文字內容文字內容文字內容文字內容文字文字內容文字內容文字內容文字內容文字內容文字內容文字內容文字文字內容文字內容文字內容文字內容文字內容文字內容文字內容文字內容文字內容文字內容文字內容文字內容文字內容文字內容文字內容文字.文字內容文字內容文字內容文字內容文字內容文字內容文字內容文字文字內容文字內容文字內容文字內容文字內容文字內容文字內容文字文字內容文字內容文字內容文字內容文字內容文字內容文字內容文字</p>
-                                                </div>
-                                                <div id="img" class="col-md-4 form-group text-left mt-2">
-                                                    <img src="assets/images/samples/banana.jpg" alt="Face 1" class="w-75">
-                                                </div>
-
-                                            </div>
-                                        </div>
-                                    </form>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="justify-content-center align-items-center">
-                            <div style="text-align:center">
-                                <a class="btn btn-primary btn-block w-25" href="#">確定修改</a>
-                            </div>
-                        </div>
-
-                    </div>
-
-                </section>
             </div>
         </div>
+        <div class="page-content">
+            <section>
+                <div>
+                    <div class="card">
+                        <div class="card-content">
+                            <div class="card-body">
+                                <form class="form form-horizontal align-items-center">
+                                    <div class="form-body">
+                                        <div id="ta" class=container">
+                                            <div class="row">
+                                                <div class="col-1 pt-2">
+                                                    <p style="color: #26B7BC;">訊息時間</p>
+                                                </div>
+                                                <div id="time" class="col-2 form-group text-left mt-2">
+                                                    <p style="color: #747474;">2021/09/01 10：23</p>
+                                                </div>
+                                            </div>
+
+                                            <div class="row">
+                                                <div class="col-1 pt-2">
+                                                    <p style="color: #26B7BC;">小販名稱</p>
+                                                </div>
+                                                <div id="name" class="col-2 form-group text-left mt-2">
+                                                    <p style="color: #747474;">蔡小販</p>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-1 pt-2">
+                                                    <p style="color: #26B7BC;">訊息內容</p>
+                                                </div>
+                                                <div id="mtxt" class="col-8 form-group text-left mt-2">
+                                                    <p style="color: #747474;">
+                                                        內容文字內容文字內容文字內容文字內容文字內容文字內容文字內容文字.文字內容文字內容文字內容文字內容文字內容文字內容文字內容文字文字內容文字內容文字內容文字內容文字內容文字內容文字內容文字文字內容文字內容文字內容文字內容文字內容文字內容文字內容文字內容文字內容文字內容文字內容文字內容文字內容文字內容文字內容文字.文字內容文字內容文字內容文字內容文字內容文字內容文字內容文字文字內容文字內容文字內容文字內容文字內容文字內容文字內容文字文字內容文字內容文字內容文字內容文字內容文字內容文字內容文字內容文字內容文字內容文字內容文字內容文字內容文字內容文字內容文字.文字內容文字內容文字內容文字內容文字內容文字內容文字內容文字文字內容文字內容文字內容文字內容文字內容文字內容文字內容文字文字內容文字內容文字內容文字內容文字內容文字內容文字內容文字內容文字內容文字內容文字內容文字內容文字內容文字內容文字內容文字.文字內容文字內容文字內容文字內容文字內容文字內容文字內容文字文字內容文字內容文字內容文字內容文字內容文字內容文字內容文字文字內容文字內容文字內容文字內容文字內容文字內容文字內容文字內容文字內容文字內容文字內容文字內容文字內容文字內容文字內容文字.文字內容文字內容文字內容文字內容文字內容文字內容文字內容文字文字內容文字內容文字內容文字內容文字內容文字內容文字內容文字文字內容文字內容文字內容文字內容文字內容文字內容文字內容文字</p>
+                                                </div>
+                                                <div id="img" class="col form-group text-left mt-2">
+                                                    <img src="assets/images/samples/banana.jpg" alt="Face 1"
+                                                         class="w-75">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="justify-content-center align-items-center">
+                        <div style="text-align:center">
+                            <a class="btn btn-primary btn-block position-relative" href="manage-message.html">
+                                <div>
+                                    <svg width="16" height="15" viewBox="0 0 16 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M15 7.00003H3.14L6.77 2.64003C6.93974 2.43581 7.0214 2.17253 6.99702 1.90811C6.97264 1.64368 6.84422 1.39977 6.64 1.23003C6.43578 1.06029 6.1725 0.978631 5.90808 1.00301C5.64365 1.02739 5.39974 1.15581 5.23 1.36003L0.23 7.36003C0.196361 7.40776 0.166279 7.45789 0.14 7.51003C0.14 7.56003 0.14 7.59003 0.0700002 7.64003C0.0246737 7.75469 0.000941121 7.87674 0 8.00003C0.000941121 8.12332 0.0246737 8.24537 0.0700002 8.36003C0.0700002 8.41003 0.0699999 8.44003 0.14 8.49003C0.166279 8.54217 0.196361 8.59231 0.23 8.64003L5.23 14.64C5.32402 14.7529 5.44176 14.8437 5.57485 14.9059C5.70793 14.9681 5.85309 15.0003 6 15C6.23365 15.0005 6.46009 14.9191 6.64 14.77C6.74126 14.6861 6.82496 14.583 6.88631 14.4666C6.94766 14.3503 6.98546 14.223 6.99754 14.092C7.00961 13.961 6.99573 13.829 6.95669 13.7034C6.91764 13.5777 6.8542 13.4611 6.77 13.36L3.14 9.00003H15C15.2652 9.00003 15.5196 8.89467 15.7071 8.70714C15.8946 8.5196 16 8.26525 16 8.00003C16 7.73482 15.8946 7.48046 15.7071 7.29292C15.5196 7.10539 15.2652 7.00003 15 7.00003Z" fill="white"/>
+                                    </svg>
+                                </div>
+                                回列表
+                            </a>
+                        </div>
+                    </div>
+
+                </div>
+
+            </section>
+        </div>
     </div>
-    <script src="assets/vendors/perfect-scrollbar/perfect-scrollbar.min.js"></script>
-    <script src="assets/js/bootstrap.bundle.min.js"></script>
+</div>
+<script src="assets/vendors/perfect-scrollbar/perfect-scrollbar.min.js"></script>
+<script src="assets/js/bootstrap.bundle.min.js"></script>
 
-    <script src="assets/vendors/apexcharts/apexcharts.js"></script>
-    <script src="assets/js/pages/dashboard.js"></script>
+<script src="assets/vendors/apexcharts/apexcharts.js"></script>
+<script src="assets/js/pages/dashboard.js"></script>
 
 
-    <script src="assets/js/mazer.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <script>
-        $(function() {
-            $("#sidebar").load("sidebar.html");
-        });
-    </script>
-    <script src="controller/js/ajax.js"></script>
-    <script src="controller/js/manage-message-content.js"></script>
+<script src="assets/js/mazer.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script>
+    $(function () {
+        $("#sidebar").load("sidebar.html")
+    })
+</script>
+<script src="controller/js/ajax.js"></script>
+<script src="controller/js/manage-message-content.js"></script>
 </body>
 
 

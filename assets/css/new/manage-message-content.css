@@ -1,0 +1,18 @@
+form {
+    padding: 125px 48px;
+}
+
+.btn-block {
+    max-width: 173px;
+    border-radius: 8px;
+}
+
+.btn-block:hover {
+    background-color: #26B7BC;
+}
+
+.btn-block div {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}

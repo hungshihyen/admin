@@ -1,0 +1,24 @@
+
+tbody tr {
+    border: none !important;
+}
+
+tbody tr td {
+    text-align: center;
+    padding-top: 16px !important;
+    padding-bottom: 16px !important;
+}
+
+.operate-btn {
+    background-color: #48C97B;
+}
+
+.operate-btn:hover {
+    background-color: #48C97B;
+    filter: contrast(110%);
+}
+
+.page-link.arrow:hover {
+    border: none !important;
+    background-color: transparent;
+}
