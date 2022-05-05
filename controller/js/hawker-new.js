@@ -1,5 +1,5 @@
 function dataSend() {
-    let uid = parseInt(Date.now()) + '' + Math.floor(Math.random() * 100);
+    let uid = parseInt(Date.now()) + '' + Math.floor(Math.random() * 100)
 
     let obj = {
         ':uid': uid,
@@ -15,10 +15,10 @@ function dataSend() {
         ':m_pwd': $("#m-pwd").val(),
     }
 
-    ajax(obj, '2.5.4');
-    window.location.href = 'hawker.html';
+    ajax(obj, '2.5.4')
+    window.location.href = 'hawker.html'
 }
 
 function dataReset() {
-    $("#form").find("#reset-btn").click();
+    $("#form").find("#reset-btn").click()
 }

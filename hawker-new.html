@@ -13,7 +13,8 @@
     <link rel="stylesheet" href="assets/vendors/iconly/bold.css">
     <link rel="stylesheet" href="assets/vendors/toastify/toastify.css">
     <link href="https://unpkg.com/filepond/dist/filepond.css" rel="stylesheet">
-    <link href="https://unpkg.com/filepond-plugin-image-preview/dist/filepond-plugin-image-preview.css" rel="stylesheet">
+    <link href="https://unpkg.com/filepond-plugin-image-preview/dist/filepond-plugin-image-preview.css"
+          rel="stylesheet">
 
     <link rel="stylesheet" href="assets/vendors/perfect-scrollbar/perfect-scrollbar.css">
     <link rel="stylesheet" href="assets/vendors/bootstrap-icons/bootstrap-icons.css">
@@ -21,61 +22,107 @@
     <link rel="shortcut icon" href="assets/images/favicon.svg" type="image/x-icon">
 
     <link rel="stylesheet" href="assets/css/customization.css">
+    <link rel="stylesheet" href="assets/css/new/all.css">
+
+    <style>
+        table input, table select, table textarea {
+            border: 1px solid #26B7BC !important;
+            border-radius: 4px;
+        }
+
+
+        #exampleModalCenter2 .modal-content,
+        #exampleModalCenter3 .modal-content {
+            border: 1px solid #26B7BC;
+            border-radius: 20px;
+            min-height: 200px;
+            max-width: 488px;
+        }
+
+        #exampleModalCenter2 .modal-content .modal-body,
+        #exampleModalCenter3 .modal-content .modal-body {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        #exampleModalCenter2 .modal-content .modal-body .btn,
+        #exampleModalCenter4 .modal-content .modal-body .btn {
+            max-width: 140px;
+        }
+
+
+    </style>
 
     <script>
-        sessionStorage.setItem('sidebar', 4);
+        sessionStorage.setItem('sidebar', 4)
     </script>
     <script src="https://kit.fontawesome.com/f8db84f08a.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
-    <div id="app">
+<div id="app">
 
-        <div id="sidebar" class="active"> </div>
+    <div id="sidebar" class="active"></div>
 
-        <div id="main">
-            <header class="mb-3">
-                <a href="#" class="burger-btn d-block d-xl-none">
-                    <i class="bi bi-justify fs-3"></i>
-                </a>
-            </header>
+    <div id="main">
+        <header class="mb-3">
+            <a href="#" class="burger-btn d-block d-xl-none">
+                <i class="bi bi-justify fs-3"></i>
+            </a>
+        </header>
 
-            <div class="page-content">
-                <div class="page-heading align-items-center">
-                    <div class="row container">
-                        <div class="col">
-                            <a class="btn btn-primary" href="hawker.html"><i class="fa-solid fa-arrow-left"></i> 回列表</a>
-                        </div>
-
+        <div class="page-content">
+            <div class="page-heading align-items-center">
+                <div class="row container">
+                    <div class="col">
+                        <a class="btn btn-primary" href="hawker.html" style="width: 176px;">
+                            <i class="fa-solid fa-arrow-left"></i> 回列表</a>
                     </div>
-                    <br/>
-                    <div class="row ">
-                        <div class="col">
-                            <h5 class="m-0 " style="color: #26B7BC;text-align: center;">新增小販</h5>
-                        </div>
+
+                </div>
+                <br />
+                <div class="row ">
+                    <div class="col">
+                        <h5 style="color: #26B7BC;text-align: center; margin-bottom: 28px;">新增小販</h5>
                     </div>
-                    <div class="row ">
-                        <section class="container">
-                            <div class="container">
-                                <div class="card">
-                                    <div class="card-content">
-                                        <form class="card-body" id="form">
-                                            <table id="utable" class="table table-lg align-items-center text-center">
+                </div>
+                <div class="row ">
+                    <section class="container mw-100">
+                        <div class="container  mw-100">
+                            <div class="card">
+                                <div class="card-content">
+                                    <form class="card-body" id="form">
+                                        <div style="padding: 80px 285px;">
+                                            <table id="utable"
+                                                   class="table table-borderless table-lg align-items-center text-center">
                                                 <tr>
                                                     <td>姓名</td>
-                                                    <td id="name" style="color: #26B7BC;"><input type="text" class="form-control" id="m-name" value=""></td>
+                                                    <td id="name" style="color: #26B7BC;"><input type="text"
+                                                                                                 class="form-control"
+                                                                                                 id="m-name" value="">
+                                                    </td>
                                                 </tr>
                                                 <tr>
                                                     <td>連絡電話</td>
-                                                    <td id="phone" style="color: #26B7BC;"><input type="text" class="form-control" id="m-phone" value=""></td>
+                                                    <td id="phone" style="color: #26B7BC;"><input type="text"
+                                                                                                  class="form-control"
+                                                                                                  id="m-phone" value="">
+                                                    </td>
                                                 </tr>
                                                 <tr>
                                                     <td>通訊地址</td>
-                                                    <td id="add" style="color: #26B7BC;"><input type="text" class="form-control" id="m-addr" value=""></td>
+                                                    <td id="add" style="color: #26B7BC;"><input type="text"
+                                                                                                class="form-control"
+                                                                                                id="m-addr" value="">
+                                                    </td>
                                                 </tr>
                                                 <tr>
                                                     <td>加入日期</td>
-                                                    <td id="date" style="color: #26B7BC;"><input type="date" class="form-control" id="m-date" value=""></td>
+                                                    <td id="date" style="color: #26B7BC;"><input type="date"
+                                                                                                 class="form-control"
+                                                                                                 id="m-date" value="">
+                                                    </td>
                                                 </tr>
                                                 <tr>
                                                     <td>銀行代碼</td>
@@ -91,11 +138,16 @@
                                                 </tr>
                                                 <tr>
                                                     <td>銀行帳戶</td>
-                                                    <td id="bankacc" style="color: #26B7BC;"><input type="text" class="form-control" id="m-bacc" value=""></td>
+                                                    <td id="bankacc" style="color: #26B7BC;"><input type="text"
+                                                                                                    class="form-control"
+                                                                                                    id="m-bacc"
+                                                                                                    value=""></td>
                                                 </tr>
                                                 <tr>
                                                     <td>分類</td>
-                                                    <td id="class" style="color: #26B7BC;"><select class="form-control" id="m-class" value="">
+                                                    <td id="class" style="color: #26B7BC;"><select class="form-control"
+                                                                                                   id="m-class"
+                                                                                                   value="">
                                                         <option value="1">未分類</option>
                                                         <option value="2">VIP</option>
                                                         <option value="3">NORMAL</option>
@@ -103,56 +155,117 @@
                                                 </tr>
                                                 <tr>
                                                     <td>備註</td>
-                                                    <td id="note" style="color: #26B7BC;"><textarea rows="5" class="form-control" id="m-note" value=""></textarea></td>
+                                                    <td id="note" style="color: #26B7BC;"><textarea rows="5"
+                                                                                                    class="form-control"
+                                                                                                    id="m-note"
+                                                                                                    value=""></textarea>
+                                                    </td>
                                                 </tr>
                                                 <tr>
                                                     <td>帳號</td>
-                                                    <td id="acc" style="color: #26B7BC;"><input type="text" class="form-control" id="m-acc" value=""></td>
+                                                    <td id="acc" style="color: #26B7BC;"><input type="text"
+                                                                                                class="form-control"
+                                                                                                id="m-acc" value="">
+                                                    </td>
                                                 </tr>
                                                 <tr>
                                                     <td>密碼</td>
-                                                    <td id="pwd" style="color: #26B7BC;"><input type="password" class="form-control" id="m-pwd" value=""></td>
+                                                    <td id="pwd" style="color: #26B7BC;"><input type="password"
+                                                                                                class="form-control"
+                                                                                                id="m-pwd" value="">
+                                                    </td>
                                                 </tr>
 
                                             </table>
-                                            <input id="reset-btn" type="reset" value="Reset" class="d-none">
-                                        </form>
-                                    </div>
-                                </div>
-                            </div>
-
-                        </section>
-                        <div class="row container">
-                            <div class="col">
-                                <div class="d-block" style="text-align: center;">
-                                    <button class="btn btn-danger" onclick="dataReset()">清除資訊</button>
-                                    <button class="btn btn-primary" onclick="dataSend()">確認新增</button>
+                                        </div>
+                                        <input id="reset-btn" type="reset" value="Reset" class="d-none">
+                                    </form>
                                 </div>
                             </div>
                         </div>
+
+                    </section>
+                    <div class="row container">
+                        <div class="col">
+                            <div class="d-block" style="text-align: center;">
+                                <button class="btn btn-danger" style="width: 170px; margin-right: 20px;"
+                                        onclick="dataReset()">清除資訊
+                                </button>
+                                <button class="btn btn-primary" style="width: 170px;" data-bs-toggle="modal"
+                                        data-bs-target="#exampleModalCenter2">確認新增
+                                </button>
+
+                                <div class="modal fade" id="exampleModalCenter2" tabindex="-1" role="dialog"
+                                     aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                                    <div class="modal-dialog modal-dialog-centered modal-dialog-centered modal-dialog-scrollable"
+                                         role="document">
+                                        <div class="modal-content text-center p-4">
+                                            <div class="modal-body">
+                                                <p style="color: #000;">是否新增此小販</p>
+                                                <div class="row px-4 mt-4">
+                                                    <div class="col">
+                                                        <a class="btn btn-secondary w-100 border-0" href="#"
+                                                           data-bs-dismiss="modal"
+                                                           style="background-color: #D2D2D2;">取消</a>
+                                                    </div>
+                                                    <div class="col">
+                                                        <!-- button trigger for  Vertically Centered modal -->
+                                                        <button type="button" onclick="dataSend()"
+                                                                class="btn btn-primary w-100"
+                                                                data-bs-toggle="modal"
+                                                                data-bs-target="#exampleModalCenter3">
+                                                            確認
+                                                        </button>
+
+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="modal fade" id="exampleModalCenter3 " tabindex="-1" role="dialog"
+                                     aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                                    <div class="modal-dialog modal-dialog-centered modal-dialog-centered modal-dialog-scrollable"
+                                         role="document">
+                                        <div class="modal-content text-center p-4">
+                                            <div class="modal-body">
+                                                <div>
+                                                    <img src="./assets/images/icons/done.png" alt="">
+                                                </div>
+                                                <p><span class="m-name"></span>已完成新增</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
                     </div>
-
-                    <!--code寫這裡-->
-
-
                 </div>
 
-                <script src="assets/vendors/perfect-scrollbar/perfect-scrollbar.min.js"></script>
-                <script src="assets/js/bootstrap.bundle.min.js"></script>
+                <!--code寫這裡-->
 
-                <script src="assets/vendors/apexcharts/apexcharts.js"></script>
-                <script src="assets/js/pages/dashboard.js"></script>
 
-                <script src="assets/js/mazer.js"></script>
-                <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+            </div>
 
-                <script>
-                    $(function() {
-                        $("#sidebar").load("sidebar.html");
-                    });
-                </script>
-                <script src="controller/js/ajax.js"></script>
-                <script src="controller/js/hawker-new.js"></script>
+            <script src="assets/vendors/perfect-scrollbar/perfect-scrollbar.min.js"></script>
+            <script src="assets/js/bootstrap.bundle.min.js"></script>
+
+            <script src="assets/vendors/apexcharts/apexcharts.js"></script>
+            <script src="assets/js/pages/dashboard.js"></script>
+
+            <script src="assets/js/mazer.js"></script>
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+            <script>
+                $(function () {
+                    $("#sidebar").load("sidebar.html")
+                })
+            </script>
+            <script src="controller/js/ajax.js"></script>
+            <script src="controller/js/hawker-new.js"></script>
 </body>
 
 </html>
