@@ -13,7 +13,8 @@
     <link rel="stylesheet" href="assets/vendors/iconly/bold.css">
     <link rel="stylesheet" href="assets/vendors/toastify/toastify.css">
     <link href="https://unpkg.com/filepond/dist/filepond.css" rel="stylesheet">
-    <link href="https://unpkg.com/filepond-plugin-image-preview/dist/filepond-plugin-image-preview.css" rel="stylesheet">
+    <link href="https://unpkg.com/filepond-plugin-image-preview/dist/filepond-plugin-image-preview.css"
+          rel="stylesheet">
 
     <link rel="stylesheet" href="assets/vendors/perfect-scrollbar/perfect-scrollbar.css">
     <link rel="stylesheet" href="assets/vendors/bootstrap-icons/bootstrap-icons.css">
@@ -21,75 +22,139 @@
     <link rel="shortcut icon" href="assets/images/favicon.svg" type="image/x-icon">
 
     <link rel="stylesheet" href="assets/css/customization.css">
+    <link rel="stylesheet" href="assets/css/new/all.css">
+
+    <style>
+
+        .modal-content {
+            border: 1px solid #26B7BC;
+            border-radius: 20px;
+            min-height: 200px;
+            max-width: 488px;
+        }
+
+        .table td {
+            color: #000000;
+            border-bottom: none !important;
+        }
+
+        td input, select {
+            border: 1px solid #26B7BC !important;
+            border-radius: 4px !important;
+            color: #747474;
+        }
+
+        select {
+            padding: .375rem .75rem;
+            width: 50%;
+        }
+
+    </style>
 
     <script>
-        sessionStorage.setItem('sidebar', 6);
+        sessionStorage.setItem('sidebar', 6)
     </script>
     <script src="https://kit.fontawesome.com/f8db84f08a.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
-    <div id="app">
+<div id="app">
 
-        <div id="sidebar" class="active"> </div>
+    <div id="sidebar" class="active"></div>
 
-        <div id="main">
-            <header class="mb-3">
-                <a href="#" class="burger-btn d-block d-xl-none">
-                    <i class="bi bi-justify fs-3"></i>
-                </a>
-            </header>
+    <div id="main">
+        <header class="mb-3">
+            <a href="#" class="burger-btn d-block d-xl-none">
+                <i class="bi bi-justify fs-3"></i>
+            </a>
+        </header>
 
-            <div class="page-content">
-                <div class="page-heading align-items-center">
-                    <div class="row container">
-                        <div class="col">
-                            <a class="btn btn-primary" href="company.html"><i class="fa-solid fa-arrow-left"></i> 回列表</a>
-                        </div>
-
+        <div class="page-content">
+            <div class="page-heading align-items-center">
+                <div class="row container mw-100">
+                    <div class="col">
+                        <a class="btn btn-primary" href="company.html" style="width: 176px;">
+                            <i class="fa-solid fa-arrow-left"></i>
+                            回列表
+                        </a>
                     </div>
-                    <br/>
-                    <div class="row ">
-                        <div class="col">
-                            <h5 class="m-0 " style="color: #26B7BC;text-align: center;">新增廠商</h5>
-                        </div>
+                </div>
+
+                <div class="row my-4">
+                    <div class="col">
+                        <h5 class="m-0 " style="color: #26B7BC;text-align: center;">新增廠商</h5>
                     </div>
-                    <div class="row ">
-                        <section class="container">
-                            <div class="container">
-                                <div class="card">
-                                    <div class="card-content">
-                                        <div class="card-body">
+                </div>
+                <div class="row ">
+                    <section class="container mw-100">
+                        <div class="container mw-100">
+                            <div class="card">
+                                <div class="card-content">
+                                    <div class="card-body">
+                                        <div style="padding: 118px 28%;">
                                             <form class="card-body" id="form">
-                                                <table id="ctable" class="table table-lg align-items-center text-center">
+                                                <table id="ctable"
+                                                       class="table table-lg align-items-center text-center">
                                                     <tr>
                                                         <td>廠商名稱</td>
-                                                        <td id="cname" style="color: #26B7BC;"><input type="text" class="form-control" id="basicInput" value=""></td>
+                                                        <td id="cname" style="color: #26B7BC;">
+                                                            <input type="text"
+                                                                   class="form-control"
+                                                                   id="basicInput"
+                                                                   value="">
+                                                        </td>
                                                     </tr>
                                                     <tr>
-                                                        <td>窗口</td>
-                                                        <td id="win" style="color: #26B7BC;"><input type="text" class="form-control" id="basicInput" value=""></td>
+                                                        <td>窗　　口</td>
+                                                        <td id="win" style="color: #26B7BC;">
+                                                            <input type="text"
+                                                                   class="form-control"
+                                                                   id="basicInput"
+                                                                   value="">
+                                                        </td>
                                                     </tr>
 
                                                     <tr>
                                                         <td>連絡電話</td>
-                                                        <td id="phone" style="color: #26B7BC;"><input type="text" class="form-control" id="basicInput" value=""></td>
+                                                        <td id="phone" style="color: #26B7BC;">
+                                                            <input type="text" class="form-control"
+                                                                   id="basicInput"
+                                                                   value="">
+                                                        </td>
                                                     </tr>
                                                     <tr>
-                                                        <td>地址</td>
-                                                        <td id="add" style="color: #26B7BC;"><input type="text" class="form-control" id="basicInput" value=""></td>
+                                                        <td>地　　址</td>
+                                                        <td id="add" style="color: #26B7BC;">
+                                                            <input type="text"
+                                                                   class="form-control"
+                                                                   id="basicInput"
+                                                                   value="">
+                                                        </td>
                                                     </tr>
                                                     <tr>
                                                         <td>銀行代碼</td>
-                                                        <td id="bank" style="color: #26B7BC;"><input type="text" class="form-control" id="basicInput" value=""></td>
+                                                        <td id="bank" style="color: #26B7BC; text-align: left">
+                                                            <select>
+                                                                <option value="">請選擇</option>
+                                                            </select>
+                                                        </td>
                                                     </tr>
                                                     <tr>
                                                         <td>銀行帳戶</td>
-                                                        <td id="acc" style="color: #26B7BC;"><input type="text" class="form-control" id="basicInput" value=""></td>
+                                                        <td id="acc" style="color: #26B7BC;">
+                                                            <input type="text"
+                                                                   class="form-control"
+                                                                   id="basicInput"
+                                                                   value="">
+                                                        </td>
                                                     </tr>
                                                     <tr>
-                                                        <th>結帳方式</th>
-                                                        <td id="pay" style="color: #26B7BC;"><input type="text" class="form-control" id="basicInput" value=""></td>
+                                                        <td>結帳方式</td>
+                                                        <td id="pay" style="color: #26B7BC; text-align: left">
+                                                            <select>
+                                                                <option value="">請選擇</option>
+                                                            </select>
+                                                        </td>
                                                     </tr>
                                                 </table>
                                                 <input id="reset-btn" type="reset" value="Reset" class="d-none">
@@ -98,73 +163,83 @@
                                     </div>
                                 </div>
                             </div>
+                        </div>
 
-                        </section>
-                        <div class="row container">
-                            <div class="col">
-                                <div class="d-block" style="text-align: center;">
-                                    <a class="btn btn-danger" onclick="dataReset()">清除資訊</a>
-                                    <a class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#ModalCenterInsert">確認新增</a>
-                                </div>
+                    </section>
+                    <div class="row container">
+                        <div class="col">
+                            <div class="d-block" style="text-align: center;">
+                                <a class="btn btn-danger" onclick="dataReset()" style="width: 126px; margin-right: 20px;">清除資訊</a>
+                                <a class="btn btn-primary" style="width: 126px;" data-bs-toggle="modal"
+                                   data-bs-target="#ModalCenterInsert">確認新增</a>
                             </div>
                         </div>
                     </div>
+                </div>
 
 
-                    <!-- Vertically Centered modal Modal -->
-                    <div class="modal fade" id="ModalCenterInsert" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-                        <div class="modal-dialog modal-dialog-centered modal-dialog-centered modal-dialog-scrollable" role="document">
-                            <div class="modal-content text-center p-4">
-                                <div class="modal-body" style="margin: 30px;">
+                <!-- Vertically Centered modal Modal -->
+                <div class="modal fade" id="ModalCenterInsert" tabindex="-1" role="dialog"
+                     aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered modal-dialog-centered modal-dialog-scrollable"
+                         role="document">
+                        <div class="modal-content text-center p-4">
+                            <div class="modal-body" style="margin: 30px;">
 
-                                    <p>是否新增此廠商?</p>
+                                <p>是否新增此廠商?</p>
 
-                                    <div class="row px-4 mt-4">
-                                        <div class="col">
-                                            <a class="btn btn-secondary w-100" href="#" data-bs-dismiss="modal">取消</a>
-                                        </div>
-                                        <div class="col">
-                                            <!-- button trigger for  Vertically Centered modal -->
-                                            <button type="button" onclick="insert_company()" class="btn btn-primary w-100" data-bs-toggle="modal" data-bs-target="#ModalCentercheck"> 確認 </button>
-                                        </div>
+                                <div class="row px-4 mt-4">
+                                    <div class="col">
+                                        <a class="btn btn-secondary w-100 border-0" href="#" data-bs-dismiss="modal" style="background-color: #D2D2D2;">取消</a>
+                                    </div>
+                                    <div class="col">
+                                        <!-- button trigger for  Vertically Centered modal -->
+                                        <button type="button" onclick="insert_company()" class="btn btn-primary w-100"
+                                                data-bs-toggle="modal" data-bs-target="#ModalCentercheck"> 確認
+                                        </button>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
+                </div>
 
-                    <!-- Vertically Centered modal Modal -->
-                    <div class="modal fade" id="ModalCentercheck" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-                        <div class="modal-dialog modal-dialog-centered modal-dialog-centered modal-dialog-scrollable" role="document">
-                            <div class="modal-content text-center p-4">
-                                <div class="modal-body">
-                                    <i class="fa-solid fa-circle-check fa-xl" id="green"></i>
-                                    <p class="checkmodaltxt" style="margin: 15px"> 已新增廠商 </p>
+                <!-- Vertically Centered modal Modal -->
+                <div class="modal fade" id="ModalCentercheck" tabindex="-1" role="dialog"
+                     aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered modal-dialog-centered modal-dialog-scrollable"
+                         role="document">
+                        <div class="modal-content text-center p-4">
+                            <div class="modal-body">
+                                <div>
+                                    <img src="./assets/images/icons/done.png" alt="">
                                 </div>
+                                <p class="checkmodaltxt" style="margin: 15px"> 已新增廠商 </p>
                             </div>
                         </div>
                     </div>
-                    <!--code寫這裡-->
-
-
                 </div>
+                <!--code寫這裡-->
 
-                <script src="assets/vendors/perfect-scrollbar/perfect-scrollbar.min.js"></script>
-                <script src="assets/js/bootstrap.bundle.min.js"></script>
 
-                <script src="assets/vendors/apexcharts/apexcharts.js"></script>
-                <script src="assets/js/pages/dashboard.js"></script>
+            </div>
 
-                <script src="assets/js/mazer.js"></script>
-                <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+            <script src="assets/vendors/perfect-scrollbar/perfect-scrollbar.min.js"></script>
+            <script src="assets/js/bootstrap.bundle.min.js"></script>
 
-                <script>
-                    $(function() {
-                        $("#sidebar").load("sidebar.html");
-                    });
-                </script>
-                <script src="controller/js/ajax.js"></script>
-                <script src="controller/js/company-new.js"></script>
+            <script src="assets/vendors/apexcharts/apexcharts.js"></script>
+            <script src="assets/js/pages/dashboard.js"></script>
+
+            <script src="assets/js/mazer.js"></script>
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+            <script>
+                $(function () {
+                    $("#sidebar").load("sidebar.html")
+                })
+            </script>
+            <script src="controller/js/ajax.js"></script>
+            <script src="controller/js/company-new.js"></script>
 </body>
 
 </html>

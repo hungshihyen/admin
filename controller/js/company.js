@@ -42,7 +42,11 @@ function boxOnclick() {
 }
 
 function selectNonPartner() {
+    document.querySelector('.all-company').classList.remove('active')
+    document.querySelector('.non-partner-company').classList.add('active')
+
     var arr = ajax(0, '1.7.1')
+
     $('tbody').html('')
     for (let i = 0; i < arr.length; i++) {
         temp = $($('template').html()).clone()
@@ -60,7 +64,4 @@ function selectNonPartner() {
         temp.find('#more').html(`<a class="btn btn-success rounded-pill mb-1" href="company-edit.html?id=${arr[i]['m_id']}">查看</a>`)
         $('tbody').append(temp)
     }
-
-    document.querySelector('.all-company').classList.remove('active')
-    document.querySelector('.non-partner-company').classList.add('active')
 }
