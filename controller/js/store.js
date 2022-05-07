@@ -7,7 +7,7 @@ function set_table() {
 }
 
 function getAll() {
-    $('tbody').html('');
+    // $('tbody').html('');
 
     let arr = ajax(0, '1.8.1');
 
@@ -145,4 +145,16 @@ function getTrash() {
     $("#getdown-btn").removeClass('active');
     $("#getup-btn").css('color', '#AEAEAE');
     $("#getup-btn").removeClass('active');
+}
+
+function selectall(checkbox) {
+    if (checkbox.checked == true) {
+        $('.cbox').prop('checked', true);
+        $(".style1").attr("hidden", true);
+        $(".style2").attr("hidden", false);
+    } else {
+        $('.cbox').prop('checked', false);
+        $(".style1").attr("hidden", false);
+        $(".style2").attr("hidden", true);
+    }
 }

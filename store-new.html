@@ -13,7 +13,8 @@
     <link rel="stylesheet" href="assets/vendors/iconly/bold.css">
     <link rel="stylesheet" href="assets/vendors/toastify/toastify.css">
     <link href="https://unpkg.com/filepond/dist/filepond.css" rel="stylesheet">
-    <link href="https://unpkg.com/filepond-plugin-image-preview/dist/filepond-plugin-image-preview.css" rel="stylesheet">
+    <link href="https://unpkg.com/filepond-plugin-image-preview/dist/filepond-plugin-image-preview.css"
+          rel="stylesheet">
 
     <link rel="stylesheet" href="assets/vendors/perfect-scrollbar/perfect-scrollbar.css">
     <link rel="stylesheet" href="assets/vendors/bootstrap-icons/bootstrap-icons.css">
@@ -21,65 +22,100 @@
     <link rel="shortcut icon" href="assets/images/favicon.svg" type="image/x-icon">
 
     <link rel="stylesheet" href="assets/css/customization.css">
+    <link rel="stylesheet" href="assets/css/new/all.css">
 
+    <style>
+
+        input, select {
+            border: 1px solid #26B7BC !important;
+        }
+
+        #pp th, #pp td {
+            border-bottom: none !important;
+        }
+
+        #pp tbody {
+            border: 1px solid #CCEFF0;
+            margin-bottom: 11px;
+        }
+
+        #pp tbody tr {
+            background: #F5FEFF;
+            color: #747474;
+        }
+
+        .modal-content {
+            border: 1px solid #26B7BC;
+            border-radius: 20px;
+            min-height: 200px;
+            color: #747474;
+        }
+
+        .item {
+            background: #F5FEFF;
+            border: 1px solid #CCEFF0;
+            padding: 23px 0;
+            margin-bottom: 16px;
+        }
+
+
+    </style>
     <script>
-        sessionStorage.setItem('sidebar', 7);
+        sessionStorage.setItem('sidebar', 7)
     </script>
     <script src="https://kit.fontawesome.com/f8db84f08a.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
-    <div id="app">
+<div id="app">
 
-        <div id="sidebar" class="active"> </div>
+    <div id="sidebar" class="active"></div>
 
-        <div id="main">
-            <header class="mb-3">
-                <a href="#" class="burger-btn d-block d-xl-none">
-                    <i class="bi bi-justify fs-3"></i>
-                </a>
-            </header>
+    <div id="main">
+        <header class="mb-3">
+            <a href="#" class="burger-btn d-block d-xl-none">
+                <i class="bi bi-justify fs-3"></i>
+            </a>
+        </header>
 
-            <div class="page-content">
-                <div class="page-heading align-items-center">
-                    <div class="row container">
-                        <div class="col">
-                            <a class="btn btn-primary" href="store.html"><i class="fa-solid fa-arrow-left"></i> 回列表</a>
-                        </div>
-                        <div class="col">
-                            <div class="d-block" style="text-align: right;">
-                                <a class="btn btn-secondary" href="#">上架</a>
-                            </div>
-                        </div>
+        <div class="page-content">
+            <div class="page-heading align-items-center">
+                <div class="row container mw-100">
+                    <a class="btn btn-primary" href="store.html" style="width: 176px;">
+                        <i class="fa-solid fa-arrow-left"></i>
+                        回列表
+                    </a>
+                </div>
+                <br />
+                <div class="row ">
+                    <div class="col">
+                        <h5 class="m-0 " style="color: #26B7BC;text-align: center;">新增販團</h5><br />
                     </div>
-                    <br/>
-                    <div class="row ">
-                        <div class="col">
-                            <h5 class="m-0 " style="color: #26B7BC;text-align: center;">新增販團</h5><br/>
-                        </div>
-                    </div>
-                    <div class="row ">
-                        <section class="container">
-                            <div class="container">
-                                <div class="card">
-                                    <div class="card-content">
-                                        <div id="gnt" class="card-body">
-                                            <div class="col">
-                                                <div class="d-block" style="text-align: center;">
-
-                                                    <table id="gn">
-                                                        <tr>
-                                                            <td>販團名稱</td>
-                                                            <td id="gname" id="gname" style="color: #26B7BC;"><input type="text" class="form-control" id="basicInput" value=""></td>
-                                                        </tr>
-                                                    </table>
-                                                </div>
+                </div>
+                <div class="row ">
+                    <section class="container mw-100">
+                        <div class="container mw-100">
+                            <div class="card">
+                                <div class="card-content">
+                                    <div id="gnt" class="card-body">
+                                        <div class="col">
+                                            <div class="d-block" style="text-align: center; padding: 50px 0;">
+                                                <table id="gn" class="mx-auto">
+                                                    <tr>
+                                                        <td style="color: #000000; padding-right: 10px;">販團名稱</td>
+                                                        <td id="gname" id="gname" style="color: #26B7BC; width: 380px;">
+                                                            <input type="text" class="form-control" id="basicInput"
+                                                                   value="" />
+                                                        </td>
+                                                    </tr>
+                                                </table>
                                             </div>
+                                        </div>
 
-                                            <hr>
-                                            <br>
-
-                                            <table>
+                                        <hr>
+                                        <br>
+                                        <div style="padding: 37px 64px;">
+                                            <table class="w-100">
                                                 <tr>
                                                     <td>成團條件</td>
                                                     <td id="cond" style="color: #26B7BC;">
@@ -96,41 +132,59 @@
                                                 </tr>
                                                 <tr>
                                                     <td>出貨時間</td>
-                                                    <td id="outtime" style="color: #26B7BC;"><input type="text" class="form-control" id="basicInput" value="下訂後五天出貨"></td>
+                                                    <td id="outtime" style="color: #26B7BC;">
+                                                        <input type="text" class="form-control" id="basicInput"
+                                                               value="下訂後五天出貨" />
+                                                    </td>
                                                     <td>開始時間</td>
-                                                    <td id="starttime" style="color: #26B7BC;"><input type="date" class="form-control" id="basicInput" value=""></td>
+                                                    <td id="starttime" style="color: #26B7BC;">
+                                                        <input type="date" class="form-control" id="basicInput"
+                                                               value="" />
+                                                    </td>
                                                     <td>結束時間</td>
-                                                    <td id="endtime" style="color: #26B7BC;"><input type="date" class="form-control" id="basicInput" value=""></td>
+                                                    <td id="endtime" style="color: #26B7BC;">
+                                                        <input type="date" class="form-control" id="basicInput"
+                                                               value="" />
+                                                    </td>
                                                 </tr>
 
                                                 <tr>
                                                     <td>備註</td>
-                                                    <td id="note" style="color: #26B7BC;" colspan="5"><input type="text" class="form-control" id="basicInput" value=""></td>
+                                                    <td id="note" style="color: #26B7BC;" colspan="5">
+                                                        <input type="text" class="form-control" id="basicInput"
+                                                               value="" />
+                                                    </td>
                                                 </tr>
 
                                             </table>
-                                            <hr>
+                                        </div>
+                                        <hr>
+                                        <div style="padding: 43px 37px;">
                                             <div class="d-block" style="text-align: right;">
                                                 <br>
-                                                <a class="btn btn-primary rounded-pill" href="#"><i class="fa-solid fa-plus-circle"></i> 新增商品</a>&nbsp&nbsp
+                                                <a class="btn btn-primary rounded-pill" href="#" data-bs-toggle="modal"
+                                                   data-bs-target="#ModalProduct"><i
+                                                        class="fa-solid fa-plus-circle"></i> 新增商品</a>&nbsp&nbsp
                                                 <br>
                                             </div>
 
                                             <table id="pp" class="table table-lg align-items-center text-center">
                                                 <thead>
-                                                    <tr style="color: #26B7BC;">
-                                                        <th>照片</th>
-                                                        <th>廠商名稱</th>
-                                                        <th>品名</th>
-                                                        <th>類別</th>
-                                                        <th>型號/口味</th>
-                                                        <th>保存期限</th>
-                                                        <th>成本進價</th>
-                                                        <th>官方售價</th>
+                                                <tr style="color: #26B7BC;">
+                                                    <th>照片</th>
+                                                    <th>廠商名稱</th>
+                                                    <th>品名</th>
+                                                    <th>類別</th>
+                                                    <th>型號/口味</th>
+                                                    <th>保存期限</th>
+                                                    <th>成本進價</th>
+                                                    <th>官方售價</th>
 
-                                                    </tr>
+                                                </tr>
                                                 </thead>
+
                                                 <template>
+                                                    <tbody>
                                                     <tr>
                                                         <td id="img"></td>
                                                         <td id="gname">廠商1</td>
@@ -141,51 +195,101 @@
                                                         <td id="cost">300</td>
                                                         <td id="sale">800</td>
                                                     </tr>
+                                                    </tbody>
                                                 </template>
                                             </table>
-
-
-
 
                                         </div>
                                     </div>
                                 </div>
                             </div>
+                        </div>
 
-                        </section>
+                    </section>
 
-                        <div class="col">
-                            <div class="d-block" style="text-align: center;">
-                                <a class="btn btn-danger" href="#">清除資訊</a>
-                                <a class="btn btn-primary" href="#">立即上架</a>
-                                <a class="btn btn-success" href="commodity-new.html">建立商品</a>
+                    <div class="col">
+                        <div class="d-block" style="text-align: center;">
+                            <a class="btn btn-danger me-2" href="#" style="width: 126px;">清除資訊</a>
+                            <a class="btn btn-primary me-2" href="#" style="width: 126px;">立即上架</a>
+                            <a class="btn btn-success border-0" href="commodity-new.html"
+                               style="width: 126px; background-color:#44B6F6;">建立商品</a>
+                        </div>
+                    </div>
+                </div>
+
+
+                <!--code寫這裡-->
+                <div class="modal fade" id="ModalProduct" tabindex="-1" role="dialog"
+                     aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                    <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-centered modal-dialog-scrollable"
+                         role="document">
+                        <div class="modal-content text-center p-4">
+                            <div class="modal-body">
+                                <div class="d-flex justify-content-center mb-4">
+                                    <div class="mx-auto" style="color:#26B7BC;">新增商品</div>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                            aria-label="Close"></button>
+                                </div>
+                                <div>
+                                    <input type="text" placeholder="請選擇商品" value=""
+                                           style="width: 100%;padding: 5px 23px;border-radius: 7px; margin-bottom: 30px;">
+                                </div>
+                                <div class="container">
+                                    <div class="row item">
+                                        <div class="col d-flex justify-content-center align-items-center">
+                                            <input type="checkbox" />
+                                        </div>
+                                        <div class="col">
+                                            <img src="" alt="">
+                                        </div>
+                                        <div class="col">
+                                            <div>PD001</div>
+                                        </div>
+                                        <div class="col">
+                                            <div>加州迷你6吋手工披薩</div>
+                                        </div>
+                                        <div class="col">
+                                            <div>食品類</div>
+                                        </div>
+                                        <div class="col">
+                                            <div>香草味</div>
+                                        </div>
+
+                                    </div>
+                                </div>
+
+                                <div class="px-4 mt-4">
+                                    <div class="mx-auto" style="width: 140px;">
+                                        <button type="button" onclick="change_status(0)" class="btn btn-primary w-100"
+                                                data-bs-toggle="modal" data-bs-target="#ModalCheck">
+                                            新增
+                                        </button>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
-
-
-
-                    <!--code寫這裡-->
-
-
                 </div>
 
-                <script src="assets/vendors/perfect-scrollbar/perfect-scrollbar.min.js"></script>
-                <script src="assets/js/bootstrap.bundle.min.js"></script>
 
-                <script src="assets/vendors/apexcharts/apexcharts.js"></script>
-                <script src="assets/js/pages/dashboard.js"></script>
+            </div>
 
-                <script src="assets/js/mazer.js"></script>
-                <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+            <script src="assets/vendors/perfect-scrollbar/perfect-scrollbar.min.js"></script>
+            <script src="assets/js/bootstrap.bundle.min.js"></script>
 
-                <script>
-                    $(function() {
-                        $("#sidebar").load("sidebar.html");
-                    });
-                </script>
-                <script src="controller/js/ajax.js"></script>
-                <script src="controller/js/store-new.js"></script>
+            <script src="assets/vendors/apexcharts/apexcharts.js"></script>
+            <script src="assets/js/pages/dashboard.js"></script>
+
+            <script src="assets/js/mazer.js"></script>
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+            <script>
+                $(function () {
+                    $("#sidebar").load("sidebar.html")
+                })
+            </script>
+            <script src="controller/js/ajax.js"></script>
+            <script src="controller/js/store-new.js"></script>
 </body>
 
 </html>

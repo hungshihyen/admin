@@ -13,7 +13,8 @@
     <link rel="stylesheet" href="assets/vendors/iconly/bold.css">
     <link rel="stylesheet" href="assets/vendors/toastify/toastify.css">
     <link href="https://unpkg.com/filepond/dist/filepond.css" rel="stylesheet">
-    <link href="https://unpkg.com/filepond-plugin-image-preview/dist/filepond-plugin-image-preview.css" rel="stylesheet">
+    <link href="https://unpkg.com/filepond-plugin-image-preview/dist/filepond-plugin-image-preview.css"
+          rel="stylesheet">
 
     <link rel="stylesheet" href="assets/vendors/perfect-scrollbar/perfect-scrollbar.css">
     <link rel="stylesheet" href="assets/vendors/bootstrap-icons/bootstrap-icons.css">
@@ -21,153 +22,291 @@
     <link rel="shortcut icon" href="assets/images/favicon.svg" type="image/x-icon">
 
     <link rel="stylesheet" href="assets/css/customization.css">
+    <link rel="stylesheet" href="assets/css/new/all.css">
+    <style>
 
+        .bi::before {
+            transform: translateY(4px);
+        }
+
+    </style>
     <script>
-        sessionStorage.setItem('sidebar', 7);
+        sessionStorage.setItem('sidebar', 7)
     </script>
     <script src="https://kit.fontawesome.com/f8db84f08a.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
-    <div id="app">
+<div id="app">
 
-        <div id="sidebar" class="active"> </div>
+    <div id="sidebar" class="active"></div>
 
-        <div id="main">
-            <header class="mb-3">
-                <a href="#" class="burger-btn d-block d-xl-none">
-                    <i class="bi bi-justify fs-3"></i>
-                </a>
-            </header>
+    <div id="main">
+        <header class="mb-3">
+            <a href="#" class="burger-btn d-block d-xl-none">
+                <i class="bi bi-justify fs-3"></i>
+            </a>
+        </header>
 
-            <div class="page-content">
-                <!--code寫這裡-->
-                <section>
+        <div class="page-content">
+            <!--code寫這裡-->
+            <section>
 
-                    <div class="container">
+                <div class="container mw-100">
+                    <div class="row mb-4">
                         <div class="col">
-                            <div class="d-block" style="text-align: right;">
-                                <a class="btn btn-primary rounded-pill" href="store-new.html"><i class="fa-solid fa-plus-circle"></i> 新增販團</a>&nbsp&nbsp
-
-                            </div>
-                            <br/>
-                        </div>
-                        <div class="row">
-                            <div class="col">
-                                <ul class="nav">
-                                    <li class="nav-item">
-                                        <a id="getall-btn" class="nav-link active" href="#" onclick="getAll()" style="color: #26B7BC;">所有販團</a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a id="getup-btn" class="nav-link" href="#" onclick="getUp()" style="color:  #AEAEAE;">上架中</a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a id="getdown-btn" class="nav-link" href="#" onclick="getDown()" style="color:  #AEAEAE;">下架中</a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a id="gettrash-btn" class="nav-link" href="#" onclick="getTrash()" style="color:  #AEAEAE;">垃圾桶</a>
-                                    </li>
-                                </ul>
-                            </div>
-
-                            <div class="col">
-                                <input type="text" id="first-name" class="form-control" name="fname" placeholder="關鍵字搜尋...">
-                            </div>
-                        </div>
-
-                        <div class="card">
-                            <div class="card-content">
-                                <div class="card-body overflow-auto">
-                                    <table class="table table-block table-hover align-items-center text-center" id="table1">
-                                        <thead>
-                                            <tr style="color: #26B7BC;">
-                                                <th>
-                                                    <input type="checkbox" id="cbox1" value="first_checkbox">
-                                                </th>
-                                                <th>小販團編號</th>
-                                                <th>販團名稱</th>
-                                                <th>狀態</th>
-                                                <th>成團條件</th>
-                                                <th>運送方式</th>
-                                                <th>結束時間</th>
-                                                <th>查看</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-
-                                        </tbody>
-                                    </table>
-                                </div>
-                            </div>
-                        </div>
-
-                        <nav aria-label="Page navigation example">
-                            <ul class="pagination pagination-primary justify-content-center">
-                                <li class="page-item">
-                                    <a class="page-link" href="#">
-                                        <span aria-hidden="true"><i class="bi bi-chevron-left"></i></span>
-                                    </a>
+                            <ul class="nav">
+                                <li class="nav-item">
+                                    <a id="getall-btn" class="nav-link active" href="#" onclick="getAll()"
+                                       style="color: #26B7BC;">所有販團</a>
                                 </li>
-                                <li class="page-item"><a class="page-link" href="#">1</a></li>
-                                <li class="page-item active"><a class="page-link" href="#">2</a></li>
-                                <li class="page-item"><a class="page-link" href="#">3</a></li>
-                                <li class="page-item"><a class="page-link" href="#">4</a></li>
-                                <li class="page-item"><a class="page-link" href="#">5</a></li>
-                                <li class="page-item"><a class="page-link" href="#">6</a></li>
-                                <li class="page-item"><a class="page-link" href="#">7</a></li>
-                                <li class="page-item"><a class="page-link" href="#">8</a></li>
-                                <li class="page-item"><a class="page-link" href="#">9</a></li>
-                                <li class="page-item">
-                                    <a class="page-link" href="#">
-                                        <span aria-hidden="true"><i class="bi bi-chevron-right"></i></span>
-                                    </a>
+                                <li class="nav-item">
+                                    <a id="getup-btn" class="nav-link" href="#" onclick="getUp()"
+                                       style="color:  #AEAEAE;">上架中</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a id="getdown-btn" class="nav-link" href="#" onclick="getDown()"
+                                       style="color:  #AEAEAE;">下架中</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a id="gettrash-btn" class="nav-link" href="#" onclick="getTrash()"
+                                       style="color:  #AEAEAE;">垃圾桶</a>
                                 </li>
                             </ul>
-                        </nav>
+                        </div>
+
+                        <div class="col">
+                            <div class="d-block" style="text-align: right;">
+                                <a class="btn btn-primary rounded-pill" href="store-new.html">
+                                    <i class="bi bi-plus-circle" style=" display: inline-block;"></i> 新增販團
+                                </a>&nbsp&nbsp
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row mb-4">
+                        <div class="col-6">
+                            <div class="style2" hidden>
+                                <a class="btn btn-secondary rounded-pill border-0" href="#" data-bs-toggle="modal" data-bs-target="#exampleModalCenter1" style="width: 126px; background-color: #C0C0C0;">上架中</a>
+                                <a class="btn btn-secondary rounded-pill border-0" href="#" data-bs-toggle="modal" data-bs-target="#exampleModalCenter2"  style="width: 126px; background-color: #C0C0C0;">下架中</a>
+                                <a class="btn btn-secondary rounded-pill border-0" href="#" data-bs-toggle="modal" data-bs-target="#exampleModalCenter3"  style="width: 126px; background-color: #C0C0C0;">垃圾桶</a>
+                            </div>
+                        </div>
+                        <div class="col-2 ms-auto">
+                            <input type="text" id="first-name" class="form-control" name="fname" placeholder="關鍵字搜尋...">
+                        </div>
                     </div>
 
-                </section>
-            </div>
+                    <div class="card">
+                        <div class="card-content">
+                            <div class="card-body overflow-auto">
+                                <table class="table table-block table-hover align-items-center text-center" id="table1">
+                                    <thead>
+                                    <tr style="color: #26B7BC;">
+                                        <th>
+                                            <input  id="cbox1" class="tbox" type="checkbox" value="first_checkbox"
+                                                   onclick="selectall(this)">
+                                        </th>
+                                        <th>小販團編號</th>
+                                        <th>販團名稱</th>
+                                        <th>狀態</th>
+                                        <th>成團條件</th>
+                                        <th>運送方式</th>
+                                        <th>結束時間</th>
+                                        <th>查看</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
 
-            <template>
-                <tr>
-                    <td>
-                        <input type="checkbox" id="cbox1" value="first_checkbox">
-                    </td>
-                    <td id="gid">FA010005</td>
-                    <td id="gname">老神在在瓦甕煨湯</td>
-                    <td id="status">
-                        <a id="green"><i class="fa-solid fa-check"></i> 上架中</a>
-                    </td>
-                    <td id="cond">滿金額1000元</td>
-                    <td id="deli">冷凍</td>
-                    <td id="enddate">2021/09/01 11:00</td>
-                    <td id="check">
-                        <a class="btn btn-success rounded-pill mb-1" href="store-edit.html">
-                            查看
-                        </a>
+                                    <tr>
+                                        <td>
+                                            <input type="checkbox" id="cbox1" class="cbox" value="first_checkbox">
+                                        </td>
+                                        <td id="gid">FA010005</td>
+                                        <td id="gname">老神在在瓦甕煨湯</td>
+                                        <td id="status">
+                                            <a id="green">
+                                                <i class="fa-solid fa-check"></i> 上架中
+                                            </a>
+                                        </td>
+                                        <td id="cond">滿金額1000元</td>
+                                        <td id="deli">冷凍</td>
+                                        <td id="enddate">2021/09/01 11:00</td>
+                                        <td id="check">
+                                            <a class="btn btn-success rounded-pill mb-1" href="store-edit.html">
+                                                查看
+                                            </a>
 
-                    </td>
-                </tr>
-            </template>
+                                        </td>
+                                    </tr>
 
-            <script src="assets/vendors/perfect-scrollbar/perfect-scrollbar.min.js"></script>
-            <script src="assets/js/bootstrap.bundle.min.js"></script>
+                                    <tr>
+                                        <td>
+                                            <input type="checkbox" id="cbox1" class="cbox" value="first_checkbox">
+                                        </td>
+                                        <td id="gid">FA010005</td>
+                                        <td id="gname">老神在在瓦甕煨湯</td>
+                                        <td id="status">
+                                            <a style="color: #FE868E;"><i class="fa fa-ban"></i> 已下架</a>
+                                        </td>
+                                        <td id="cond">滿金額1000元</td>
+                                        <td id="deli">冷凍</td>
+                                        <td id="enddate">2021/09/01 11:00</td>
+                                        <td id="check">
+                                            <a class="btn btn-success rounded-pill mb-1" href="store-edit.html">
+                                                查看
+                                            </a>
 
-            <script src="assets/vendors/apexcharts/apexcharts.js"></script>
-            <script src="assets/js/pages/dashboard.js"></script>
+                                        </td>
+                                    </tr>
 
-            <script src="assets/js/mazer.js"></script>
-            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+                                    <tr>
+                                        <td>
+                                            <input type="checkbox" id="cbox1" class="cbox" value="first_checkbox">
+                                        </td>
+                                        <td id="gid">FA010005</td>
+                                        <td id="gname">老神在在瓦甕煨湯</td>
+                                        <td id="status">
+                                            <a><i class="fa fa-trash"></i> 垃圾桶</a>
+                                        </td>
+                                        <td id="cond">滿金額1000元</td>
+                                        <td id="deli">冷凍</td>
+                                        <td id="enddate">2021/09/01 11:00</td>
+                                        <td id="check">
+                                            <a class="btn btn-success rounded-pill mb-1" href="store-edit.html">
+                                                查看
+                                            </a>
 
-            <script>
-                $(function() {
-                    $("#sidebar").load("sidebar.html");
-                });
-            </script>
-            <script src="controller/js/ajax.js"></script>
-            <script src="controller/js/store.js"></script>
+                                        </td>
+                                    </tr>
+
+
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+
+                    <nav aria-label="Page navigation example">
+                        <ul class="pagination pagination-primary justify-content-center">
+                            <li class="page-item">
+                                <a class="page-link arrow" href="#">
+                                    <img src="./assets/images/icons/pagination_arrow_left.png" alt="">
+                                </a>
+                            </li>
+                            <li class="page-item"><a class="page-link" href="#">1</a></li>
+                            <li class="page-item active"><a class="page-link" href="#">2</a></li>
+                            <li class="page-item"><a class="page-link" href="#">3</a></li>
+                            <li class="page-item"><a class="page-link" href="#">4</a></li>
+                            <li class="page-item"><a class="page-link" href="#">5</a></li>
+                            <li class="page-item"><a class="page-link" href="#">6</a></li>
+                            <li class="page-item"><a class="page-link" href="#">7</a></li>
+                            <li class="page-item"><a class="page-link" href="#">8</a></li>
+                            <li class="page-item"><a class="page-link" href="#">9</a></li>
+                            <li class="page-item">
+                                <a class="page-link arrow" href="#">
+                                    <img src="./assets/images/icons/pagination_arrow_right.png" alt="">
+                                </a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+
+            </section>
         </div>
+
+        <template>
+            <tr>
+                <td>
+                    <input type="checkbox" id="cbox1" class="cbox" value="first_checkbox">
+                </td>
+                <td id="gid">FA010005</td>
+                <td id="gname">老神在在瓦甕煨湯</td>
+                <td id="status">
+                    <a id="green"><i class="fa-solid fa-check"></i> 上架中</a>
+                </td>
+                <td id="cond">滿金額1000元</td>
+                <td id="deli">冷凍</td>
+                <td id="enddate">2021/09/01 11:00</td>
+                <td id="check">
+                    <a class="btn btn-success rounded-pill mb-1" href="store-edit.html">
+                        查看
+                    </a>
+
+                </td>
+            </tr>
+        </template>
+
+        <!-- Vertically Centered modal Modal -->
+        <div class="modal fade" id="exampleModalCenter1" tabindex="-1"
+             role="dialog"
+             aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered modal-dialog-centered modal-dialog-scrollable"
+                 role="document">
+                <div class="modal-content text-center p-4">
+                    <div class="modal-body">
+                        <div>
+                            <img src="./assets/images/icons/done.png" alt="">
+                        </div>
+                        <p style="color: #000;"><span class="m-name"></span>販團已上架
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal fade" id="exampleModalCenter2" tabindex="-1"
+             role="dialog"
+             aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered modal-dialog-centered modal-dialog-scrollable"
+                 role="document">
+                <div class="modal-content text-center p-4">
+                    <div class="modal-body">
+                        <div>
+                            <img src="./assets/images/icons/forbidden.png"
+                                 alt="">
+                        </div>
+                        <p style="color: #000;"><span class="m-name"></span>已下架販團
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal fade" id="exampleModalCenter3" tabindex="-1"
+             role="dialog"
+             aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered modal-dialog-centered modal-dialog-scrollable"
+                 role="document">
+                <div class="modal-content text-center p-4">
+                    <div class="modal-body">
+                        <div>
+                            <img src="./assets/images/icons/trash_can.png"
+                                 alt="">
+                        </div>
+                        <p style="color: #000;"><span class="m-name"></span>已移至垃圾桶
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <script src="assets/vendors/perfect-scrollbar/perfect-scrollbar.min.js"></script>
+        <script src="assets/js/bootstrap.bundle.min.js"></script>
+
+        <script src="assets/vendors/apexcharts/apexcharts.js"></script>
+        <script src="assets/js/pages/dashboard.js"></script>
+
+        <script src="assets/js/mazer.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+        <script>
+            $(function () {
+                $("#sidebar").load("sidebar.html")
+            })
+        </script>
+        <script src="controller/js/ajax.js"></script>
+        <script src="controller/js/store.js"></script>
+    </div>
 </body>
 
 </html>

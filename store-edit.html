@@ -13,7 +13,8 @@
     <link rel="stylesheet" href="assets/vendors/iconly/bold.css">
     <link rel="stylesheet" href="assets/vendors/toastify/toastify.css">
     <link href="https://unpkg.com/filepond/dist/filepond.css" rel="stylesheet">
-    <link href="https://unpkg.com/filepond-plugin-image-preview/dist/filepond-plugin-image-preview.css" rel="stylesheet">
+    <link href="https://unpkg.com/filepond-plugin-image-preview/dist/filepond-plugin-image-preview.css"
+          rel="stylesheet">
 
     <link rel="stylesheet" href="assets/vendors/perfect-scrollbar/perfect-scrollbar.css">
     <link rel="stylesheet" href="assets/vendors/bootstrap-icons/bootstrap-icons.css">
@@ -21,83 +22,156 @@
     <link rel="shortcut icon" href="assets/images/favicon.svg" type="image/x-icon">
 
     <link rel="stylesheet" href="assets/css/customization.css">
+    <link rel="stylesheet" href="assets/css/new/all.css">
+    <style>
+        .search-table {
+            width: 100%;
+        }
 
+        .comp-table tr td,
+        .search-table tr td {
+            padding: 10px;
+        }
+
+        input, select {
+            border: 1px solid #26B7BC !important;
+        }
+
+        #table1 th {
+            padding: 20px 0;
+        }
+
+        #table1 td, #uu th, #uu td {
+            border-bottom: none !important;
+        }
+
+        #uu tbody {
+            border: 1px solid #CCEFF0;
+            margin-bottom: 11px;
+        }
+
+        #uu tbody tr {
+            background: #F5FEFF;
+            color: #747474;
+        }
+
+
+        .history-label-row {
+            padding: 12px 0;
+            border-bottom: 1px dashed #26B7BC;
+        }
+
+        .label-pill {
+            width: 97px;
+            height: 20px;
+            border-radius: 10px;
+            font-size: 12px;
+            line-height: 20px;
+            color: #fff;
+        }
+
+        .label-pill:hover {
+            color: #fff;
+            cursor: auto;
+        }
+
+        .history-label-row span {
+            color: #747474;
+            font-size: 12px;
+        }
+
+        #exampleModalCenter2 .modal-content,
+        #exampleModalCenter3 .modal-content {
+            border: 1px solid #26B7BC;
+            border-radius: 20px;
+            min-height: 250px;
+            max-width: 488px;
+        }
+
+        #exampleModalCenter2 .modal-content .modal-body,
+        #exampleModalCenter3 .modal-content .modal-body {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        #exampleModalCenter2 .modal-content .modal-body .btn,
+        #exampleModalCenter4 .modal-content .modal-body .btn {
+            max-width: 140px;
+        }
+
+
+    </style>
     <script>
-        sessionStorage.setItem('sidebar', 7);
+        sessionStorage.setItem('sidebar', 7)
     </script>
     <script src="https://kit.fontawesome.com/f8db84f08a.js" crossorigin="anonymous"></script>
 </head>
 
-<style>
-    .search-table {
-        width: 100%;
-    }
-    
-    .comp-table tr td,
-    .search-table tr td {
-        padding: 10px;
-    }
-</style>
 
 <body>
-    <div id="app">
+<div id="app">
 
-        <div id="sidebar" class="active"> </div>
+    <div id="sidebar" class="active"></div>
 
-        <div id="main">
-            <header class="mb-3">
-                <a href="#" class="burger-btn d-block d-xl-none">
-                    <i class="bi bi-justify fs-3"></i>
-                </a>
-            </header>
+    <div id="main">
+        <header class="mb-3">
+            <a href="#" class="burger-btn d-block d-xl-none">
+                <i class="bi bi-justify fs-3"></i>
+            </a>
+        </header>
 
-            <div class="page-content">
-                <div class="page-heading align-items-center">
-                    <div class="row container">
-                        <div class="col">
-                            <a class="btn btn-primary" href="store.html"><i class="fa-solid fa-arrow-left"></i> 回列表</a>
-                        </div>
-                        <div class="col">
-                            <div class="d-block" style="text-align: right;">
-                                <a class="btn btn-secondary" href="#">上架</a>
-                            </div>
+        <div class="page-content">
+            <div class="page-heading align-items-center">
+                <div class="row container mw-100">
+                    <div class="col">
+                        <a class="btn btn-primary" href="store.html" style="width: 176px;">
+                            <i class="fa-solid fa-arrow-left"></i>
+                            回列表
+                        </a>
+                    </div>
+                    <div class="col">
+                        <div class="d-block" style="text-align: right;">
+                            <a class="btn btn-secondary border-0" href="#"
+                               style="width: 130px;background-color: #AEAEAE;border-radius: 8px  ">上架</a>
                         </div>
                     </div>
-                    <br/>
-                    <div class="row ">
-                        <div class="col">
-                            <h5 class="m-0 " style="color: #26B7BC;text-align: center;">編輯販團</h5><br/>
-                        </div>
+                </div>
+                <br />
+                <div class="row ">
+                    <div class="col">
+                        <h5 class="m-0 " style="color: #26B7BC;text-align: center;">編輯販團</h5><br />
                     </div>
-                    <div class="row ">
-                        <section class="container">
-                            <div class="container">
-                                <div class="card">
-                                    <div class="card-content">
-                                        <div class="card-body">
-                                            <div class="col">
-                                                <div class="d-flex justify-content-center">
+                </div>
+                <div class="row ">
+                    <section class="container mw-100">
+                        <div class="container mw-100">
+                            <div class="card">
+                                <div class="card-content">
+                                    <div class="card-body">
+                                        <div class="d-flex justify-content-center"
+                                             style="margin-top: 50px; margin-bottom: 60px;">
+                                            <table class="comp-table" style="width: 50%;">
+                                                <tr>
+                                                    <td style="text-align: left;color: #000000; width: 15%;">販團名稱</td>
+                                                    <td id="gname" style="color: #26B7BC;">
+                                                        <input type="text" class="form-control" id="basicInput"
+                                                               value="" />
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td style="text-align: left;color: #000000;">分類</td>
+                                                    <td id="class" style="color: #26B7BC;">
+                                                        <select class="form-control">
+                                                            <option value="-">--</option>
+                                                        </select>
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </div>
 
-                                                    <table class="comp-table" style="width: 60%;">
-                                                        <tr>
-                                                            <td style="text-align: left;">販團名稱</td>
-                                                            <td id="gname" style="color: #26B7BC;padding-left: 50px;"><input type="text" class="form-control" id="basicInput" value=""></td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td style="text-align: left;">分類</td>
-                                                            <td id="class" style="color: #26B7BC;padding-left: 50px;">
-                                                                <select class="form-control">
-                                                                    <option></option>
-                                                                </select>
-                                                            </td>
-                                                        </tr>
-                                                    </table>
-                                                </div>
-                                            </div>
-
-                                            <hr>
-                                            <br>
-
+                                        <hr>
+                                        <div style="padding: 84px 65px;">
                                             <table class="search-table">
                                                 <tr>
                                                     <td width="8%">成團條件</td>
@@ -115,43 +189,65 @@
                                                 </tr>
                                                 <tr>
                                                     <td>出貨時間</td>
-                                                    <td id="outtime" style="color: #26B7BC;"><input type="text" class="form-control" id="basicInput" value="下訂後五天出貨"></td>
+                                                    <td id="outtime" style="color: #26B7BC;">
+                                                        <input type="text" class="form-control" id="basicInput"
+                                                               value="下訂後五天出貨" />
+                                                    </td>
                                                     <td>開始時間</td>
-                                                    <td id="startdate" style="color: #26B7BC;"><input type="date" class="form-control" id="basicInput" value=""></td>
-                                                    <td id="starttime" style="color: #26B7BC;"><input type="time" class="form-control" id="basicInput" value=""></td>
+                                                    <td id="startdate" style="color: #26B7BC;">
+                                                        <input type="date" class="form-control" id="basicInput"
+                                                               value="" />
+                                                    </td>
+                                                    <td id="starttime" style="color: #26B7BC;">
+                                                        <input type="time" class="form-control" id="basicInput"
+                                                               value="" />
+                                                    </td>
                                                     <td>結束時間</td>
-                                                    <td id="enddate" style="color: #26B7BC;"><input type="date" class="form-control" id="basicInput" value=""></td>
-                                                    <td id="endtime" style="color: #26B7BC;"><input type="time" class="form-control" id="basicInput" value=""></td>
+                                                    <td id="enddate" style="color: #26B7BC;">
+                                                        <input type="date" class="form-control" id="basicInput"
+                                                               value="" />
+                                                    </td>
+                                                    <td id="endtime" style="color: #26B7BC;">
+                                                        <input type="time" class="form-control" id="basicInput"
+                                                               value="" />
+                                                    </td>
                                                 </tr>
 
                                                 <tr>
                                                     <td>備註</td>
-                                                    <td id="note" style="color: #26B7BC;" colspan="7"><input type="text" class="form-control" id="basicInput" value=""></td>
+                                                    <td id="note" style="color: #26B7BC;" colspan="7">
+                                                        <input type="text" class="form-control" id="basicInput"
+                                                               value="" />
+                                                    </td>
                                                 </tr>
 
                                             </table>
-                                            <hr>
-                                            <div class="d-block" style="text-align: right;">
-                                                <br>
-                                                <a class="btn btn-primary rounded-pill" href="commodity-new.html"><i class="fa-solid fa-plus-circle"></i> 新增商品</a>&nbsp&nbsp
+                                        </div>
+                                        <hr>
+                                        <div style="padding: 43px 37px;">
+
+                                            <div class="d-block" style="text-align: right; ">
+                                                <a class="btn btn-primary rounded-pill" href="commodity-new.html">
+                                                    <i class="fa-solid fa-plus-circle"></i> 新增商品</a>&nbsp&nbsp
                                                 <br>
                                             </div>
 
                                             <table id="uu" class="table table-lg align-items-center text-center">
                                                 <thead>
-                                                    <tr style="color: #26B7BC;">
-                                                        <th>照片</th>
-                                                        <th>廠商名稱</th>
-                                                        <th>品名</th>
-                                                        <th>類別</th>
-                                                        <th>型號/口味</th>
-                                                        <th>保存期限</th>
-                                                        <th>成本進價</th>
-                                                        <th>官方售價</th>
-
-                                                    </tr>
+                                                <tr style="color: #26B7BC; font-size: 12px;">
+                                                    <th>照片</th>
+                                                    <th>廠商名稱</th>
+                                                    <th>品名</th>
+                                                    <th>類別</th>
+                                                    <th>型號/口味</th>
+                                                    <th>保存期限</th>
+                                                    <th>成本進價</th>
+                                                    <th>官方售價</th>
+                                                </tr>
                                                 </thead>
+
                                                 <template id="ptable">
+                                                    <tbody>
                                                     <tr>
                                                         <td id="pimg"></td>
                                                         <td id="cname">廠商1</td>
@@ -162,12 +258,16 @@
                                                         <td id="cost">300</td>
                                                         <td id="sale">800</td>
                                                     </tr>
+                                                    </tbody>
                                                 </template>
                                             </table>
 
-                                            <div class="col">
+                                            <div class="col" style="margin-bottom: 45px;">
                                                 <div class="d-block" style="text-align: center;">
-                                                    <a class="btn btn-primary" href="#">儲存</a>
+                                                    <a class="btn btn-primary" href="#"
+                                                       data-bs-toggle="modal"
+                                                       data-bs-target="#exampleModalCenter2"
+                                                       style="width: 126px;background-color: #44B6F6;">儲存</a>
                                                 </div>
                                             </div>
 
@@ -176,117 +276,185 @@
                                     </div>
                                 </div>
                             </div>
-
-                        </section>
-
-                    </div>
-
-                    <div class="container">
-                        <div class="col">
-                            <h5 class="m-0 " style="color: #26B7BC">最新訂單</h5>
-                            <div class="d-block" style="text-align: right;">
-                                <a class="btn btn-primary rounded-pill" href="order-pending.html"><i class="fa-solid fa-plus-circle"></i> 更多訂單</a>
-                            </div>
                         </div>
 
-                    </div>
-                    <br>
-                    <div class="row ">
-                        <section class="container">
-                            <div class="container">
-                                <div class="card">
-                                    <div class="card-content">
-                                        <div class="card-body">
-
-                                            <table class="table table-striped align-items-center text-center" id="table1">
-                                                <thead>
-                                                    <tr style="color: #26B7BC;">
-
-                                                        <th>訂單編號</th>
-                                                        <th>截團日期</th>
-                                                        <th>小販名稱</th>
-                                                        <th>狀態</th>
-                                                        <th>販團名稱</th>
-                                                        <th>總金額</th>
-                                                        <th>查看</th>
-
-                                                    </tr>
-                                                </thead>
-                                                <tbody id="nn">
-                                                    <template id="ntable">
-                                                        <tr>
-                                                            <td id="lid">FA0100050002</td>
-                                                            <td id="date">2021/09/01</td>
-                                                            <td id="uname">蔡小販</td>
-                                                            <td id="status">帳務 <i class="fa-solid fa-circle-check" id="g"></i><br> 訂單 <i class="fa-solid fa-circle-xmark" id="pink"></i></td>
-                                                            <td id="gname">加州迷你6吋手工披薩</td>
-                                                            <td id="allp">8020</td>
-                                                            <td id="check">
-                                                                <a class="btn btn-success rounded-pill mb-1" href="company-edit.html">
-                                                                    查看
-                                                                </a>
-
-                                                            </td>
-                                                        </tr>
-                                                    </template>
-                                                </tbody>
-                                            </table>
-
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                        </section>
-
-                    </div>
-
-                    <div class="container ">
-                        <div class="col">
-                            <h5 class="m-0 " style="color: #26B7BC">販團資訊歷史紀錄</h5>
-                        </div>
-                    </div>
-                    <br>
-                    <div class="row ">
-                        <section class="container">
-                            <div class="container">
-                                <div class="card">
-                                    <div class="card-content">
-                                        <div class="card-body">
-                                            <div><a class="btn btn-danger rounded-pill mb-1">售動議價</a> 2022-01-22 13:26 小販底價更動從28元改為30元 - 由管理員1執行</div>
-                                            <div><a class="btn btn-success rounded-pill mb-1">進動議價</a> 2022-01-22 13:26 小販底價更動從28元改為30元 - 由管理員1執行</div>
-                                            <div><a class="btn btn-primary rounded-pill mb-1">商品下架</a> 2022-01-22 13:26 小販底價更動從28元改為30元 - 由管理員1執行</div>
-                                            <div><a class="btn btn-secondary rounded-pill mb-1">新品上架</a> 2022-01-22 13:26 小販底價更動從28元改為30元 - 由管理員1執行</div>
-
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                        </section>
-
-                    </div>
-                    <!--code寫這裡-->
-
+                    </section>
 
                 </div>
 
-                <script src="assets/vendors/perfect-scrollbar/perfect-scrollbar.min.js"></script>
-                <script src="assets/js/bootstrap.bundle.min.js"></script>
+                <div class="container mw-100" style="margin-top: 83px;">
+                    <div class="col">
+                        <h5 class="m-0 " style="color: #26B7BC; text-indent: 12px;">最新訂單</h5>
+                        <div class="d-block" style="text-align: right;">
+                            <a class="btn btn-primary rounded-pill" href="order-pending.html"><i
+                                    class="fa-solid fa-plus-circle"></i> 更多訂單</a>
+                        </div>
+                    </div>
 
-                <script src="assets/vendors/apexcharts/apexcharts.js"></script>
-                <script src="assets/js/pages/dashboard.js"></script>
+                </div>
+                <br>
+                <div class="row ">
+                    <section class="container mw-100">
+                        <div class="container mw-100">
+                            <div class="card">
+                                <div class="card-content">
+                                    <div class="card-body">
+                                        <table class="table table-block align-items-center text-center" id="table1">
+                                            <thead>
+                                            <tr style="color: #26B7BC; background-color: #F5FEFF;">
+                                                <th style="border-top-left-radius: 0.7rem">訂單編號</th>
+                                                <th>截團日期</th>
+                                                <th>小販名稱</th>
+                                                <th>狀態</th>
+                                                <th>販團名稱</th>
+                                                <th>總金額</th>
+                                                <th style="border-top-right-radius: 0.7rem">查看</th>
+                                            </tr>
+                                            </thead>
+                                            <tbody id="nn">
 
-                <script src="assets/js/mazer.js"></script>
-                <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+                                            <template id="ntable">
+                                                <tr>
+                                                    <td id="lid">FA0100050002</td>
+                                                    <td id="date">2021/09/01</td>
+                                                    <td id="uname">蔡小販</td>
+                                                    <td id="status">帳務 <i class="fa-solid fa-circle-check"
+                                                                          id="g"></i><br> 訂單 <i
+                                                            class="fa-solid fa-circle-xmark" id="pink"></i></td>
+                                                    <td id="gname">加州迷你6吋手工披薩</td>
+                                                    <td id="allp">8020</td>
+                                                    <td id="check">
+                                                        <a class="btn btn-success rounded-pill mb-1"
+                                                           href="company-edit.html">
+                                                            查看
+                                                        </a>
+                                                        <a class="btn btn-success rounded-pill mb-1"
+                                                           href="company-edit.html">
+                                                            查看
+                                                        </a>
 
-                <script>
-                    $(function() {
-                        $("#sidebar").load("sidebar.html");
-                    });
-                </script>
-                <script src="controller/js/ajax.js"></script>
-                <script src="controller/js/store-edit.js"></script>
+                                                    </td>
+                                                </tr>
+                                            </template>
+                                            </tbody>
+                                        </table>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </section>
+
+                </div>
+
+                <div class="container mw-100">
+                    <div class="col">
+                        <h5 class="m-0 " style="color: #26B7BC; text-indent: 12px;">販團資訊歷史紀錄</h5>
+                    </div>
+                </div>
+                <br>
+                <div class="row">
+                    <section class="container mw-100">
+                        <div class="container mw-100">
+                            <div class="card">
+                                <div class="card-content">
+                                    <div class="card-body">
+                                        <div style="padding: 22px 50px;">
+                                            <div class="d-flex align-items-center history-label-row">
+                                                <a class="label-pill btn-danger text-center me-1">售動議價</a>
+                                                <span>2022-01-22 13:26 小販底價更動從28元改為30元 - 由管理員1執行</span>
+                                            </div>
+                                            <div class="d-flex align-items-center history-label-row">
+                                                <a class="label-pill btn-warning text-center me-1">進動議價</a>
+                                                <span>2022-01-22 13:26 小販底價更動從28元改為30元 - 由管理員1執行</span>
+                                            </div>
+                                            <div class="d-flex align-items-center history-label-row">
+                                                <a class="label-pill btn-primary text-center me-1">商品下架</a>
+                                                <span>2022-01-22 13:26 小販底價更動從28元改為30元 - 由管理員1執行</span>
+                                            </div>
+                                            <div class="d-flex align-items-center history-label-row">
+                                                <a class="label-pill btn-secondary text-center me-1">新品上架</a>
+                                                <span>2022-01-22 13:26 小販底價更動從28元改為30元 - 由管理員1執行</span>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </section>
+
+                </div>
+                <!--code寫這裡-->
+
+
+            </div>
+
+            <div class="modal fade" id="exampleModalCenter2" tabindex="-1" role="dialog"
+                 aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered modal-dialog-centered modal-dialog-scrollable"
+                     role="document">
+                    <div class="modal-content text-center p-4">
+                        <div class="modal-body">
+                            <p style="color: #000;">是否修改此飯團資訊</p>
+                            <div class="row px-4 mt-4">
+                                <div class="col">
+                                    <a class="btn btn-secondary w-100 border-0" href="#"
+                                       data-bs-dismiss="modal"
+                                       style="background-color: #D2D2D2;">取消</a>
+                                </div>
+                                <div class="col">
+                                    <!-- button trigger for  Vertically Centered modal -->
+                                    <button type="button"
+                                            class="btn btn-primary w-100"
+                                            data-bs-toggle="modal"
+                                            data-bs-dismiss="modal"
+                                            data-bs-target="#exampleModalCenter3">
+                                        確認
+                                    </button>
+
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="modal fade" id="exampleModalCenter3" tabindex="-1" role="dialog"
+                 aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered modal-dialog-centered modal-dialog-scrollable"
+                     role="document">
+                    <div class="modal-content text-center p-4">
+                        <div class="modal-body">
+                            <div>
+                                <img src="./assets/images/icons/done.png" alt="">
+                            </div>
+                            <p class="checkmodaltxt" style="margin: 15px"> 已更新資訊 </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <script src="assets/vendors/perfect-scrollbar/perfect-scrollbar.min.js"></script>
+            <script src="assets/js/bootstrap.bundle.min.js"></script>
+
+            <script src="assets/vendors/apexcharts/apexcharts.js"></script>
+            <script src="assets/js/pages/dashboard.js"></script>
+
+            <script src="assets/js/mazer.js"></script>
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+            <script>
+                $(function () {
+                    $("#sidebar").load("sidebar.html")
+                })
+            </script>
+            <script src="controller/js/ajax.js"></script>
+            <script src="controller/js/store-edit.js"></script>
 </body>
 
 </html>
