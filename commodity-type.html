@@ -24,7 +24,43 @@
     <link rel="stylesheet" href="assets/css/customization.css">
     <link rel="stylesheet" href="assets/css/new/all.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <style>
 
+        #ModalCenter0 .modal-content,
+        #ModalCenter1 .modal-content,
+        #ModalCenter2 .modal-content,
+        #ModalCenter3 .modal-content,
+        #ModalCenter4 .modal-content {
+            border: 1px solid #26B7BC;
+            border-radius: 20px;
+            min-height: 200px;
+            max-width: 488px;
+        }
+
+        #ModalCenter2 .modal-content .modal-body,
+        #ModalCenter3 .modal-content .modal-body,
+        #ModalCenter4 .modal-content .modal-body {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        #ModalCenter2 .modal-content .modal-body .btn,
+        #ModalCenter3 .modal-content .modal-body .btn {
+            width: 130px;
+        }
+
+        #ModalCenter2 input,
+        #ModalCenter2 textarea,
+        #ModalCenter3 input,
+        #ModalCenter3 textarea {
+            width: 100%;
+            border: 1px solid #26B7BC;
+            padding: 13px 20px;
+            color: #AEAEAE;
+        }
+
+    </style>
     <script>
         sessionStorage.setItem('sidebar', 5)
     </script>
@@ -190,7 +226,10 @@
                          role="document">
                         <div class="modal-content text-center p-4">
                             <div class="modal-body">
-                                <i class="fa-solid fa-circle-xmark fa-xl" id="pink"></i>
+                                <div>
+                                    <img src="./assets/images/icons/forbidden.png"
+                                         alt="">
+                                </div>
                                 <p class="xmarkmodaltxt" style="margin: 15px"> 已刪除分類 </p>
                             </div>
                         </div>
@@ -204,7 +243,9 @@
                          role="document">
                         <div class="modal-content text-center p-4">
                             <div class="modal-body">
-                                <i class="fa-solid fa-circle-check fa-xl" id="green"></i>
+                                <div>
+                                    <img src="./assets/images/icons/done.png" alt="">
+                                </div>
                                 <p class="checkmodaltxt" style="margin: 15px"> 已新增分類 </p>
                             </div>
                         </div>
@@ -246,7 +287,8 @@
                                 </form>
                                 <div class="row px-4 mt-4">
                                     <div class="col">
-                                        <a class="btn btn-secondary w-100" href="#" data-bs-dismiss="modal">取消</a>
+                                        <a class="btn btn-secondary w-100 border-0" href="#" data-bs-dismiss="modal"
+                                           style="background-color: #D2D2D2;">取消</a>
                                     </div>
                                     <div class="col">
                                         <!-- button trigger for  Vertically Centered modal -->
@@ -293,7 +335,8 @@
 
                                 <div class="row px-4 mt-4">
                                     <div class="col">
-                                        <a class="btn btn-secondary w-100" href="#" data-bs-dismiss="modal">取消</a>
+                                        <a class="btn btn-secondary w-100 border-0" href="#" data-bs-dismiss="modal"
+                                           style="background-color: #D2D2D2;">取消</a>
                                     </div>
                                     <div class="col">
                                         <!-- button trigger for  Vertically Centered modal -->
@@ -319,12 +362,12 @@
 
                                 <div class="row px-4 mt-4">
                                     <div class="col">
-                                        <a class="btn btn-secondary w-100" href="#" data-bs-dismiss="modal">取消</a>
+                                        <a class="btn btn-secondary w-100 border-0" href="#" data-bs-dismiss="modal" style="background-color: #D2D2D2;">取消</a>
                                     </div>
                                     <div class="col">
                                         <!-- button trigger for  Vertically Centered modal -->
                                         <button type="button" onclick="del_tier()" class="btn btn-primary w-100"
-                                                data-bs-toggle="modal" data-bs-target="#ModalCenter0">
+                                                data-bs-toggle="modal" data-bs-dismiss="modal"  data-bs-target="#ModalCenter0">
                                             確認
                                         </button>
 
