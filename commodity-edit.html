@@ -53,6 +53,29 @@
             max-width: 488px;
         }
 
+        .history-label-row {
+            padding: 12px 0;
+            border-bottom: 1px dashed #26B7BC;
+        }
+
+        .label-pill {
+            width: 97px;
+            height: 20px;
+            border-radius: 10px;
+            font-size: 12px;
+            line-height: 20px;
+            color: #fff;
+        }
+
+        .label-pill:hover {
+            color: #fff;
+            cursor: auto;
+        }
+
+        .label-content {
+            color: #747474;
+        }
+
     </style>
     <script>
         sessionStorage.setItem('sidebar', 5)
@@ -270,30 +293,34 @@
 
                 <div class="row ">
                     <div class="col">
-                        <h5 class="m-0 " style="color: #26B7BC">商品資訊歷史紀錄</h5>
+                        <h5 class="m-0" style="color: #26B7BC; text-indent: 45px;">商品資訊歷史紀錄</h5>
                     </div>
                 </div>
                 <br>
                 <div class="row ">
-                    <section class="container">
-                        <div class="container">
+                    <section class="container mw-100">
+                        <div class="container mw-100">
                             <div class="card">
                                 <div class="card-content">
-                                    <div class="card-body record">
+                                    <div class="card-body">
+                                        <div class="record" style="padding: 22px 50px;">
+                                            無資料
+                                        </div>
+                                        <template>
+                                            <div class="d-flex align-items-center history-label-row">
+                                                <a class="label-pill text-center me-1">售動議價</a>
+                                                <span> </span>
+                                            </div>
+                                            <!-- <div><a class="btn btn-danger rounded-pill mb-1">售動議價</a> 2022-01-22 13:26 小販底價更動從28元改為30元 - 由管理員1執行</div>
+                                            <div><a class="btn btn-success rounded-pill mb-1">進動議價</a> 2022-01-22 13:26 小販底價更動從28元改為30元 - 由管理員1執行</div>
+                                            <div><a class="btn btn-info rounded-pill mb-1">商品下架</a> 2022-01-22 13:26 小販底價更動從28元改為30元 - 由管理員1執行</div>
+                                            <div><a class="btn btn-secondary rounded-pill mb-1">新品上架</a> 2022-01-22 13:26 小販底價更動從28元改為30元 - 由管理員1執行</div> -->
+                                        </template>
                                     </div>
-                                    <template>
-                                        <div><a class="btn rounded-pill mb-1">售動議價</a> <span> </span></div>
-                                        <!-- <div><a class="btn btn-danger rounded-pill mb-1">售動議價</a> 2022-01-22 13:26 小販底價更動從28元改為30元 - 由管理員1執行</div>
-                                        <div><a class="btn btn-success rounded-pill mb-1">進動議價</a> 2022-01-22 13:26 小販底價更動從28元改為30元 - 由管理員1執行</div>
-                                        <div><a class="btn btn-info rounded-pill mb-1">商品下架</a> 2022-01-22 13:26 小販底價更動從28元改為30元 - 由管理員1執行</div>
-                                        <div><a class="btn btn-secondary rounded-pill mb-1">新品上架</a> 2022-01-22 13:26 小販底價更動從28元改為30元 - 由管理員1執行</div> -->
-                                    </template>
                                 </div>
                             </div>
                         </div>
-
                     </section>
-
                 </div>
 
                 <!-- Vertically Centered modal Modal -->
