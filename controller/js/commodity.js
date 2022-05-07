@@ -26,36 +26,31 @@ function filter(num) {
 
 /*-按鈕顏色-*/
 function change_active(num) {
+    var color = '#747474'
+    var activeColor = '#26B7BC'
+
+    $('.sbtn99').css('color', color);
+    $('.sbtn0').css('color', color);
+    $('.sbtn1').css('color', color);
+    $('.sbtn2').css('color', color);
+
     switch (num) {
         case 0:
             sessionStorage.setItem(filter, 0);
-            $('.sbtn99').css('color', '#AEAEAE');
-            $('.sbtn0').css('color', '#26B7BC');
-            $('.sbtn1').css('color', '#AEAEAE');
-            $('.sbtn2').css('color', '#AEAEAE');
+            $('.sbtn0').css('color', activeColor);
             break;
         case 1:
             sessionStorage.setItem(filter, 1);
-            $('.sbtn99').css('color', '#AEAEAE');
-            $('.sbtn0').css('color', '#AEAEAE');
-            $('.sbtn1').css('color', '#26B7BC');
-            $('.sbtn2').css('color', '#AEAEAE');
+            $('.sbtn1').css('color', activeColor);
             break;
         case 2:
             sessionStorage.setItem(filter, 2);
-            $('.sbtn99').css('color', '#AEAEAE');
-            $('.sbtn0').css('color', '#AEAEAE');
-            $('.sbtn1').css('color', '#AEAEAE');
-            $('.sbtn2').css('color', '#26B7BC');
+            $('.sbtn2').css('color', activeColor);
             break;
         default:
             sessionStorage.setItem(filter, 99);
-            $('.sbtn99').css('color', '#26B7BC');
-            $('.sbtn0').css('color', '#AEAEAE');
-            $('.sbtn1').css('color', '#AEAEAE');
-            $('.sbtn2').css('color', '#AEAEAE');
+            $('.sbtn99').css('color', activeColor);
             break;
-
     }
 }
 
@@ -75,9 +70,9 @@ function set_table(status, g_class, search) {
                     temp.find('#pname').html(arr[i]['gname']);
                     temp.find('#type').html(arr[i]['ver']);
                     if (arr[i]['g_status'] == 0)
-                        temp.find('#status').html('<a id="yellow"><i class="fa-solid fa-check"></i> 下架中</a>');
+                        temp.find('#status').html('<a id="yellow"><i class="bi bi-arrow-bar-down"></i> 下架中</a>');
                     else if (arr[i]['g_status'] == 1)
-                        temp.find('#status').html('<a id="green"><i class="fa-solid fa-check"></i> 上架中</a>');
+                        temp.find('#status').html('<a id="green"><i class="bi bi-arrow-bar-up"></i> 上架中</a>');
                     else if (arr[i]['g_status'] == 2)
                         temp.find('#status').html('<a id="red"><i class="fa-solid fa-check"></i> 暫停販售</a>');
                     temp.find('#cost').html(arr[i]['p_imprice']);
