@@ -13,7 +13,8 @@
     <link rel="stylesheet" href="assets/vendors/iconly/bold.css">
     <link rel="stylesheet" href="assets/vendors/toastify/toastify.css">
     <link href="https://unpkg.com/filepond/dist/filepond.css" rel="stylesheet">
-    <link href="https://unpkg.com/filepond-plugin-image-preview/dist/filepond-plugin-image-preview.css" rel="stylesheet">
+    <link href="https://unpkg.com/filepond-plugin-image-preview/dist/filepond-plugin-image-preview.css"
+          rel="stylesheet">
 
     <link rel="stylesheet" href="assets/vendors/perfect-scrollbar/perfect-scrollbar.css">
     <link rel="stylesheet" href="assets/vendors/bootstrap-icons/bootstrap-icons.css">
@@ -21,277 +22,441 @@
     <link rel="shortcut icon" href="assets/images/favicon.svg" type="image/x-icon">
 
     <link rel="stylesheet" href="assets/css/customization.css">
+    <link rel="stylesheet" href="assets/css/new/all.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
+
+    <style>
+        .insert-table .col-1,
+        .insert-table .col-2 {
+            align-self: center;
+            text-align: left;
+            white-space: nowrap;
+        }
+
+        .insert-table .material-icons {
+            margin: 0;
+            padding: 0;
+            align-self: center;
+            color: #26B7BC;
+            flex: 0;
+        }
+
+        .insert-table .row {
+            padding-left: 15px !important;
+            padding-right: 15px !important;
+            padding: 10px;
+        }
+
+        form {
+            padding: 67px 62px;
+        }
+
+        .history-label-row {
+            padding: 12px 0;
+            border-bottom: 1px dashed #26B7BC;
+        }
+
+        .label-pill {
+            width: 97px;
+            height: 20px;
+            border-radius: 10px;
+            font-size: 12px;
+            line-height: 20px;
+            color: #fff;
+        }
+
+        .label-content {
+            color: #747474;
+        }
+
+        #exampleModalCenter2 .modal-content,
+        #exampleModalCenter3 .modal-content {
+            border: 1px solid #26B7BC;
+            border-radius: 20px;
+            min-height: 250px;
+            max-width: 488px;
+        }
+
+        #exampleModalCenter2 .modal-content .modal-body,
+        #exampleModalCenter3 .modal-content .modal-body {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        #exampleModalCenter2 .modal-content .modal-body .btn,
+        #exampleModalCenter4 .modal-content .modal-body .btn {
+            max-width: 140px;
+        }
+
+    </style>
+
     <script>
-        sessionStorage.setItem('sidebar', 5);
+        sessionStorage.setItem('sidebar', 5)
     </script>
     <script src="https://kit.fontawesome.com/f8db84f08a.js" crossorigin="anonymous"></script>
 </head>
 
-<style>
-    .insert-table .col-1,
-    .insert-table .col-2 {
-        align-self: center;
-        text-align: left;
-        white-space: nowrap;
-    }
-    
-    .insert-table .material-icons {
-        margin: 0;
-        padding: 0;
-        align-self: center;
-        color: #26B7BC;
-        flex: 0;
-    }
-    
-    .insert-table .row {
-        padding-left: 15px !important;
-        padding-right: 15px !important;
-        padding: 10px;
-    }
-</style>
 
 <body>
-    <div id="app">
+<div id="app">
 
-        <div id="sidebar" class="active"> </div>
+    <div id="sidebar" class="active"></div>
 
-        <div id="main">
-            <header class="mb-3">
-                <a href="#" class="burger-btn d-block d-xl-none">
-                    <i class="bi bi-justify fs-3"></i>
-                </a>
-            </header>
+    <div id="main">
+        <header class="mb-3">
+            <a href="#" class="burger-btn d-block d-xl-none">
+                <i class="bi bi-justify fs-3"></i>
+            </a>
+        </header>
 
-            <div class="page-content">
-                <div class="page-heading align-items-center">
-                    <div class="row container">
-                        <div class="col">
-                            <a class="btn btn-primary" href="commodity.html"><i class="fa-solid fa-arrow-left"></i> 回列表</a>
-                        </div>
+        <div class="page-content">
+            <div class="page-heading align-items-center">
+                <div class="row mb-4">
+                    <div class="col">
+                        <a class="btn btn-primary" href="commodity.html" style="width: 176px;">
+                            <i class="fa-solid fa-arrow-left"></i>
+                            回列表
+                        </a>
                     </div>
-                    <br/>
-                    <div class="row ">
-                        <div class="col">
-                            <h5 class="m-0 " style="color: #26B7BC;text-align: center;">新增商品</h5><br/>
-                        </div>
-                    </div>
-                    <div class="row ">
-                        <section class="container">
-                            <div class="container">
-                                <div class="card">
-                                    <div class="card-content">
-                                        <div class="card-body">
-                                            <div class="col">
-                                                <div class="d-block" style="text-align: center;">
-                                                    <form id="form">
-                                                        <div class="insert-table row">
-                                                            <div class="col-lg-6 col-12">
-                                                                <div class="row">
-                                                                    <div class="col-2">
-                                                                        廠商名稱
-                                                                    </div>
-
-                                                                    <div id="cname" class="col-lg col-12" style="color: #26B7BC; text-align: left; align-items: center; display: flex;">
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                            <div class="col-lg-6 col-12">
-                                                                <div class="row">
-                                                                    <div class="col-2">
-                                                                        類&emsp;&emsp;別
-                                                                    </div>
-
-                                                                    <div id="class" class="col-lg col-12" style="color: #26B7BC;">
-                                                                        <select class="form-control g_class">
-                                                                        <option>請選擇</option>
-                                                                    </select>
-                                                                    </div>
-                                                                </div>
-
-                                                            </div>
-
-                                                            <div class="col-lg-6 col-12">
-                                                                <div class="row">
-                                                                    <div class="col-2">
-                                                                        品&emsp;&emsp;名
-                                                                    </div>
-                                                                    <div class="col-lg col-12" style="color: #26B7BC;">
-                                                                        <input type="text" class="form-control pname" id="basicInput" value="">
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-
-                                                            <div class="col-lg-6 col-12">
-                                                                <div class="row">
-                                                                    <div class="col-2">
-                                                                        型號口味
-                                                                    </div>
-                                                                    <div class="col-lg col-12" style="color: #26B7BC;">
-                                                                        <input type="text" class="form-control type" id="basicInput" value="">
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-
-                                                            <div class="col-lg-6 col-12">
-                                                                <div class="row">
-                                                                    <div class="col-2">
-                                                                        保存期限
-                                                                    </div>
-                                                                    <div class="col-lg col-12" style="color: #26B7BC;">
-                                                                        <input type="number" class="form-control enddate" id="basicInput" value="">
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-
-                                                            <div class="col-lg-6 col-12">
-                                                                <div class="row">
-                                                                    <div class="col-2">
-                                                                        溫&emsp;&emsp;層
-                                                                    </div>
-                                                                    <div class="col-lg col-12" style="color: #26B7BC;">
-                                                                        <select class="form-control deli">
-                                                                            <option value="">請選擇</option>
-                                                                            <option>常溫</option>
-                                                                            <option>冷凍</option>
-                                                                        </select>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-
-                                                            <div class="col-lg-6 col-12">
-                                                                <div class="row">
-                                                                    <div class="col-2">
-                                                                        產&emsp;&emsp;地
-                                                                    </div>
-                                                                    <div class="col-lg col-12" style="color: #26B7BC;">
-                                                                        <input type="text" class="form-control place" id="basicInput" value="">
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-
-                                                            <div class="col-lg-6 col-12">
-                                                                <div class="row">
-                                                                    <div class="col-2">
-                                                                        圖片上傳
-                                                                    </div>
-                                                                    <div class="col-lg col-12" style="color: #26B7BC;">
-                                                                        <input type="date" class="form-control img_path" id="basicInput" value="">
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-
-                                                            <div class="col-lg-6 col-12">
-                                                                <div class="row">
-                                                                    <div class="col-2">
-                                                                        庫存數量
-                                                                    </div>
-                                                                    <div class="row col-lg col-12">
-                                                                        <span class="material-icons col">remove_circle</span>
-
-                                                                        <div class="col-lg-2 col-4" style="color: #26B7BC;">
-                                                                            <input type="number" class="form-control qnt" id="basicInput" value="">
-                                                                        </div>
-                                                                        <span class="material-icons col">add_circle</span>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-
-                                                            <div class="col-12">
-                                                                <div class="row">
-                                                                    <div class="col-1" style="align-self: flex-start;">
-                                                                        商品介紹
-                                                                    </div>
-                                                                    <div class="col-lg col-12" colspan="3" style="color: #26B7BC;">
-                                                                        <textarea class="form-control ptxt" id="exampleFormControlTextarea1" rows="8"></textarea>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-
-                                                        <div class="col">
-                                                            <br><br>
-                                                            <div class="d-block row" style="text-align: center;">
-                                                                <a class="btn btn-danger col-lg-2 col-6 m-3" href="#">價格設定</a>
-                                                                <a class="btn btn-primary col-lg-2 col-6 m-3" onclick="ceditsend()" href="#" data-bs-toggle="modal" data-bs-target="#ModalCheck">儲存</a>
-                                                            </div>
-                                                        </div>
-                                                        <input id="reset-btn" type="reset" value="Reset" class="d-none">
-                                                    </form>
-                                                </div>
-                                            </div>
-
-                                            <br>
-
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                        </section>
-
-                    </div>
-
-
-                    <!-- Vertically Centered modal Modal -->
-                    <div class="modal fade" id="ModalPrice" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-                        <div class="modal-dialog modal-dialog-centered modal-dialog-centered modal-dialog-scrollable" role="document">
-                            <div class="modal-content text-center p-4">
-                                <div class="modal-body" style="margin: 30px;">
-
-                                    <p>確定要取消合作此廠商嗎?</p>
-
-                                    <div class="row px-4 mt-4">
-                                        <div class="col">
-                                            <a class="btn btn-secondary w-100" href="#" data-bs-dismiss="modal">取消</a>
-                                        </div>
-                                        <div class="col">
-                                            <!-- button trigger for  Vertically Centered modal -->
-                                            <button type="button" onclick="change_status(0)" class="btn btn-primary w-100" data-bs-toggle="modal" data-bs-target="#ModalCheck">
-                                    確認
-                                </button>
-
-
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Vertically Centered modal Modal -->
-                    <div class="modal fade" id="ModalCheck" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-                        <div class="modal-dialog modal-dialog-centered modal-dialog-centered modal-dialog-scrollable" role="document">
-                            <div class="modal-content text-center p-4">
-                                <div class="modal-body">
-                                    <i class="fa-solid fa-circle-check fa-xl" id="green"></i>
-                                    <p class="checkmodaltxt" style="margin: 15px"> 新增商品完成 </p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!--code寫這裡-->
-
+<!--                    <div class="col text-right">-->
+<!--                        <button class="btn btn-primary" style="width: 130px;" data-bs-toggle="modal"-->
+<!--                                data-bs-target="#exampleModalCenter2">上架-->
+<!--                        </button>-->
+<!--                    </div>-->
+<!--                    <div class="modal fade" id="exampleModalCenter3" tabindex="-1" role="dialog"-->
+<!--                         aria-labelledby="exampleModalCenterTitle" aria-hidden="true">-->
+<!--                        <div class="modal-dialog modal-dialog-centered modal-dialog-centered modal-dialog-scrollable"-->
+<!--                             role="document">-->
+<!--                            <div class="modal-content text-center p-4">-->
+<!--                                <div class="modal-body">-->
+<!--                                    <div>-->
+<!--                                        <img src="./assets/images/icons/done.png" alt="">-->
+<!--                                    </div>-->
+<!--                                    <p><span class="m-name"></span>已完成新增</p>-->
+<!--                                </div>-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                    </div>-->
 
                 </div>
 
-                <script src="assets/vendors/perfect-scrollbar/perfect-scrollbar.min.js"></script>
-                <script src="assets/js/bootstrap.bundle.min.js"></script>
+                <div class="row mb-3">
+                    <div class="col">
+                        <h5 class="m-0 " style="color: #26B7BC;text-align: center;">新增商品</h5><br />
+                    </div>
+                </div>
 
-                <script src="assets/vendors/apexcharts/apexcharts.js"></script>
-                <script src="assets/js/pages/dashboard.js"></script>
+                <div class="row ">
+                    <section class="container mw-100">
+                        <div class="container mw-100 px-0">
+                            <div class="card">
+                                <div class="card-content">
+                                    <div class="card-body">
+                                        <div class="col">
+                                            <div class="d-block" style="text-align: center;">
+                                                <form id="form">
+                                                    <div class="insert-table row">
+                                                        <div class="col-lg-6 col-12">
+                                                            <div class="row">
+                                                                <div class="col-2">
+                                                                    廠商名稱
+                                                                </div>
+                                                                <div id="cname" class="col-lg col-12"
+                                                                     style="color: #C0C0C0; text-align: left; align-items: center; display: flex;"></div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-lg-6 col-12">
+                                                            <div class="row">
+                                                                <div class="col-2">
+                                                                    類&emsp;&emsp;別
+                                                                </div>
 
-                <script src="assets/js/mazer.js"></script>
-                <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-                <script>
-                    $(function() {
-                        $("#sidebar").load("sidebar.html");
-                    });
-                </script>
-                <script src="controller/js/ajax.js"></script>
-                <script src="controller/js/commodity-new.js"></script>
+                                                                <div id="class" class="col-lg col-12"
+                                                                     style="color: #26B7BC;">
+                                                                    <select class="form-control g_class">
+                                                                        <option>請選擇</option>
+                                                                    </select>
+                                                                </div>
+                                                            </div>
+
+                                                        </div>
+
+                                                        <div class="col-lg-6 col-12">
+                                                            <div class="row">
+                                                                <div class="col-2">
+                                                                    品&emsp;&emsp;名
+                                                                </div>
+                                                                <div class="col-lg col-12" style="color: #26B7BC;">
+                                                                    <input type="text" class="form-control pname"
+                                                                           id="basicInput" value="">
+                                                                </div>
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="col-lg-6 col-12">
+                                                            <div class="row">
+                                                                <div class="col-2">
+                                                                    型號口味
+                                                                </div>
+                                                                <div class="col-lg col-12" style="color: #26B7BC;">
+                                                                    <input type="text" class="form-control type"
+                                                                           id="basicInput" value="">
+                                                                </div>
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="col-lg-6 col-12">
+                                                            <div class="row">
+                                                                <div class="col-2">
+                                                                    保存期限
+                                                                </div>
+                                                                <div class="col-lg col-12" style="color: #26B7BC;">
+                                                                    <input type="number" class="form-control enddate"
+                                                                           id="basicInput" value="">
+                                                                </div>
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="col-lg-6 col-12">
+                                                            <div class="row">
+                                                                <div class="col-2">
+                                                                    溫&emsp;&emsp;層
+                                                                </div>
+                                                                <div class="col-lg col-12" style="color: #26B7BC;">
+                                                                    <select class="form-control deli">
+                                                                        <option value="">請選擇</option>
+                                                                        <option>常溫</option>
+                                                                        <option>冷凍</option>
+                                                                    </select>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="col-lg-6 col-12">
+                                                            <div class="row">
+                                                                <div class="col-2">
+                                                                    產&emsp;&emsp;地
+                                                                </div>
+                                                                <div class="col-lg col-12" style="color: #26B7BC;">
+                                                                    <input type="text" class="form-control place"
+                                                                           id="basicInput" value="">
+                                                                </div>
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="col-lg-6 col-12">
+                                                            <div class="row">
+                                                                <div class="col-2">
+                                                                    圖片上傳
+                                                                </div>
+                                                                <div class="col-lg col-12" style="color: #26B7BC;">
+                                                                    <input type="file" class="form-control img_path"
+                                                                           id="basicInput" value="">
+                                                                </div>
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="col-lg-6 col-12">
+                                                            <div class="row">
+                                                                <div class="col-2">
+                                                                    庫存數量
+                                                                </div>
+                                                                <div class="row col-lg col-12">
+                                                                    <span class="material-icons col">remove_circle</span>
+
+                                                                    <div class="col-lg-2 col-4" style="color: #26B7BC;">
+                                                                        <input type="number" class="form-control qnt"
+                                                                               id="basicInput" value="">
+                                                                    </div>
+                                                                    <span class="material-icons col">add_circle</span>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="col-12">
+                                                            <div class="row">
+                                                                <div class="col-1" style="align-self: flex-start;">
+                                                                    商品介紹
+                                                                </div>
+                                                                <div class="col-lg col-12" colspan="3"
+                                                                     style="color: #26B7BC;">
+                                                                    <textarea class="form-control ptxt"
+                                                                              id="exampleFormControlTextarea1"
+                                                                              rows="8"></textarea>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="col">
+                                                        <br><br>
+                                                        <div class="d-block row" style="text-align: center;">
+                                                            <a class="btn btn-danger col-lg-2 col-6 m-3" href="#"
+                                                               style="width: 176px; padding: 12px 0;border-radius: 7px;">價格設定</a>
+                                                            <a class="btn btn-primary col-lg-2 col-6 m-3" href="#"
+                                                               onclick="ceditsend()"
+                                                               style="width: 176px; padding: 12px 0; border-radius: 7px;"
+                                                               data-bs-toggle="modal"
+                                                               data-bs-target="#exampleModalCenter2">儲存</a>
+                                                        </div>
+                                                    </div>
+                                                    <input id="reset-btn" type="reset" value="Reset" class="d-none">
+                                                </form>
+                                            </div>
+                                        </div>
+
+                                        <br>
+
+                                    </div>
+                                </div>
+                            </div>
+
+<!--                            <h5 class="mb-2 " style="color: #26B7BC;text-align: left;">商品資訊歷史紀錄</h5>-->
+<!--                            <div class="card">-->
+<!--                                <div class="card-content">-->
+<!--                                    <div class="card-body">-->
+<!--                                        <div style="padding: 22px 50px;">-->
+<!--                                            <div class="d-flex align-items-center history-label-row">-->
+<!--                                                <div class="label-pill text-center me-1"-->
+<!--                                                     style="background-color:#FE868E;">-->
+<!--                                                    售價異動-->
+<!--                                                </div>-->
+<!--                                                <div class="label-content">2022-01-22 13:26 小販底價更動從28元改為30元 - 由管理員1執行-->
+<!--                                                </div>-->
+<!--                                            </div>-->
+<!--                                            <div class="d-flex align-items-center history-label-row">-->
+<!--                                                <div class="label-pill text-center me-1"-->
+<!--                                                     style="background-color:#FFCE4F;">-->
+<!--                                                    進價異動-->
+<!--                                                </div>-->
+<!--                                                <div class="label-content">2022-01-11 13:26 商品進價更動從8元改為10元  -  由管理員2執行-->
+<!--                                                </div>-->
+<!--                                            </div>-->
+<!--                                            <div class="d-flex align-items-center history-label-row">-->
+<!--                                                <div class="label-pill text-center me-1"-->
+<!--                                                     style="background-color:#70B7F8;">-->
+<!--                                                    進價異動-->
+<!--                                                </div>-->
+<!--                                                <div class="label-content">2022-01-05 13:26 商品下架  -  由管理員1執行-->
+<!--                                                </div>-->
+<!--                                            </div>-->
+<!--                                            <div class="d-flex align-items-center history-label-row">-->
+<!--                                                <div class="label-pill text-center me-1"-->
+<!--                                                     style="background-color:#747474;">-->
+<!--                                                    進價異動-->
+<!--                                                </div>-->
+<!--                                                <div class="label-content">2022-01-01 13:26 新上品上架  -  由管理員1執行-->
+<!--                                                </div>-->
+<!--                                            </div>-->
+<!--                                        </div>-->
+<!--                                    </div>-->
+<!--                                </div>-->
+<!--                            </div>-->
+                        </div>
+                    </section>
+
+                </div>
+
+
+                <!-- Vertically Centered modal Modal -->
+                <div class="modal fade" id="ModalPrice" tabindex="-1" role="dialog"
+                     aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered modal-dialog-centered modal-dialog-scrollable"
+                         role="document">
+                        <div class="modal-content text-center p-4">
+                            <div class="modal-body" style="margin: 30px;">
+
+                                <p>確定要取消合作此廠商嗎?</p>
+
+                                <div class="row px-4 mt-4">
+                                    <div class="col">
+                                        <a class="btn btn-secondary w-100" href="#" data-bs-dismiss="modal">取消</a>
+                                    </div>
+                                    <div class="col">
+                                        <!-- button trigger for  Vertically Centered modal -->
+                                        <button type="button" onclick="change_status(0)" class="btn btn-primary w-100"
+                                                data-bs-toggle="modal" data-bs-target="#ModalCheck">
+                                            確認
+                                        </button>
+
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="modal fade" id="exampleModalCenter2" tabindex="-1" role="dialog"
+                     aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered modal-dialog-centered modal-dialog-scrollable"
+                         role="document">
+                        <div class="modal-content text-center p-4">
+                            <div class="modal-body">
+                                <p style="color: #000;">是否新增此商品</p>
+                                <div class="row px-4 mt-4">
+                                    <div class="col">
+                                        <a class="btn btn-secondary w-100 border-0" href="#"
+                                           data-bs-dismiss="modal"
+                                           style="background-color: #D2D2D2;">取消</a>
+                                    </div>
+                                    <div class="col">
+                                        <!-- button trigger for  Vertically Centered modal -->
+                                        <button type="button"
+                                                class="btn btn-primary w-100"
+                                                data-bs-toggle="modal"
+                                                data-bs-dismiss="modal"
+                                                data-bs-target="#exampleModalCenter3">
+                                            確認
+                                        </button>
+
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <!-- Vertically Centered modal Modal -->
+                <div class="modal fade" id="exampleModalCenter3" tabindex="-1" role="dialog"
+                     aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered modal-dialog-centered modal-dialog-scrollable"
+                         role="document">
+                        <div class="modal-content text-center p-4">
+                            <div class="modal-body">
+                                <div>
+                                    <img src="./assets/images/icons/done.png" alt="">
+                                </div>
+                                <p class="checkmodaltxt" style="margin: 15px"> 新增商品完成 </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!--code寫這裡-->
+
+
+            </div>
+
+            <script src="assets/vendors/perfect-scrollbar/perfect-scrollbar.min.js"></script>
+            <script src="assets/js/bootstrap.bundle.min.js"></script>
+
+            <script src="assets/vendors/apexcharts/apexcharts.js"></script>
+            <script src="assets/js/pages/dashboard.js"></script>
+
+            <script src="assets/js/mazer.js"></script>
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+            <script>
+                $(function () {
+                    $("#sidebar").load("sidebar.html")
+                })
+            </script>
+            <script src="controller/js/ajax.js"></script>
+            <script src="controller/js/commodity-new.js"></script>
 </body>
 
 </html>
