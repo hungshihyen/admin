@@ -13,7 +13,8 @@
     <link rel="stylesheet" href="assets/vendors/iconly/bold.css">
     <link rel="stylesheet" href="assets/vendors/toastify/toastify.css">
     <link href="https://unpkg.com/filepond/dist/filepond.css" rel="stylesheet">
-    <link href="https://unpkg.com/filepond-plugin-image-preview/dist/filepond-plugin-image-preview.css" rel="stylesheet">
+    <link href="https://unpkg.com/filepond-plugin-image-preview/dist/filepond-plugin-image-preview.css"
+          rel="stylesheet">
 
     <link rel="stylesheet" href="assets/vendors/perfect-scrollbar/perfect-scrollbar.css">
     <link rel="stylesheet" href="assets/vendors/bootstrap-icons/bootstrap-icons.css">
@@ -21,100 +22,124 @@
     <link rel="shortcut icon" href="assets/images/favicon.svg" type="image/x-icon">
 
     <link rel="stylesheet" href="assets/css/customization.css">
+    <link rel="stylesheet" href="assets/css/new/all.css">
 
+    <style>
+        table td:first-child {
+            color: #000;
+            font-size: 12px;
+            text-align: right;
+        }
+    </style>
     <script>
-        sessionStorage.setItem('sidebar', 8);
+        sessionStorage.setItem('sidebar', 8)
     </script>
     <script src="https://kit.fontawesome.com/f8db84f08a.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
-    <div id="app">
+<div id="app">
 
-        <div id="sidebar" class="active"> </div>
+    <div id="sidebar" class="active"></div>
 
-        <div id="main">
-            <header class="mb-3">
-                <a href="#" class="burger-btn d-block d-xl-none">
-                    <i class="bi bi-justify fs-3"></i>
-                </a>
-            </header>
+    <div id="main">
+        <header class="mb-3">
+            <a href="#" class="burger-btn d-block d-xl-none">
+                <i class="bi bi-justify fs-3"></i>
+            </a>
+        </header>
 
-            <div class="page-content">
-                <div class="page-heading align-items-center">
-                    <div class="row container">
-                        <div class="col">
-                            <a class="btn btn-primary" href="control2.html"><i class="fa-solid fa-arrow-left"></i> 回列表</a>
-                        </div>
+        <div class="page-content">
+            <div class="page-heading align-items-center">
+                <div class="row container">
+                    <div class="col">
+                        <a class="btn btn-primary" href="control2.html" style="width: 176px;">
+                            <i class="fa-solid fa-arrow-left"></i>
+                            回列表
+                        </a>
                     </div>
-                    <br/>
-                    <div class="row ">
-                        <div class="col">
-                            <h5 class="m-0 " style="color: #26B7BC;text-align: center;">新增管理員</h5><br>
-                        </div>
+                </div>
+                <br />
+                <div class="row ">
+                    <div class="col">
+                        <h5 class="m-0 " style="color: #26B7BC;text-align: center;">新增管理員</h5><br>
                     </div>
-                    <div class="row ">
-                        <section class="container">
-                            <div class="container">
-                                <div class="card">
-                                    <div class="card-content">
-                                        <div class="card-body">
-                                            <table class="table table-lg align-items-center text-center">
-                                                <tr>
+                </div>
+                <div class="row ">
+                    <section class="container mw-100">
+                        <div class="container mw-100">
+                            <div class="card">
+                                <div class="card-content">
+                                    <div class="card-body">
+                                        <div style="padding: 130px 0;">
+                                            <table class="table table-block table-lg align-items-center text-center w-50 mx-auto">                                                <tr>
                                                     <td>管理員名稱</td>
-                                                    <td id="name" style="color: #26B7BC;"><input type="text" class="form-control" id="basicInput" value=""></td>
+                                                    <td id="name" style="color: #26B7BC;"><input type="text"
+                                                                                                 class="form-control"
+                                                                                                 id="basicInput"
+                                                                                                 value=""></td>
                                                 </tr>
                                                 <tr>
                                                     <td>帳號</td>
-                                                    <td id="acc" style="color: #26B7BC;"><input type="text" class="form-control" id="basicInput" value=""></td>
+                                                    <td id="acc" style="color: #26B7BC;"><input type="text"
+                                                                                                class="form-control"
+                                                                                                id="basicInput"
+                                                                                                value=""></td>
                                                 </tr>
 
                                                 <tr>
                                                     <td>密碼</td>
-                                                    <td id="pwd" style="color: #26B7BC;"><input type="text" class="form-control" id="basicInput" value=""></td>
+                                                    <td id="pwd" style="color: #26B7BC;"><input type="text"
+                                                                                                class="form-control"
+                                                                                                id="basicInput"
+                                                                                                value=""></td>
                                                 </tr>
                                                 <tr>
                                                     <td>備註</td>
-                                                    <td id="txt" style="color: #26B7BC;"><input type="text" class="form-control" id="basicInput" value=""></td>
+                                                    <td id="txt" style="color: #26B7BC;"><input type="text"
+                                                                                                class="form-control"
+                                                                                                id="basicInput"
+                                                                                                value=""></td>
                                                 </tr>
 
                                             </table>
-
                                         </div>
+
                                     </div>
                                 </div>
                             </div>
+                        </div>
 
-                        </section>
-                        <div class="row container">
-                            <div class="col">
-                                <div class="d-block" style="text-align: center;">
-                                    <a class="btn btn-primary" onclick="" href="">新增管理</a>
-                                </div>
+                    </section>
+                    <div class="row container">
+                        <div class="col">
+                            <div class="d-block" style="text-align: center;">
+                                <a class="btn btn-primary" onclick="" href="">新增管理</a>
                             </div>
                         </div>
                     </div>
-
-                    <!--code寫這裡-->
-
-
                 </div>
 
-                <script src="assets/vendors/perfect-scrollbar/perfect-scrollbar.min.js"></script>
-                <script src="assets/js/bootstrap.bundle.min.js"></script>
+                <!--code寫這裡-->
 
-                <script src="assets/vendors/apexcharts/apexcharts.js"></script>
-                <script src="assets/js/pages/dashboard.js"></script>
 
-                <script src="assets/js/mazer.js"></script>
-                <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-                <script>
-                    $(function() {
-                        $("#sidebar").load("sidebar.html");
-                    });
-                </script>
-                <script src="controller/js/ajax.js"></script>
-                <script src="controller/js/control-new.js"></script>
+            </div>
+
+            <script src="assets/vendors/perfect-scrollbar/perfect-scrollbar.min.js"></script>
+            <script src="assets/js/bootstrap.bundle.min.js"></script>
+
+            <script src="assets/vendors/apexcharts/apexcharts.js"></script>
+            <script src="assets/js/pages/dashboard.js"></script>
+
+            <script src="assets/js/mazer.js"></script>
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+            <script>
+                $(function () {
+                    $("#sidebar").load("sidebar.html")
+                })
+            </script>
+            <script src="controller/js/ajax.js"></script>
+            <script src="controller/js/control-new.js"></script>
 </body>
 
 </html>

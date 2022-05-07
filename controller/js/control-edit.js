@@ -12,7 +12,7 @@ function set_table() {
     $('#name').html('<input type="text" class="form-control" id="basicInput" value="' + arr[0][0] + '">');
     $('#acc').html('<input type="text" class="form-control" id="basicInput" value="' + arr[0][1] + '">');
     $('#pwd').html('<input type="text" class="form-control" id="basicInput" value="' + arr[0][2] + '">');
-    $('#txt').html('<input type="text" class="form-control" id="basicInput" value="' + arr[0][3] + '">');
+    $('#txt').html('<textarea type="text" class="form-control" id="basicInput" value="' + arr[0][3] + '"></textarea>');
 
 }
 
